@@ -9,10 +9,10 @@ import java.util.ArrayList;
 
 /**
  *
- * @author raunak
+ * @author yibing
  */
 public class OrganizationDirectory {
-    
+
     private ArrayList<Organization> organizationList;
 
     public OrganizationDirectory() {
@@ -22,15 +22,14 @@ public class OrganizationDirectory {
     public ArrayList<Organization> getOrganizationList() {
         return organizationList;
     }
-    
-    public Organization createOrganization(Type type){
+
+    public Organization createOrganization(Type type) {
         Organization organization = null;
-        if (type.getValue().equals(Type.Doctor.getValue())){
-            organization = new DoctorOrganization();
+        if (type.getValue().equals(Type.Arrangement.getValue())) {
+            organization = new ArrangementOrganization();
             organizationList.add(organization);
-        }
-        else if (type.getValue().equals(Type.Lab.getValue())){
-            organization = new LabOrganization();
+        } else if (type.getValue().equals(Type.Registration.getValue())) {
+            organization = new RegistrationOrganization();
             organizationList.add(organization);
         }
         return organization;
