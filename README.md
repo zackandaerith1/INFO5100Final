@@ -1,7 +1,10 @@
 # INFO5100Final
  Final Project.
+ 
  Team: Zheng Fang, Yibing Zhu, Jichu Wang. 
+ 
  Mentor : Qian Chen
+ 
  Instructor : Bugrara Kal
 
 Deliverables
