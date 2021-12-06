@@ -12,13 +12,12 @@ import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Component;
 import java.awt.Image;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -60,6 +59,11 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
         txtEmail.setText(profile.getEmail());
         txtComment.setText(profile.getComment());
         photoComponent.setIcon(ResizeImage(profile.getImagePath()));
+        txtID.setEnabled(false);
+        txtFirstName.setEnabled(false);
+        txtLastName.setEnabled(false);
+        txtGender.setEnabled(false);
+        jDateChooser.setEnabled(false);
 
     }
 
@@ -83,7 +87,7 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtFirstName = new javax.swing.JTextField();
-        btnAdd = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txtLastName = new javax.swing.JTextField();
@@ -123,13 +127,13 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnAdd.setBackground(new java.awt.Color(122, 72, 221));
-        btnAdd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
-        btnAdd.setText("Add Record");
-        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdate.setBackground(new java.awt.Color(122, 72, 221));
+        btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdate.setText("Update Record");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddActionPerformed(evt);
+                btnUpdateActionPerformed(evt);
             }
         });
 
@@ -263,7 +267,7 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel11)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btnBack)
                     .addGroup(layout.createSequentialGroup()
@@ -350,7 +354,7 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBack)
-                    .addComponent(btnAdd))
+                    .addComponent(btnUpdate))
                 .addGap(48, 48, 48))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -359,34 +363,31 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFirstNameActionPerformed
 
-    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         if (txtFirstName.getText().isEmpty() || txtLastName.getText().isEmpty() || txtGender.getText().isEmpty()
                 || txtPhone.getText().isEmpty() || jDateChooser.getDate() == null || txtAddress.getText().isEmpty()
                 || txtEmail.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Fields cannot be empty(except Comment)", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        int reply = JOptionPane.showConfirmDialog(null, "Are You Sure To Update Info?", "Warning", JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION) {
 
-        String firstname = txtFirstName.getText();
-        String lastname = txtLastName.getText();
-        String gender = txtGender.getText();
-        String shelter = account.getEmployee().getName();
-        String phone = txtPhone.getText();
-        SimpleDateFormat dateformat = new SimpleDateFormat("MM-dd-yyyy");
-        String birth = dateformat.format(jDateChooser.getDate());
-        int year = jDateChooser.getDate().getYear() + 1900;
-        int currentyear = Calendar.getInstance().get(Calendar.YEAR);
-        int age = currentyear - year;
-        String address = txtAddress.getText();
-        String email = txtEmail.getText();
-        String comment = txtComment.getText();
-        String imagePath = txtFilePath.getText();
+            String phone = txtPhone.getText();
+            String address = txtAddress.getText();
+            String email = txtEmail.getText();
+            String comment = txtComment.getText();
+            String imagePath = txtFilePath.getText();
+            profile.setPhone(phone);
+            profile.setAddress(address);
+            profile.setEmail(email);
+            profile.setComment(comment);
+            profile.setImagePath(imagePath);
 
-        Random random = new Random();
-        int randNumber = random.nextInt(200000 - 100000 + 1) + 100000;
-        String id = String.valueOf(randNumber);
-
-        profileDirectory.newItem(id, firstname, lastname, gender, age, phone, birth, address, email, comment, imagePath, shelter);
+            JOptionPane.showMessageDialog(null, "Information Updated!");
+        } else {
+            return;
+        }
 
         txtFirstName.setText("");
         txtLastName.setText("");
@@ -396,10 +397,14 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
         txtAddress.setText("");
         txtEmail.setText("");
         txtComment.setText("");
-    }//GEN-LAST:event_btnAddActionPerformed
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        ManageProfileJPanel managecust = (ManageProfileJPanel) component;
+        managecust.populateTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
@@ -449,9 +454,9 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtIDActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnChoose;
+    private javax.swing.JButton btnUpdate;
     private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
