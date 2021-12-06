@@ -5,32 +5,82 @@
  */
 package Business;
 
-import Business.Network.Network;
+import Business.Coordinator.CoordinatorDirectory;
+import Business.DeliveryMan.DeliveryManDirectory;
+import Business.Profile.ProfileDirectory;
+import Business.Order.OrderDirectory;
 import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
+import Business.Shelter.ShelterDirectory;
 import java.util.ArrayList;
 
 /**
  *
- * @author yibin
+ * @author MyPC1
  */
 public class EcoSystem extends Organization {
 
     private static EcoSystem business;
-    private ArrayList<Network> networkList;
+    private ShelterDirectory shelterDirectory;
+    private CoordinatorDirectory coordinatorDirectory;
+    private DeliveryManDirectory deliveryManDirectory;
+    private OrderDirectory orderDirectory;
+    private ProfileDirectory profileDirectory;
+
+    public EcoSystem(ShelterDirectory shelterDirectory, CoordinatorDirectory coordinatorDirectory, DeliveryManDirectory deliveryManDirectory) {
+
+        this.shelterDirectory = shelterDirectory;
+        this.coordinatorDirectory = coordinatorDirectory;
+        this.deliveryManDirectory = deliveryManDirectory;
+
+    }
+
+    public OrderDirectory getOrderDirectory() {
+        return orderDirectory;
+    }
+
+    public void setOrderDirectory(OrderDirectory orderDirectory) {
+        this.orderDirectory = orderDirectory;
+    }
+
+    public ProfileDirectory getProfileDirectory() {
+        return profileDirectory;
+    }
+
+    public void setProfileDirectory(ProfileDirectory profileDirectory) {
+        this.profileDirectory = profileDirectory;
+    }
+
+    public ShelterDirectory getShelterDirectory() {
+        return shelterDirectory;
+    }
+
+    public void setShelterDirectory(ShelterDirectory shelterDirectory) {
+        this.shelterDirectory = shelterDirectory;
+    }
+
+    public CoordinatorDirectory getCoordinatorDirectory() {
+        return coordinatorDirectory;
+    }
+
+    public void setCoordinatorDirectory(CoordinatorDirectory coordinatorDirectory) {
+        this.coordinatorDirectory = coordinatorDirectory;
+    }
+
+    public DeliveryManDirectory getDeliveryManDirectory() {
+        return deliveryManDirectory;
+    }
+
+    public void setDeliveryManDirectory(DeliveryManDirectory deliveryManDirectory) {
+        this.deliveryManDirectory = deliveryManDirectory;
+    }
 
     public static EcoSystem getInstance() {
         if (business == null) {
             business = new EcoSystem();
         }
         return business;
-    }
-
-    public Network createAndAddNetwork() {
-        Network network = new Network();
-        networkList.add(network);
-        return network;
     }
 
     @Override
@@ -42,24 +92,17 @@ public class EcoSystem extends Organization {
 
     private EcoSystem() {
         super(null);
-        networkList = new ArrayList<Network>();
-    }
+        coordinatorDirectory = new CoordinatorDirectory();
+        shelterDirectory = new ShelterDirectory();
+        deliveryManDirectory = new DeliveryManDirectory();
+        profileDirectory = new ProfileDirectory();
+        orderDirectory = new OrderDirectory();
 
-    public ArrayList<Network> getNetworkList() {
-        return networkList;
-    }
-
-    public void setNetworkList(ArrayList<Network> networkList) {
-        this.networkList = networkList;
     }
 
     public boolean checkIfUserIsUnique(String userName) {
-        if (!this.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
-            return false;
-        }
-        for (Network network : networkList) {
 
-        }
-        return true;
+        return false;
     }
+
 }

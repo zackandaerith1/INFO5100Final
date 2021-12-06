@@ -4,22 +4,26 @@
  */
 package Business.Role;
 
+import Business.Coordinator.CoordinatorDirectory;
+import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Organization.Organization;
+import Business.Profile.ProfileDirectory;
+import Business.Order.OrderDirectory;
+import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
+import Business.UserAccount.UserAccountDirectory;
 import javax.swing.JPanel;
-import ui.AdministrativeRole.AdminWorkAreaJPanel;
+import ui.ShelterAdminRole.AdminWorkAreaJPanel;
 
 /**
  *
- * @author yibing
+ * @author yibin
  */
 public class AdminRole extends Role {
 
-    @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new AdminWorkAreaJPanel(userProcessContainer, enterprise);
+    //  @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business, CoordinatorDirectory customerDirectory, ShelterDirectory restaurantDirectory, DeliveryManDirectory deliveryManDirectory, ProfileDirectory menuDirectory, OrderDirectory orderDirectory, UserAccountDirectory userAccountDirectory) {
+        return new AdminWorkAreaJPanel(userProcessContainer, account, business, customerDirectory, restaurantDirectory, deliveryManDirectory, menuDirectory, orderDirectory);
     }
 
 }

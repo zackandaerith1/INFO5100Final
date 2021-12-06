@@ -4,22 +4,27 @@
  */
 package Business.Role;
 
+import Business.Coordinator.CoordinatorDirectory;
+import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Organization.Organization;
+import Business.Profile.ProfileDirectory;
+import Business.Order.OrderDirectory;
+import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
+import Business.UserAccount.UserAccountDirectory;
 import javax.swing.JPanel;
 
 /**
  *
- * @author raunak
+ * @author yibin
  */
 public abstract class Role {
 
     public enum RoleType {
-        Admin("Admin"),
-        Registration("Registration"),
-        Arrangement("Arrangement");
+        RestaurantAdmin("RestaurantAdmin"),
+        Customer("Customer"),
+        DeliveryMan("Delivery"),
+        SysAdmin("Sysadmin");
 
         private String value;
 
@@ -37,11 +42,9 @@ public abstract class Role {
         }
     }
 
-    public abstract JPanel createWorkArea(JPanel userProcessContainer,
-            UserAccount account,
-            Organization organization,
-            Enterprise enterprise,
-            EcoSystem business);
+    public abstract JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business,
+            CoordinatorDirectory customerDirectory, ShelterDirectory restaurantDirectory,
+            DeliveryManDirectory deliveryManDirectory, ProfileDirectory menuDirectory, OrderDirectory oderDirectory, UserAccountDirectory userAccountDirectory);
 
     @Override
     public String toString() {

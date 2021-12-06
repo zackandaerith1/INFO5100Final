@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author raunak
+ * @author yibing
  */
 public abstract class WorkRequest {
 
@@ -19,8 +19,8 @@ public abstract class WorkRequest {
     private String status;
     private Date requestDate;
     private Date resolveDate;
-    
-    public WorkRequest(){
+
+    public WorkRequest() {
         requestDate = new Date();
     }
 

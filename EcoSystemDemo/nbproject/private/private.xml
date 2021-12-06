@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/yibin/Documents/GitHub/INFO5100Final/EcoSystemDemo/src/ui/CoordinatorRole/CoordinatorAreaJPanel.java</file>
+            <file>file:/C:/Users/yibin/Documents/GitHub/INFO5100Final/EcoSystemDemo/src/ui/CoordinatorRole/CoordinatorCommentJPanel.java</file>
+            <file>file:/C:/Users/yibin/Documents/GitHub/INFO5100Final/EcoSystemDemo/src/ui/ShelterAdminRole/AdminWorkAreaJPanel.java</file>
+            <file>file:/C:/Users/yibin/Documents/GitHub/INFO5100Final/EcoSystemDemo/src/Business/Profile/Person.java</file>
+            <file>file:/C:/Users/yibin/Documents/GitHub/INFO5100Final/EcoSystemDemo/src/Business/Profile/ProfileDirectory.java</file>
+            <file>file:/C:/Users/yibin/Documents/GitHub/INFO5100Final/EcoSystemDemo/src/ui/ShelterAdminRole/ManageOrderJPanel.java</file>
+            <file>file:/C:/Users/yibin/Documents/GitHub/INFO5100Final/EcoSystemDemo/src/ui/ShelterAdminRole/ManageProfileJPanel.java</file>
+            <file>file:/C:/Users/yibin/Documents/GitHub/INFO5100Final/EcoSystemDemo/src/Business/Profile/Profile.java</file>
+            <file>file:/C:/Users/yibin/Documents/GitHub/INFO5100Final/EcoSystemDemo/src/Business/EcoSystem.java</file>
+        </group>
     </open-files>
 </project-private>

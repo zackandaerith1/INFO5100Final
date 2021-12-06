@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author yibing
+ * @author yibin
  */
 public abstract class Organization {
 
@@ -24,7 +24,11 @@ public abstract class Organization {
     private static int counter = 0;
 
     public enum Type {
-        Admin("Admin Organization"), Arrangement("Arrangement Organization"), Registration("Registration Organization");
+        RestaurantAdmin("RestaurantAdmin"),
+        Customer("Customer"),
+        DeliveryMan("Delivery"),
+        SysAdmin("Sysadmin");
+
         private String value;
 
         private Type(String value) {
@@ -43,6 +47,10 @@ public abstract class Organization {
         userAccountDirectory = new UserAccountDirectory();
         organizationID = counter;
         ++counter;
+    }
+
+    public Organization() {
+
     }
 
     public abstract ArrayList<Role> getSupportedRole();
@@ -79,5 +87,4 @@ public abstract class Organization {
     public String toString() {
         return name;
     }
-
 }
