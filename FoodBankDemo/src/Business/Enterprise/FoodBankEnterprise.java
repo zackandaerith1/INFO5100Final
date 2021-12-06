@@ -10,16 +10,21 @@ import java.util.ArrayList;
 
 /**
  *
- * @author MyPC1
+ * @author zhengfang
  */
-public class HospitalEnterprise extends Enterprise {
-    
-    public HospitalEnterprise(String name){
-        super(name,EnterpriseType.Hospital);
+public class FoodBankEnterprise extends Enterprise{
+
+    public FoodBankEnterprise(String name){
+        super(name,EnterpriseType.FoodBank);
     }
+    
+    
+
     @Override
     public ArrayList<Role> getSupportedRole() {
-        return null;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
+    
     
 }
