@@ -14,11 +14,21 @@ public class Menu {
     private String itemName;
     private int qty;
     private String shelterName;
+    private String unit;
 
-    public Menu(String itemName, int qty, String shelterName) {
+    public Menu(String itemName, int qty, String unit, String shelterName) {
         this.itemName = itemName;
         this.qty = qty;
         this.shelterName = shelterName;
+        this.unit = unit;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 
     public String getItemName() {

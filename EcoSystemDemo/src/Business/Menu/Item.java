@@ -13,12 +13,22 @@ public class Item {
 
     double price;
     int qty;
+    String unit;
     String itemname;
 
-    public Item(String itemname, double price, int qty) {
+    public Item(String itemname, double price, int qty, String unit) {
         this.price = price;
         this.qty = qty;
         this.itemname = itemname;
+        this.unit = unit;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 
     public double getPrice() {
