@@ -43,12 +43,13 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
         DefaultTableModel dtm = (DefaultTableModel) tblShelter.getModel();
         dtm.setRowCount(0);
         for (Shelter shelter : ecosystem.getShelterDirectory().getShelterDirectory()) {
-            Object[] row = new Object[5];
+            Object[] row = new Object[6];
             row[0] = shelter;
-            row[1] = ecosystem.getUserAccountDirectory().getUserAccountList().get(1);
-            row[2] = shelter.getAdminName();
-            row[3] = shelter.getPhoneNumber();
-            row[4] = shelter.getAddress();
+            row[1] = shelter.getShelterName();
+            row[2] = ecosystem.getUserAccountDirectory().getUserAccountList().get(1);
+            row[3] = shelter.getAdminName();
+            row[4] = shelter.getPhoneNumber();
+            row[5] = shelter.getAddress();
             dtm.addRow(row);
         }
     }
@@ -96,23 +97,23 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
         tblShelter.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tblShelter.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Shelter Name", "", "Shelter Admin Name", "Mobile Number", "Address"
+                "", "Shelter Name", "Shelter Account", "Shelter Admin Name", "Mobile Number", "Address"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -121,9 +122,9 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblShelter);
         if (tblShelter.getColumnModel().getColumnCount() > 0) {
-            tblShelter.getColumnModel().getColumn(1).setMinWidth(0);
-            tblShelter.getColumnModel().getColumn(1).setPreferredWidth(0);
-            tblShelter.getColumnModel().getColumn(1).setMaxWidth(0);
+            tblShelter.getColumnModel().getColumn(0).setMinWidth(0);
+            tblShelter.getColumnModel().getColumn(0).setPreferredWidth(0);
+            tblShelter.getColumnModel().getColumn(0).setMaxWidth(0);
         }
 
         btnModify.setBackground(new java.awt.Color(122, 72, 221));
