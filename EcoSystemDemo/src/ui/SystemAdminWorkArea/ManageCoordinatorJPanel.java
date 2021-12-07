@@ -44,13 +44,14 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
         DefaultTableModel dtm = (DefaultTableModel) viewtbl.getModel();
         dtm.setRowCount(0);
         for (Coordinator coordinator : ecosystem.getCoordinatorDirectory().getCoordinatorDirectory()) {
-            Object[] row = new Object[6];
+            Object[] row = new Object[7];
             row[0] = coordinator;
-            row[1] = ecosystem.getUserAccountDirectory().getUserAccountList().get(1);
-            row[2] = coordinator.getName();
-            row[3] = coordinator.getEmail();
-            row[4] = coordinator.getHomeAddress();
-            row[5] = coordinator.getPhoneNumber();
+            row[1] = coordinator.getShelter();
+            row[2] = ecosystem.getUserAccountDirectory().getUserAccountList().get(1);
+            row[3] = coordinator.getName();
+            row[4] = coordinator.getEmail();
+            row[5] = coordinator.getHomeAddress();
+            row[6] = coordinator.getPhoneNumber();
 
             dtm.addRow(row);
         }
@@ -99,21 +100,21 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
         viewtbl.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         viewtbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "", "Name", "Email Address", "Address", "Mobile Number"
+                "", "Shelter Name", "Account", "Coordinator Name", "Email Address", "Address", "Mobile Number"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -123,14 +124,16 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
         viewtbl.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(viewtbl);
         if (viewtbl.getColumnModel().getColumnCount() > 0) {
-            viewtbl.getColumnModel().getColumn(0).setPreferredWidth(10);
-            viewtbl.getColumnModel().getColumn(1).setMinWidth(0);
-            viewtbl.getColumnModel().getColumn(1).setPreferredWidth(0);
-            viewtbl.getColumnModel().getColumn(1).setMaxWidth(0);
-            viewtbl.getColumnModel().getColumn(2).setPreferredWidth(30);
+            viewtbl.getColumnModel().getColumn(0).setMinWidth(0);
+            viewtbl.getColumnModel().getColumn(0).setPreferredWidth(0);
+            viewtbl.getColumnModel().getColumn(0).setMaxWidth(0);
+            viewtbl.getColumnModel().getColumn(2).setMinWidth(0);
+            viewtbl.getColumnModel().getColumn(2).setPreferredWidth(0);
+            viewtbl.getColumnModel().getColumn(2).setMaxWidth(0);
             viewtbl.getColumnModel().getColumn(3).setPreferredWidth(30);
-            viewtbl.getColumnModel().getColumn(4).setPreferredWidth(40);
-            viewtbl.getColumnModel().getColumn(5).setPreferredWidth(50);
+            viewtbl.getColumnModel().getColumn(4).setPreferredWidth(30);
+            viewtbl.getColumnModel().getColumn(5).setPreferredWidth(40);
+            viewtbl.getColumnModel().getColumn(6).setPreferredWidth(50);
         }
 
         btnModify.setBackground(new java.awt.Color(122, 72, 221));
