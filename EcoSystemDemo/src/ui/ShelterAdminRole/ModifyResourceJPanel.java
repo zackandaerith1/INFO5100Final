@@ -240,6 +240,13 @@ public class ModifyResourceJPanel extends javax.swing.JPanel {
         txtItemName.setText("");
         txtUnit.setText("");
         txtQuantity.setText("");
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        ManageResourceJPanel manageresources = (ManageResourceJPanel) component;
+        manageresources.populateTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
