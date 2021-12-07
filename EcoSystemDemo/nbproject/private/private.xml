@@ -3,10 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream:EcoSystemDemo/nbproject/private/private.xml
             <file>file:/Users/zhengfang/NetBeansProjects/INFO5100/Fang_Zheng_001066084/EcoSystemDemo/src/ui/AdministrativeRole/ManageOrganizationJPanel.java</file>
             <file>file:/Users/zhengfang/NetBeansProjects/INFO5100/Fang_Zheng_001066084/EcoSystemDemo/src/ui/DoctorRole/DoctorWorkAreaJPanel.java</file>
             <file>file:/Users/zhengfang/NetBeansProjects/INFO5100/Fang_Zheng_001066084/EcoSystemDemo/src/ui/AdministrativeRole/ManageUserAccountJPanel.java</file>
             <file>file:/Users/zhengfang/NetBeansProjects/INFO5100/Fang_Zheng_001066084/EcoSystemDemo/src/Business/Network/Network.java</file>
+=======
+            <file>file:/Users/zhengfang/NetBeansProjects/INFO5100final/INFO5100Final/FoodBankDemo/src/Business/Role/AnalyRole.java</file>
+            <file>file:/Users/zhengfang/NetBeansProjects/INFO5100final/INFO5100Final/FoodBankDemo/src/ui/AccountRole/AccountWorkAreaJPanel.java</file>
+            <file>file:/Users/zhengfang/NetBeansProjects/INFO5100final/INFO5100Final/FoodBankDemo/src/Business/Organization/AccountOrganization.java</file>
+            <file>file:/Users/zhengfang/NetBeansProjects/INFO5100final/INFO5100Final/FoodBankDemo/src/Business/Role/AccountRole.java</file>
+            <file>file:/Users/zhengfang/NetBeansProjects/INFO5100final/INFO5100Final/FoodBankDemo/src/Business/Role/DoctorRole.java</file>
+            <file>file:/Users/zhengfang/NetBeansProjects/INFO5100final/INFO5100Final/FoodBankDemo/src/ui/DistributionRole/DistriWorkAreaJPanel.java</file>
+            <file>file:/Users/zhengfang/NetBeansProjects/INFO5100final/INFO5100Final/FoodBankDemo/src/Business/Enterprise/HospitalEnterprise.java</file>
+            <file>file:/Users/zhengfang/NetBeansProjects/INFO5100final/INFO5100Final/FoodBankDemo/src/Business/Organization/LabOrganization.java</file>
+            <file>file:/Users/zhengfang/NetBeansProjects/INFO5100final/INFO5100Final/FoodBankDemo/src/ui/AnalysisRole/AnalyWorkAreaJPanel.java</file>
+            <file>file:/Users/zhengfang/NetBeansProjects/INFO5100final/INFO5100Final/FoodBankDemo/src/Business/Enterprise/FundingEnterprise.java</file>
+            <file>file:/Users/zhengfang/NetBeansProjects/INFO5100final/INFO5100Final/FoodBankDemo/src/Business/Role/DostriRole.java</file>
+>>>>>>> Stashed changes:FoodBankDemo/nbproject/private/private.xml
         </group>
     </open-files>
 </project-private>
