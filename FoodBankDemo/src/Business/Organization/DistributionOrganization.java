@@ -14,8 +14,8 @@ import java.util.ArrayList;
  */
 public class DistributionOrganization extends Organization{
 
-    public DistributionOrganization(String name) {
-        super(name);
+    public DistributionOrganization() {
+        super(Organization.Type.DistriDepart.getValue());
     }
     
     

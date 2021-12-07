@@ -14,8 +14,8 @@ import java.util.ArrayList;
  */
 public class AnalysisOranization extends Organization{
 
-    public AnalysisOranization(String name) {
-        super(name);
+    public AnalysisOranization() {
+        super(Organization.Type.AnalyDepart.getValue());
     }
     
 

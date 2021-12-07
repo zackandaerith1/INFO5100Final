@@ -5,6 +5,8 @@
  */
 package Business.Organization;
 
+import Business.Role.CommRole;
+import Business.Role.DoctorRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -14,14 +16,16 @@ import java.util.ArrayList;
  */
 public class CommunicationOrganization extends Organization{
 
-    public CommunicationOrganization(String name) {
-        super(name);
+    public CommunicationOrganization() {
+        super(Organization.Type.CommDepart.getValue());
     }
     
 
     @Override
     public ArrayList<Role> getSupportedRole() {
-        return null;
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new CommRole());
+        return roles;
     }
     
 }
