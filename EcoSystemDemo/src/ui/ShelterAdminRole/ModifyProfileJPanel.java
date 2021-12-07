@@ -364,12 +364,15 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtFirstNameActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        //Not null check
         if (txtFirstName.getText().isEmpty() || txtLastName.getText().isEmpty() || txtGender.getText().isEmpty()
                 || txtPhone.getText().isEmpty() || jDateChooser.getDate() == null || txtAddress.getText().isEmpty()
                 || txtEmail.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Fields cannot be empty(except Comment)", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+
+        //Data format check needed
         int reply = JOptionPane.showConfirmDialog(null, "Are You Sure To Update Info?", "Warning", JOptionPane.YES_NO_OPTION);
         if (reply == JOptionPane.YES_OPTION) {
 
@@ -398,6 +401,8 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
         txtEmail.setText("");
         txtComment.setText("");
         userProcessContainer.remove(this);
+
+        //Auto back page
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         ManageProfileJPanel managecust = (ManageProfileJPanel) component;
