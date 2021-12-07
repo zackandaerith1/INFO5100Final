@@ -476,9 +476,9 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
             return;
         }
 
+        //Data format check needed
         String firstname = txtFirstName.getText();
         String lastname = txtLastName.getText();
-//        String gender = txtGender.getText();
         String gender = "";
         if (radioMale.isSelected() == true) {
             gender = "Male";
