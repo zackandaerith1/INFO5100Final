@@ -5,6 +5,11 @@
  */
 package ui.CommunicationRole;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.CommunicationOrganization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author zhengfang
@@ -16,6 +21,10 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
      */
     public CommWorkAreaJPanel() {
         initComponents();
+    }
+
+    public CommWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, CommunicationOrganization communicationOrganization, Enterprise enterprise) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
