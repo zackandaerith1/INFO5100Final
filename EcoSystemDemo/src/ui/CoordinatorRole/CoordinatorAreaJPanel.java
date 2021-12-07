@@ -40,7 +40,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
     private OrderDirectory orderDirectory;
     private static int count = 1;
 
-    ArrayList<Person> itemList = new ActivatableArrayList<>();
+    ArrayList<Person> personList = new ActivatableArrayList<>();
 
     public CoordinatorAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem,
             CoordinatorDirectory coordinatorDirectory, ShelterDirectory shelterDirectory,
@@ -87,11 +87,11 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
     void populateCartTable() {
         DefaultTableModel dtm = (DefaultTableModel) orderTbl.getModel();
         dtm.setRowCount(0);
-        for (Person item : itemList) {
+        for (Person person : personList) {
             Object[] row = new Object[3];
-            row[0] = item.getFirstname();
-            row[1] = item.getLastname();
-            row[2] = item.getPhone();
+            row[0] = person.getFirstname();
+            row[1] = person.getLastname();
+            row[2] = person.getPhone();
 
             dtm.addRow(row);
         }
@@ -99,8 +99,8 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
 
     private void calTotalAge() {
         double total = 0.0;
-        for (Person item : itemList) {
-            total = item.getAge() + total;
+        for (Person person : personList) {
+            total = person.getAge() + total;
             totalAgeJTextField.setText(String.valueOf(total));
         }
     }
@@ -135,7 +135,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
-        enterpriseLabel.setText("Customer:");
+        enterpriseLabel.setText("Coordinator:");
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         valueLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -196,7 +196,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
         btnMenuShow.setBackground(new java.awt.Color(122, 72, 221));
         btnMenuShow.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnMenuShow.setForeground(new java.awt.Color(255, 255, 255));
-        btnMenuShow.setText("Show Menu");
+        btnMenuShow.setText("Show Person List");
         btnMenuShow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMenuShowActionPerformed(evt);
@@ -275,19 +275,19 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(69, 69, 69)
                                 .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(dropboxShelter, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
                                 .addComponent(btnMenuShow)))
-                        .addGap(107, 107, 107)
+                        .addGap(92, 92, 92)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
@@ -301,7 +301,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(orderHistoryJButton))
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,9 +365,9 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
             double totalAge = 0.0;
 
             StringBuilder profileItems = new StringBuilder();
-            for (Person item : itemList) {
-                totalAge = item.getAge() + totalAge;
-                profileItems.append(" " + item.getFirstname() + ":" + ",");
+            for (Person person : personList) {
+                totalAge = person.getAge() + totalAge;
+                profileItems.append(" " + person.getFirstname() + ":" + ",");
             }
             order.setTotalprice(totalAge);
 
@@ -376,7 +376,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
             DefaultTableModel cartModel = (DefaultTableModel) orderTbl.getModel();
             cartModel.setRowCount(0);
             totalAgeJTextField.setText("");
-            itemList = new ActivatableArrayList<>();
+            personList = new ActivatableArrayList<>();
 
         } else {
             JOptionPane.showMessageDialog(null, "Your list is empty", "warning", JOptionPane.WARNING_MESSAGE);
@@ -413,8 +413,8 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
         if (quantity > 0) {
             Profile profile = (Profile) itemtable.getValueAt(selectedRow, 0);
 //            int qty = Integer.parseInt(txtQuantity.getText());
-            Person item = new Person(profile.getId(), profile.getFirstname(), profile.getLastname(), profile.getGender(), profile.getAge(), profile.getPhone(), profile.getBirth(), profile.getAddress(), profile.getEmail(), profile.getComment(), profile.getImagePath());
-            itemList.add(item);
+            Person person = new Person(profile.getId(), profile.getFirstname(), profile.getLastname(), profile.getGender(), profile.getAge(), profile.getPhone(), profile.getBirth(), profile.getAddress(), profile.getEmail(), profile.getComment(), profile.getImagePath());
+            personList.add(person);
             populateCartTable();
             calTotalAge();
 
