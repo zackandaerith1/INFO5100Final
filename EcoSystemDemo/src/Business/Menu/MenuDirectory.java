@@ -27,8 +27,8 @@ public class MenuDirectory {
         this.menuDirectory = menuDirectory;
     }
 
-    public Menu newItem(String itemName, int qty, String unit, String res) {
-        Menu menu = new Menu(itemName, qty, unit, res);
+    public Menu newItem(String itemName, int qty, String unit, String id, String res) {
+        Menu menu = new Menu(itemName, qty, unit, id, res);
         menuDirectory.add(menu);
         return menu;
     }

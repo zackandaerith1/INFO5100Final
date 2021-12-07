@@ -15,12 +15,22 @@ public class Menu {
     private int qty;
     private String shelterName;
     private String unit;
+    private String id;
 
-    public Menu(String itemName, int qty, String unit, String shelterName) {
+    public Menu(String itemName, int qty, String unit, String id, String shelterName) {
         this.itemName = itemName;
         this.qty = qty;
         this.shelterName = shelterName;
         this.unit = unit;
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUnit() {

@@ -12,6 +12,7 @@ import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -45,10 +46,11 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
         dtm.setRowCount(0);
         for (Menu menu : menuDirectory.getMenuDirectory()) {
             if (menu.getShelterName().equals(account.getEmployee().getName())) {
-                Object[] row = new Object[3];
-                row[0] = menu;
-                row[1] = menu.getUnit();
-                row[2] = menu.getQty();
+                Object[] row = new Object[4];
+                row[0] = menu.getId();
+                row[1] = menu.getItemName();
+                row[2] = menu.getUnit();
+                row[3] = menu.getQty();
                 dtm.addRow(row);
             }
         }
@@ -84,28 +86,28 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
         tblResource.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         tblResource.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Item Name", "Unit", "Stock/Availability"
+                "ID", "Item Name", "Unit", "Stock/Availability"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -311,8 +313,11 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
 
         String shelter = account.getEmployee().getName();
         String unit = txtUnit.getText();
+        Random random = new Random();
+        int randNumber = random.nextInt(200000 - 100000 + 1) + 100000;
+        String id = String.valueOf(randNumber);
 
-        menuDirectory.newItem(itemName, quantity, unit, shelter);
+        menuDirectory.newItem(itemName, quantity, unit, id, shelter);
         populateTable();
 
         txtItemName.setText("");

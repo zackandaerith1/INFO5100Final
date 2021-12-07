@@ -12,15 +12,25 @@ package Business.Menu;
 public class Item {
 
     double price;
+    String id;
     int qty;
     String unit;
     String itemname;
 
-    public Item(String itemname, double price, int qty, String unit) {
+    public Item(String itemname, double price, int qty, String unit, String id) {
         this.price = price;
         this.qty = qty;
         this.itemname = itemname;
         this.unit = unit;
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUnit() {
