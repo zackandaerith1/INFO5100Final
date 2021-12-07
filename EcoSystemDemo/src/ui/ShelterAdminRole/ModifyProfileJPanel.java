@@ -397,6 +397,13 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
         txtAddress.setText("");
         txtEmail.setText("");
         txtComment.setText("");
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        ManageProfileJPanel managecust = (ManageProfileJPanel) component;
+        managecust.populateTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
