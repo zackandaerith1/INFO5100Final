@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Enterprise;
+package Business.Organization;
 
 import Business.Role.Role;
 import java.util.ArrayList;
@@ -12,21 +12,17 @@ import java.util.ArrayList;
  *
  * @author zhengfang
  */
-public class FoodBankEnterprise extends Enterprise{
+public class DistributionOrganization extends Organization{
 
-    public FoodBankEnterprise(String name, EnterpriseType type) {
-        super(name, type);
-    }
-
-    FoodBankEnterprise(String name) {
-        super(name,EnterpriseType.FoodBank);
-    }
-
-    @Override
-    public ArrayList<Role> getSupportedRole() {
-        return null;
+    public DistributionOrganization(String name) {
+        super(name);
     }
     
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
