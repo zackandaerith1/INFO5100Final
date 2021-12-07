@@ -278,11 +278,8 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
                         .addComponent(btnAdd)))
                 .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(delete)
-                            .addComponent(delete1)))
+                    .addComponent(delete1)
+                    .addComponent(delete)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(136, 136, 136)
                         .addComponent(btnBack)))
@@ -318,6 +315,7 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
         }
 
         String shelter = account.getEmployee().getName();
+        System.out.println(shelter);
         String unit = txtUnit.getText();
         Random random = new Random();
         int randNumber = random.nextInt(200000 - 100000 + 1) + 100000;

@@ -322,7 +322,7 @@ public class CoordinatorCommentJPanel extends javax.swing.JPanel {
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         CoordinatorAreaJPanel cmjp = (CoordinatorAreaJPanel) component;
-        cmjp.populateCartTable();
+        cmjp.populateApplicationTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed

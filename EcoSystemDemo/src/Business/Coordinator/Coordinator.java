@@ -18,8 +18,9 @@ public class Coordinator {
     private String phoneNumber;
     private String homeAddress;
     private String id;
+    private String shelter;
 
-    public Coordinator(String firstname, String lastname, String name, String email, String phoneNumber, String homeAddress, String id) {
+    public Coordinator(String firstname, String lastname, String name, String email, String phoneNumber, String homeAddress, String id, String shelter) {
         this.name = firstname + lastname;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -27,7 +28,16 @@ public class Coordinator {
         this.phoneNumber = phoneNumber;
         this.homeAddress = homeAddress;
         this.id = id;
+        this.shelter = shelter;
 
+    }
+
+    public String getShelter() {
+        return shelter;
+    }
+
+    public void setShelter(String shelter) {
+        this.shelter = shelter;
     }
 
     public String getFirstname() {

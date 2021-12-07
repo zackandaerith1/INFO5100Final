@@ -29,8 +29,8 @@ public class CoordinatorDirectory {
         this.coordinatorDirectory = coordinatorDirectory;
     }
 
-    public Coordinator newCoordinator(String firstname, String lastname, String name, String email, String phoneNumber, String homeAddress, String id) {
-        Coordinator coordinator = new Coordinator(firstname, lastname, name, email, phoneNumber, homeAddress, id);
+    public Coordinator newCoordinator(String firstname, String lastname, String name, String email, String phoneNumber, String homeAddress, String id, String shelter) {
+        Coordinator coordinator = new Coordinator(firstname, lastname, name, email, phoneNumber, homeAddress, id, shelter);
         coordinatorDirectory.add(coordinator);
         return coordinator;
     }
