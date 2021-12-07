@@ -32,7 +32,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="manageOrderBtn" min="-2" pref="230" max="-2" attributes="0"/>
+                          <Component id="manageApplicationBtn" min="-2" pref="230" max="-2" attributes="0"/>
                           <Component id="managePersonBtn" min="-2" pref="230" max="-2" attributes="0"/>
                           <Component id="manageResourceBtn" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                       </Group>
@@ -57,7 +57,7 @@
                   <Component id="valueLabel" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="manageOrderBtn" min="-2" max="-2" attributes="0"/>
+              <Component id="manageApplicationBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
               <Component id="managePersonBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -96,7 +96,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="managePersonBtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="manageOrderBtn">
+    <Component class="javax.swing.JButton" name="manageApplicationBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="dd" green="48" red="7a" type="rgb"/>
@@ -107,10 +107,10 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Manage Orders"/>
+        <Property name="text" type="java.lang.String" value="Manage Application"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageOrderBtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageApplicationBtnActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="enterpriseLabel">
