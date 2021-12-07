@@ -7,9 +7,10 @@ package Business;
 
 import Business.Coordinator.CoordinatorDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
-import Business.Profile.ProfileDirectory;
+import Business.Menu.MenuDirectory;
 import Business.Order.OrderDirectory;
 import Business.Organization.Organization;
+import Business.Profile.ProfileDirectory;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
 import Business.Shelter.ShelterDirectory;
@@ -27,6 +28,7 @@ public class EcoSystem extends Organization {
     private DeliveryManDirectory deliveryManDirectory;
     private OrderDirectory orderDirectory;
     private ProfileDirectory profileDirectory;
+    private MenuDirectory menuDirectory;
 
     public EcoSystem(ShelterDirectory shelterDirectory, CoordinatorDirectory coordinatorDirectory, DeliveryManDirectory deliveryManDirectory) {
 
@@ -34,6 +36,14 @@ public class EcoSystem extends Organization {
         this.coordinatorDirectory = coordinatorDirectory;
         this.deliveryManDirectory = deliveryManDirectory;
 
+    }
+
+    public MenuDirectory getMenuDirectory() {
+        return menuDirectory;
+    }
+
+    public void setMenuDirectory(MenuDirectory menuDirectory) {
+        this.menuDirectory = menuDirectory;
     }
 
     public OrderDirectory getOrderDirectory() {
@@ -97,6 +107,7 @@ public class EcoSystem extends Organization {
         deliveryManDirectory = new DeliveryManDirectory();
         profileDirectory = new ProfileDirectory();
         orderDirectory = new OrderDirectory();
+        menuDirectory = new MenuDirectory();
 
     }
 

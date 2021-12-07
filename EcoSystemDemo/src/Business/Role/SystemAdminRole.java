@@ -7,8 +7,9 @@ package Business.Role;
 import Business.Coordinator.CoordinatorDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
-import Business.Profile.ProfileDirectory;
+import Business.Menu.MenuDirectory;
 import Business.Order.OrderDirectory;
+import Business.Profile.ProfileDirectory;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
 import Business.UserAccount.UserAccountDirectory;
@@ -21,8 +22,8 @@ import ui.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
  */
 public class SystemAdminRole extends Role {
 
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business, CoordinatorDirectory customerDirectory, ShelterDirectory restaurantDirectory, DeliveryManDirectory deliveryManDirectory, ProfileDirectory menuDirectory, OrderDirectory orderDirectory, UserAccountDirectory userAccountDirectory) {
-        return new SystemAdminWorkAreaJPanel(userProcessContainer, business, customerDirectory, restaurantDirectory, deliveryManDirectory, userAccountDirectory);
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business, CoordinatorDirectory coordinatorDirectory, ShelterDirectory shelterDirectory, DeliveryManDirectory deliveryManDirectory, ProfileDirectory profileDirectory, OrderDirectory orderDirectory, UserAccountDirectory userAccountDirectory, MenuDirectory menuDirectory) {
+        return new SystemAdminWorkAreaJPanel(userProcessContainer, business, coordinatorDirectory, shelterDirectory, deliveryManDirectory, userAccountDirectory);
     }
 
 }

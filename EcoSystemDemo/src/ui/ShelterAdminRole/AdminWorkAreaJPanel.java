@@ -3,6 +3,7 @@ package ui.ShelterAdminRole;
 import Business.Coordinator.CoordinatorDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
+import Business.Menu.MenuDirectory;
 import Business.Order.OrderDirectory;
 import Business.Profile.ProfileDirectory;
 import Business.Shelter.ShelterDirectory;
@@ -20,26 +21,28 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     private UserAccount account;
     private EcoSystem ecosystem;
     private CoordinatorDirectory customerDirectory;
-    private ShelterDirectory restaurantDirectory;
+    private ShelterDirectory shelterDirectory;
     private DeliveryManDirectory deliveryManDirectory;
     private ProfileDirectory profileDirectory;
     private OrderDirectory orderDirectory;
+    private MenuDirectory menuDirectory;
 
     /**
      * Creates new form AdminWorkAreaJPanel
      */
     public AdminWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem,
-            CoordinatorDirectory customerDirectory, ShelterDirectory restaurantDirectory,
-            DeliveryManDirectory deliveryManDirectory, ProfileDirectory profileDirectory, OrderDirectory orderDirectory) {
+            CoordinatorDirectory customerDirectory, ShelterDirectory shelterDirectory,
+            DeliveryManDirectory deliveryManDirectory, ProfileDirectory profileDirectory, OrderDirectory orderDirectory, MenuDirectory menuDirectory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.ecosystem = ecosystem;
         this.customerDirectory = ecosystem.getCoordinatorDirectory();
-        this.restaurantDirectory = ecosystem.getShelterDirectory();
+        this.shelterDirectory = ecosystem.getShelterDirectory();
         this.deliveryManDirectory = ecosystem.getDeliveryManDirectory();
         this.profileDirectory = ecosystem.getProfileDirectory();
         this.orderDirectory = ecosystem.getOrderDirectory();
+        this.menuDirectory = ecosystem.getMenuDirectory();
         valueLabel.setText(account.getUsername());
 
     }
@@ -53,43 +56,54 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        manageEmployeeJButton = new javax.swing.JButton();
-        manageOrganizationJButton = new javax.swing.JButton();
+        managePersonBtn = new javax.swing.JButton();
+        manageOrderBtn = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
+        manageResourceBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(54, 33, 89));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Restaurant Admin Work Area");
+        jLabel1.setText("Shelter Admin Work Area");
 
-        manageEmployeeJButton.setBackground(new java.awt.Color(122, 72, 221));
-        manageEmployeeJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        manageEmployeeJButton.setForeground(new java.awt.Color(255, 255, 255));
-        manageEmployeeJButton.setText("Manage menu");
-        manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
+        managePersonBtn.setBackground(new java.awt.Color(122, 72, 221));
+        managePersonBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        managePersonBtn.setForeground(new java.awt.Color(255, 255, 255));
+        managePersonBtn.setText("Manage Person");
+        managePersonBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageEmployeeJButtonActionPerformed(evt);
+                managePersonBtnActionPerformed(evt);
             }
         });
 
-        manageOrganizationJButton.setBackground(new java.awt.Color(122, 72, 221));
-        manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        manageOrganizationJButton.setForeground(new java.awt.Color(255, 255, 255));
-        manageOrganizationJButton.setText("Manage Orders");
-        manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
+        manageOrderBtn.setBackground(new java.awt.Color(122, 72, 221));
+        manageOrderBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        manageOrderBtn.setForeground(new java.awt.Color(255, 255, 255));
+        manageOrderBtn.setText("Manage Orders");
+        manageOrderBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageOrganizationJButtonActionPerformed(evt);
+                manageOrderBtnActionPerformed(evt);
             }
         });
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
-        enterpriseLabel.setText("Restaurant :");
+        enterpriseLabel.setText("Shelter :");
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         valueLabel.setForeground(new java.awt.Color(255, 255, 255));
+
+        manageResourceBtn.setBackground(new java.awt.Color(122, 72, 221));
+        manageResourceBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        manageResourceBtn.setForeground(new java.awt.Color(255, 255, 255));
+        manageResourceBtn.setText("Manage Resource");
+        manageResourceBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manageResourceBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -105,12 +119,13 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(209, 209, 209)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(manageOrganizationJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(manageEmployeeJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(manageOrderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(managePersonBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(manageResourceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
+                        .addGap(156, 156, 156)
                         .addComponent(jLabel1)))
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,34 +137,45 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(enterpriseLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                     .addComponent(valueLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(manageOrganizationJButton)
+                .addComponent(manageOrderBtn)
                 .addGap(25, 25, 25)
-                .addComponent(manageEmployeeJButton)
-                .addGap(61, 61, 61))
+                .addComponent(managePersonBtn)
+                .addGap(18, 18, 18)
+                .addComponent(manageResourceBtn)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void manageEmployeeJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButtonActionPerformed
+    private void managePersonBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managePersonBtnActionPerformed
 
-        ManageProfileJPanel manageprofile = new ManageProfileJPanel(userProcessContainer, account, ecosystem, restaurantDirectory, profileDirectory);
+        ManageProfileJPanel manageprofile = new ManageProfileJPanel(userProcessContainer, account, ecosystem, shelterDirectory, profileDirectory);
         userProcessContainer.add(manageprofile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_manageEmployeeJButtonActionPerformed
+    }//GEN-LAST:event_managePersonBtnActionPerformed
 
-    private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
+    private void manageOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrderBtnActionPerformed
 
-        ManageOrderJPanel manageorder = new ManageOrderJPanel(userProcessContainer, account, ecosystem, restaurantDirectory, profileDirectory, orderDirectory);
+        ManageOrderJPanel manageorder = new ManageOrderJPanel(userProcessContainer, account, ecosystem, shelterDirectory, profileDirectory, orderDirectory);
         userProcessContainer.add(manageorder);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_manageOrganizationJButtonActionPerformed
+    }//GEN-LAST:event_manageOrderBtnActionPerformed
+
+    private void manageResourceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageResourceBtnActionPerformed
+        ManageResourceJPanel manageresource = new ManageResourceJPanel(userProcessContainer, account, ecosystem,
+                shelterDirectory, menuDirectory);
+        userProcessContainer.add(manageresource);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_manageResourceBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton manageEmployeeJButton;
-    private javax.swing.JButton manageOrganizationJButton;
+    private javax.swing.JButton manageOrderBtn;
+    private javax.swing.JButton managePersonBtn;
+    private javax.swing.JButton manageResourceBtn;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 

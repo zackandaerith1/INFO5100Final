@@ -8,8 +8,9 @@ import Business.Coordinator.CoordinatorDirectory;
 import Business.DB4OUtil.DB4OUtil;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
-import Business.Profile.ProfileDirectory;
+import Business.Menu.MenuDirectory;
 import Business.Order.OrderDirectory;
+import Business.Profile.ProfileDirectory;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
 import Business.UserAccount.UserAccountDirectory;
@@ -30,23 +31,25 @@ public class MainJFrame extends javax.swing.JFrame {
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     private UserAccount userAccount;
     private JPanel userProcessContainer;
-    private CoordinatorDirectory customerDirectory;
-    private ShelterDirectory restaurantDirectory;
+    private CoordinatorDirectory coordinatorDirectory;
+    private ShelterDirectory shelterDirectory;
     private DeliveryManDirectory deliveryManDirectory;
-    private ProfileDirectory menuDirectory;
+    private ProfileDirectory profileDirectory;
     private OrderDirectory orderDirectory;
     private UserAccountDirectory userAccountDirectory;
+    private MenuDirectory menuDirectory;
 
     public MainJFrame() {
         initComponents();
         ecosystem = dB4OUtil.retrieveSystem();
         this.setSize(1680, 1050);
-        customerDirectory = new CoordinatorDirectory();
-        restaurantDirectory = new ShelterDirectory();
+        coordinatorDirectory = new CoordinatorDirectory();
+        shelterDirectory = new ShelterDirectory();
         deliveryManDirectory = new DeliveryManDirectory();
         userAccountDirectory = new UserAccountDirectory();
-        menuDirectory = new ProfileDirectory();
+        profileDirectory = new ProfileDirectory();
         orderDirectory = new OrderDirectory();
+        menuDirectory = new MenuDirectory();
     }
 
     /**
@@ -176,7 +179,7 @@ public class MainJFrame extends javax.swing.JFrame {
         UserAccount userAccount = ecosystem.getUserAccountDirectory().authenticateUser(userNameTxt.getText(), passwordTxt.getText());
 
         CardLayout card = (CardLayout) container.getLayout();
-        container.add("workArea", userAccount.getRole().createWorkArea(container, userAccount, ecosystem, customerDirectory, restaurantDirectory, deliveryManDirectory, menuDirectory, orderDirectory, userAccountDirectory));
+        container.add("workArea", userAccount.getRole().createWorkArea(userProcessContainer, userAccount, ecosystem, coordinatorDirectory, shelterDirectory, deliveryManDirectory, profileDirectory, orderDirectory, userAccountDirectory, menuDirectory));
         card.next(container);
         logoutBtn.setEnabled(true);
         loginBtn.setEnabled(false);
