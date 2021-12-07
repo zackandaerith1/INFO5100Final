@@ -7,21 +7,21 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.AccountOrganization;
+import Business.Organization.AnalysisOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import ui.AccountRole.AccountWorkAreaJPanel;
+import ui.AnalysisRole.AnalyWorkAreaJPanel;
 
 /**
  *
  * @author zhengfang
  */
-public class AccountRole extends Role{
+public class AnalyRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new AccountWorkAreaJPanel(userProcessContainer, account, (AccountOrganization)organization, enterprise);
+        return new AnalyWorkAreaJPanel(userProcessContainer, account, (AnalysisOrganization)organization, enterprise);
     }
     
     

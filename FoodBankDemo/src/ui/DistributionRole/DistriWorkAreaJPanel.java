@@ -5,6 +5,11 @@
  */
 package ui.DistributionRole;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.DistributionOrganization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author zhengfang
@@ -16,6 +21,10 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
      */
     public DistriWorkAreaJPanel() {
         initComponents();
+    }
+
+    public DistriWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, DistributionOrganization distributionOrganization, Enterprise enterprise) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**

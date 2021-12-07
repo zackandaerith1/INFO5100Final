@@ -5,6 +5,11 @@
  */
 package ui.AccountRole;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.AccountOrganization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author zhengfang
@@ -16,6 +21,10 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
      */
     public AccountWorkAreaJPanel() {
         initComponents();
+    }
+
+    public AccountWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, AccountOrganization accountOrganization, Enterprise enterprise) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**

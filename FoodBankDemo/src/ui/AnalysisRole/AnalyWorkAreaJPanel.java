@@ -5,6 +5,11 @@
  */
 package ui.AnalysisRole;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.AnalysisOrganization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author zhengfang
@@ -16,6 +21,10 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
      */
     public AnalyWorkAreaJPanel() {
         initComponents();
+    }
+
+    public AnalyWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, AnalysisOrganization analysisOrganization, Enterprise enterprise) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
