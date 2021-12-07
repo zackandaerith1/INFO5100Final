@@ -179,7 +179,7 @@ public class MainJFrame extends javax.swing.JFrame {
         UserAccount userAccount = ecosystem.getUserAccountDirectory().authenticateUser(userNameTxt.getText(), passwordTxt.getText());
 
         CardLayout card = (CardLayout) container.getLayout();
-        container.add("workArea", userAccount.getRole().createWorkArea(userProcessContainer, userAccount, ecosystem, coordinatorDirectory, shelterDirectory, deliveryManDirectory, profileDirectory, orderDirectory, userAccountDirectory, menuDirectory));
+        container.add("workArea", userAccount.getRole().createWorkArea(container, userAccount, ecosystem, coordinatorDirectory, shelterDirectory, deliveryManDirectory, profileDirectory, orderDirectory, userAccountDirectory, menuDirectory));
         card.next(container);
         logoutBtn.setEnabled(true);
         loginBtn.setEnabled(false);
