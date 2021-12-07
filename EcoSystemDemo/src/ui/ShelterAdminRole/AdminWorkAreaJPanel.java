@@ -57,7 +57,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         managePersonBtn = new javax.swing.JButton();
-        manageOrderBtn = new javax.swing.JButton();
+        manageApplicationBtn = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         manageResourceBtn = new javax.swing.JButton();
@@ -78,13 +78,13 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        manageOrderBtn.setBackground(new java.awt.Color(122, 72, 221));
-        manageOrderBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        manageOrderBtn.setForeground(new java.awt.Color(255, 255, 255));
-        manageOrderBtn.setText("Manage Orders");
-        manageOrderBtn.addActionListener(new java.awt.event.ActionListener() {
+        manageApplicationBtn.setBackground(new java.awt.Color(122, 72, 221));
+        manageApplicationBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        manageApplicationBtn.setForeground(new java.awt.Color(255, 255, 255));
+        manageApplicationBtn.setText("Manage Application");
+        manageApplicationBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageOrderBtnActionPerformed(evt);
+                manageApplicationBtnActionPerformed(evt);
             }
         });
 
@@ -119,7 +119,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(209, 209, 209)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(manageOrderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(manageApplicationBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(managePersonBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(manageResourceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
@@ -137,7 +137,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(enterpriseLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                     .addComponent(valueLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(manageOrderBtn)
+                .addComponent(manageApplicationBtn)
                 .addGap(25, 25, 25)
                 .addComponent(managePersonBtn)
                 .addGap(18, 18, 18)
@@ -154,13 +154,13 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_managePersonBtnActionPerformed
 
-    private void manageOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrderBtnActionPerformed
+    private void manageApplicationBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageApplicationBtnActionPerformed
 
-        ManageOrderJPanel manageorder = new ManageOrderJPanel(userProcessContainer, account, ecosystem, shelterDirectory, profileDirectory, orderDirectory);
+        ManageApplicationJPanel manageorder = new ManageApplicationJPanel(userProcessContainer, account, ecosystem, shelterDirectory, profileDirectory, orderDirectory);
         userProcessContainer.add(manageorder);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_manageOrderBtnActionPerformed
+    }//GEN-LAST:event_manageApplicationBtnActionPerformed
 
     private void manageResourceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageResourceBtnActionPerformed
         ManageResourceJPanel manageresource = new ManageResourceJPanel(userProcessContainer, account, ecosystem,
@@ -173,7 +173,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton manageOrderBtn;
+    private javax.swing.JButton manageApplicationBtn;
     private javax.swing.JButton managePersonBtn;
     private javax.swing.JButton manageResourceBtn;
     private javax.swing.JLabel valueLabel;
