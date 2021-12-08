@@ -19,9 +19,9 @@ import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
 import com.db4o.collections.ActivatableArrayList;
-import java.awt.CardLayout;
 import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -565,22 +565,20 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSelectActionPerformed
 
     private void orderHistoryJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderHistoryJButtonActionPerformed
-//
-//        CoordinatorApplicationDetailFrame newframe = new CoordinatorApplicationDetailFrame();
-//        CoordinatorApplicationListJPanel ccjp = new CoordinatorApplicationListJPanel(userProcessContainer, account, ecosystem,
-//                coordinatorDirectory, shelterDirectory,
-//                deliveryManDirectory, profileDirectory, orderDirectory);
-//
-//        newframe.setVisible(true);
-//
-//        newframe.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         CoordinatorApplicationListJPanel ccjp = new CoordinatorApplicationListJPanel(userProcessContainer, account, ecosystem,
                 coordinatorDirectory, shelterDirectory,
                 deliveryManDirectory, profileDirectory, orderDirectory);
-        userProcessContainer.add(ccjp);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+
+        JFrame window = new JFrame("CoordinatorApplicationDetailFrame");
+
+        //new panel
+        window.add(ccjp);
+        window.setResizable(true);
+        window.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        window.pack();
+        window.setVisible(true);
+
     }//GEN-LAST:event_orderHistoryJButtonActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
