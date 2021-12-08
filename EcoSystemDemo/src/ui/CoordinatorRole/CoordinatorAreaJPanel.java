@@ -499,7 +499,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
                 String shelterName = dropboxShelter.getSelectedItem().toString();
                 Shelter shelter = ecosystem.getShelterDirectory().getShelter(shelterName);
                 Coordinator coordinator = ecosystem.getCoordinatorDirectory().getCoordinator(account.getEmployee().getName());
-                String status = "Application Sent to Shelter Admin";
+                String status = "Sent";
 
                 int selectedRow = tblPerson.getSelectedRow();
                 if (selectedRow < 0) {
@@ -565,6 +565,16 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSelectActionPerformed
 
     private void orderHistoryJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderHistoryJButtonActionPerformed
+//
+//        CoordinatorApplicationDetailFrame newframe = new CoordinatorApplicationDetailFrame();
+//        CoordinatorApplicationListJPanel ccjp = new CoordinatorApplicationListJPanel(userProcessContainer, account, ecosystem,
+//                coordinatorDirectory, shelterDirectory,
+//                deliveryManDirectory, profileDirectory, orderDirectory);
+//
+//        newframe.setVisible(true);
+//
+//        newframe.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+
         CoordinatorApplicationListJPanel ccjp = new CoordinatorApplicationListJPanel(userProcessContainer, account, ecosystem,
                 coordinatorDirectory, shelterDirectory,
                 deliveryManDirectory, profileDirectory, orderDirectory);
