@@ -12,9 +12,14 @@ import Business.Profile.ProfileDirectory;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 /**
  *
@@ -47,6 +52,34 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
     public void populateTable() {
         DefaultTableModel dtm = (DefaultTableModel) tblOrder.getModel();
         dtm.setRowCount(0);
+        tblOrder.setDefaultRenderer(Object.class, new TableCellRenderer() {
+            private DefaultTableCellRenderer DEFAULT_RENDERER = new DefaultTableCellRenderer();
+
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                Component c = DEFAULT_RENDERER.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                if (isSelected) {
+                    c.setBackground(Color.YELLOW);
+                } else {
+                    if (row % 2 == 0) {
+                        c.setBackground(Color.WHITE);
+
+                    } else {
+                        c.setBackground(Color.LIGHT_GRAY);
+                    }
+                }
+
+                //Add below code here
+                if (table.getColumnModel().getColumn(column).getIdentifier().equals("Application Status")) {//Here `Status` is column name
+                    if (value.toString().equals("Application Rejected")) {//Here `OK` is the value of row
+
+                        c.setBackground(Color.GREEN);
+                    }
+                }
+                return c;
+            }
+
+        });
 
         for (Order order : ecosystem.getOrderDirectory().getOrderDirectory()) {
             if (account.getEmployee().getName().equals(order.getShelter().getShelterName())) {
@@ -68,6 +101,24 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
 
                 dtm.addRow(row);
             }
+        }
+    }
+
+    class ColumnColorRenderer extends DefaultTableCellRenderer {
+
+        Color backgroundColor, foregroundColor;
+
+        public ColumnColorRenderer(Color backgroundColor, Color foregroundColor) {
+            super();
+            this.backgroundColor = backgroundColor;
+            this.foregroundColor = foregroundColor;
+        }
+
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            Component cell = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+            cell.setBackground(backgroundColor);
+            cell.setForeground(foregroundColor);
+            return cell;
         }
     }
 
