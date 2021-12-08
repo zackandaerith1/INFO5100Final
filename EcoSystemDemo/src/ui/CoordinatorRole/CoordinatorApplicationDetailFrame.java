@@ -5,6 +5,22 @@
  */
 package ui.CoordinatorRole;
 
+import Business.Coordinator.CoordinatorDirectory;
+import Business.DB4OUtil.DB4OUtil;
+import Business.DeliveryMan.DeliveryManDirectory;
+import Business.EcoSystem;
+import Business.Menu.Item;
+import Business.Menu.MenuDirectory;
+import Business.Order.Order;
+import Business.Order.OrderDirectory;
+import Business.Profile.ProfileDirectory;
+import Business.Shelter.ShelterDirectory;
+import Business.UserAccount.UserAccount;
+import com.db4o.collections.ActivatableArrayList;
+import java.util.ArrayList;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author yibing
@@ -14,9 +30,55 @@ public class CoordinatorApplicationDetailFrame extends javax.swing.JFrame {
     /**
      * Creates new form CoordinatorApplicationDetailFrame
      */
+    private JPanel userProcessContainer;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    private EcoSystem ecosystem;
+    private UserAccount account;
+    private CoordinatorDirectory coordinatorDirectory;
+    private ShelterDirectory shelterDirectory;
+    private DeliveryManDirectory deliveryManDirectory;
+    private ProfileDirectory profileDirectory;
+    private OrderDirectory orderDirectory;
+    private MenuDirectory menuDirectory;
+    ArrayList<Item> arrayListItems = new ActivatableArrayList<>();
+
     public CoordinatorApplicationDetailFrame() {
         initComponents();
 
+//        this.userProcessContainer = userProcessContainer;
+        ecosystem = dB4OUtil.retrieveSystem();
+        account = ecosystem.getUserAccount();
+        this.coordinatorDirectory = ecosystem.getCoordinatorDirectory();
+        this.shelterDirectory = ecosystem.getShelterDirectory();
+        this.profileDirectory = ecosystem.getProfileDirectory();
+        this.deliveryManDirectory = ecosystem.getDeliveryManDirectory();
+        this.orderDirectory = ecosystem.getOrderDirectory();
+        valueLabel.setText(account.getEmployee().getName());
+
+        populateRequestTable();
+
+    }
+
+    public void populateRequestTable() {
+        DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
+        model.setRowCount(0);
+
+        for (Order order : ecosystem.getOrderDirectory().getOrderDirectory()) {
+            if (account.getEmployee().getName().equals(order.getCoordinator().getName())) {
+                Object[] row = new Object[10];
+                row[0] = order;
+                row[1] = order.getShelter().getShelterName();
+                row[2] = order.getProfile().getId();
+                row[3] = order.getProfile().getFirstname();
+                row[4] = order.getProfile().getLastname();
+                row[5] = order.getOrderStatus();
+                row[6] = order.getRequestDate();
+                row[7] = order.getResolveDate();
+                row[8] = order.getMessage();
+                row[9] = order.getApplicationItems();
+                model.addRow(row);
+            }
+        }
     }
 
     /**
@@ -28,17 +90,102 @@ public class CoordinatorApplicationDetailFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblOrder = new javax.swing.JTable();
+        enterpriseLabel = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(54, 33, 89));
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        tblOrder.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        tblOrder.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Application ID", "Shelter", "Applicant ID", "Applicant First Name", "Applicant Last Name", "Items", "Status", "Order Request Date", "Order Complete Date", "Comment"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblOrder);
+
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
+        enterpriseLabel.setText("Coordinator:");
+
+        valueLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        valueLabel.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(enterpriseLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1404, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(valueLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)))
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(142, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 636, Short.MAX_VALUE)
+            .addGap(0, 1488, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 626, Short.MAX_VALUE)
+            .addGap(0, 390, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -80,5 +227,10 @@ public class CoordinatorApplicationDetailFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblOrder;
+    private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }
