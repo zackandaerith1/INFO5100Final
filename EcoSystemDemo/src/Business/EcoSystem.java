@@ -14,6 +14,7 @@ import Business.Profile.ProfileDirectory;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
 import Business.Shelter.ShelterDirectory;
+import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
 
 /**
@@ -29,6 +30,7 @@ public class EcoSystem extends Organization {
     private OrderDirectory orderDirectory;
     private ProfileDirectory profileDirectory;
     private MenuDirectory menuDirectory;
+    private UserAccount userAccount;
 
     public EcoSystem(ShelterDirectory shelterDirectory, CoordinatorDirectory coordinatorDirectory, DeliveryManDirectory deliveryManDirectory) {
 
@@ -36,6 +38,14 @@ public class EcoSystem extends Organization {
         this.coordinatorDirectory = coordinatorDirectory;
         this.deliveryManDirectory = deliveryManDirectory;
 
+    }
+
+    public UserAccount getUserAccount() {
+        return userAccount;
+    }
+
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
     }
 
     public MenuDirectory getMenuDirectory() {
