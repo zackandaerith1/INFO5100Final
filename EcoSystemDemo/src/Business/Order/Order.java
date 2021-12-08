@@ -6,6 +6,7 @@
 package Business.Order;
 
 import Business.Coordinator.Coordinator;
+import Business.Menu.Menu;
 import Business.Profile.Profile;
 import Business.Shelter.Shelter;
 import Business.WorkQueue.WorkRequest;
@@ -22,10 +23,27 @@ public class Order extends WorkRequest {
     private Coordinator coordinator;
     private String deliveryMan;
     private int quantity;
-    private Profile menu;
+    private Menu menu;
     private String result;
     private boolean assign;
-    private double totalprice;
+    private int totalQty;
+    private Profile profile;
+
+    public int getTotalQty() {
+        return totalQty;
+    }
+
+    public void setTotalQty(int totalQty) {
+        this.totalQty = totalQty;
+    }
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
 
     public boolean isAssign() {
         return assign;
@@ -33,14 +51,6 @@ public class Order extends WorkRequest {
 
     public void setAssign(boolean assign) {
         this.assign = assign;
-    }
-
-    public double getTotalprice() {
-        return totalprice;
-    }
-
-    public void setTotalprice(double totalprice) {
-        this.totalprice = totalprice;
     }
 
     public String getOrderId() {
@@ -91,11 +101,11 @@ public class Order extends WorkRequest {
         this.quantity = quantity;
     }
 
-    public Profile getMenu() {
+    public Menu getMenu() {
         return menu;
     }
 
-    public void setMenu(Profile menu) {
+    public void setMenu(Menu menu) {
         this.menu = menu;
     }
 

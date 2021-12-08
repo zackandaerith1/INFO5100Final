@@ -78,7 +78,7 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
         delete = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txtUnit = new javax.swing.JTextField();
-        delete1 = new javax.swing.JButton();
+        btnView = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
 
@@ -186,13 +186,13 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
             }
         });
 
-        delete1.setBackground(new java.awt.Color(122, 72, 221));
-        delete1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        delete1.setForeground(new java.awt.Color(255, 255, 255));
-        delete1.setText("View/Modify Item");
-        delete1.addActionListener(new java.awt.event.ActionListener() {
+        btnView.setBackground(new java.awt.Color(122, 72, 221));
+        btnView.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
+        btnView.setText("View/Modify Item");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                delete1ActionPerformed(evt);
+                btnViewActionPerformed(evt);
             }
         });
 
@@ -238,7 +238,7 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(delete1)
+                                .addComponent(btnView)
                                 .addGap(59, 59, 59)
                                 .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -278,7 +278,7 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
                         .addComponent(btnAdd)))
                 .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(delete1)
+                    .addComponent(btnView)
                     .addComponent(delete)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(136, 136, 136)
@@ -352,7 +352,7 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUnitActionPerformed
 
-    private void delete1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete1ActionPerformed
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         int selectedRow = tblResource.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -364,13 +364,13 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
         userProcessContainer.add("ModifyProfileJPanel", modifyResource);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_delete1ActionPerformed
+    }//GEN-LAST:event_btnViewActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnView;
     private javax.swing.JButton delete;
-    private javax.swing.JButton delete1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

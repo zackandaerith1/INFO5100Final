@@ -11,14 +11,13 @@ package Business.Menu;
  */
 public class Item {
 
-    double price;
     String id;
     int qty;
     String unit;
     String itemname;
 
-    public Item(String itemname, double price, int qty, String unit, String id) {
-        this.price = price;
+    public Item(String itemname, int qty, String unit, String id) {
+
         this.qty = qty;
         this.itemname = itemname;
         this.unit = unit;
@@ -39,14 +38,6 @@ public class Item {
 
     public void setUnit(String unit) {
         this.unit = unit;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public int getQty() {

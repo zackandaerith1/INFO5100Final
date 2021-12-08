@@ -55,7 +55,7 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
                 row[0] = order;
                 row[1] = order.getMessage();
                 row[2] = order.getCoordinator().getName();
-                row[3] = order.getTotalprice();
+                row[3] = order.getTotalQty();
                 row[4] = order.getOrderStatus();
 
                 dtm.addRow(row);
