@@ -61,13 +61,14 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
         DefaultTableModel dtm = (DefaultTableModel) viewtbl.getModel();
         dtm.setRowCount(0);
         for (Coordinator coordinator : ecosystem.getCoordinatorDirectory().getCoordinatorDirectory()) {
-            Object[] row = new Object[6];
+            Object[] row = new Object[7];
             row[0] = coordinator;
-            row[1] = ecosystem.getUserAccountDirectory().getUserAccountList().get(1);
-            row[2] = coordinator.getName();
-            row[3] = coordinator.getEmail();
-            row[4] = coordinator.getHomeAddress();
-            row[5] = coordinator.getPhoneNumber();
+            row[1] = coordinator.getShelter();
+            row[2] = ecosystem.getUserAccountDirectory().getUserAccountList().get(1);
+            row[3] = coordinator.getName();
+            row[4] = coordinator.getEmail();
+            row[5] = coordinator.getHomeAddress();
+            row[6] = coordinator.getPhoneNumber();
 
             dtm.addRow(row);
         }
