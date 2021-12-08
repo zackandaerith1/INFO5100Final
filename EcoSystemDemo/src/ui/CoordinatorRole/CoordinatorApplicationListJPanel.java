@@ -18,8 +18,6 @@ import com.db4o.collections.ActivatableArrayList;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.ArrayList;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -55,9 +53,8 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
         this.profileDirectory = ecosystem.getProfileDirectory();
         this.deliveryManDirectory = ecosystem.getDeliveryManDirectory();
         this.orderDirectory = ecosystem.getOrderDirectory();
-        valueLabel.setText(account.getUsername());
-        boxShelter.setEnabled(false);
-        btnProfileShow.setEnabled(false);
+        valueLabel.setText(account.getEmployee().getName());
+
         populateRequestTable();
 
     }
@@ -68,7 +65,7 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
 
         for (Order order : ecosystem.getOrderDirectory().getOrderDirectory()) {
             if (account.getEmployee().getName().equals(order.getCoordinator().getName())) {
-                Object[] row = new Object[9];
+                Object[] row = new Object[10];
                 row[0] = order;
                 row[1] = order.getShelter().getShelterName();
                 row[2] = order.getProfile().getId();
@@ -78,7 +75,7 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
                 row[6] = order.getRequestDate();
                 row[7] = order.getResolveDate();
                 row[8] = order.getMessage();
-
+                row[9] = order.getApplicationItems();
                 model.addRow(row);
             }
         }
@@ -95,42 +92,35 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblOrder = new javax.swing.JTable();
-        comment = new javax.swing.JButton();
-        refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
-        boxShelter = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
-        txtComment = new javax.swing.JTextField();
-        btnProfileShow = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
-        btnView = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(54, 33, 89));
 
         tblOrder.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         tblOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Application ID", "Shelter", "Applicant ID", "Applicant First Name", "Applicant Last Name", "Status", "Order Request Date", "Order Complete Date", "Comment"
+                "Application ID", "Shelter", "Applicant ID", "Applicant First Name", "Applicant Last Name", "Items", "Status", "Order Request Date", "Order Complete Date", "Comment"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+                java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -142,26 +132,9 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(tblOrder);
-
-        comment.setBackground(new java.awt.Color(122, 72, 221));
-        comment.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        comment.setForeground(new java.awt.Color(255, 255, 255));
-        comment.setText("Add Comment");
-        comment.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                commentActionPerformed(evt);
-            }
-        });
-
-        refreshTestJButton.setBackground(new java.awt.Color(122, 72, 221));
-        refreshTestJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        refreshTestJButton.setForeground(new java.awt.Color(255, 255, 255));
-        refreshTestJButton.setText("Refresh");
-        refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshTestJButtonActionPerformed(evt);
-            }
-        });
+        if (tblOrder.getColumnModel().getColumnCount() > 0) {
+            tblOrder.getColumnModel().getColumn(5).setPreferredWidth(100);
+        }
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -169,30 +142,6 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         valueLabel.setForeground(new java.awt.Color(255, 255, 255));
-
-        boxShelter.setBackground(new java.awt.Color(122, 72, 221));
-        boxShelter.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        boxShelter.setForeground(new java.awt.Color(255, 255, 255));
-        boxShelter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        boxShelter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boxShelterActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Comment");
-
-        btnProfileShow.setBackground(new java.awt.Color(122, 72, 221));
-        btnProfileShow.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnProfileShow.setForeground(new java.awt.Color(255, 255, 255));
-        btnProfileShow.setText("Show Menu");
-        btnProfileShow.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProfileShowActionPerformed(evt);
-            }
-        });
 
         btnBack.setBackground(new java.awt.Color(122, 72, 221));
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -204,16 +153,6 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnView.setBackground(new java.awt.Color(122, 72, 221));
-        btnView.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnView.setForeground(new java.awt.Color(255, 255, 255));
-        btnView.setText("View/Modify Item");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -222,116 +161,33 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnBack)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtComment, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(comment)
-                            .addGap(257, 257, 257)
-                            .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 934, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(enterpriseLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(boxShelter, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(37, 37, 37)
-                                .addComponent(btnProfileShow)
-                                .addGap(51, 51, 51)
-                                .addComponent(refreshTestJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                                .addGap(128, 128, 128))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1404, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnProfileShow, comment, refreshTestJButton});
-
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(valueLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(boxShelter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnProfileShow)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(refreshTestJButton)))
+                        .addGap(2, 2, 2)))
                 .addGap(42, 42, 42)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtComment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comment)
-                    .addComponent(btnView))
-                .addGap(18, 18, 18)
+                .addGap(69, 69, 69)
                 .addComponent(btnBack)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnProfileShow, comment, refreshTestJButton});
-
     }// </editor-fold>//GEN-END:initComponents
-
-    private void commentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commentActionPerformed
-
-        int selectedRow = tblOrder.getSelectedRow();
-
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if (txtComment.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Comment cannot be empty", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        Order order = (Order) tblOrder.getValueAt(selectedRow, 0);
-        if (!order.getOrderStatus().equals("Delivered")) {
-            JOptionPane.showMessageDialog(null, "Order has not been delivered yet, please leave comment after delivery.", "Warning", JOptionPane.WARNING_MESSAGE);
-            txtComment.setText("");
-            return;
-        }
-        if (order.getMessage() == null) {
-            order.setMessage(txtComment.getText());
-            JOptionPane.showMessageDialog(null, "Comment saved!");
-
-        } else {
-            int reply = JOptionPane.showConfirmDialog(null, "You commented already, do you want to edit you comment?", "Warning", JOptionPane.YES_NO_OPTION);
-            if (reply == JOptionPane.NO_OPTION) {
-                txtComment.setText("");
-
-            } else {
-                order.setMessage(txtComment.getText());
-                JOptionPane.showMessageDialog(null, "Comment edited!");
-
-            }
-        }
-
-        populateRequestTable();
-        txtComment.setText("");
-    }//GEN-LAST:event_commentActionPerformed
-
-    private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
-
-        populateRequestTable();
-
-    }//GEN-LAST:event_refreshTestJButtonActionPerformed
-
-    private void boxShelterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxShelterActionPerformed
-
-    }//GEN-LAST:event_boxShelterActionPerformed
-
-    private void btnProfileShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileShowActionPerformed
-
-        if (boxShelter.getSelectedIndex() == 0) {
-            JOptionPane.showMessageDialog(null, "Please select a shelter");
-            return;
-        }
-    }//GEN-LAST:event_btnProfileShowActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
 
@@ -344,35 +200,11 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        int selectedRow = tblOrder.getSelectedRow();
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        CoordinatorApplicationDetailFrame newframe = new CoordinatorApplicationDetailFrame();
-        newframe.setVisible(true);
-        newframe.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-
-//        CoordinatorApplicationDetailJPanel applicationDetail = new CoordinatorApplicationDetailJPanel(userProcessContainer, account, ecosystem,
-//                coordinatorDirectory, shelterDirectory, deliveryManDirectory, profileDirectory, orderDirectory, menuDirectory);
-//        userProcessContainer.add("CoordinatorApplicationDetailJPanel", applicationDetail);
-//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-//        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnViewActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> boxShelter;
     private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnProfileShow;
-    private javax.swing.JButton btnView;
-    private javax.swing.JButton comment;
     private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton refreshTestJButton;
     private javax.swing.JTable tblOrder;
-    private javax.swing.JTextField txtComment;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 

@@ -60,7 +60,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
         this.orderDirectory = ecosystem.getOrderDirectory();
         this.menuDirectory = ecosystem.getMenuDirectory();
 
-        valueLabel.setText(account.getUsername());
+        valueLabel.setText(account.getEmployee().getName());
         populateApplicationTable();
         populateShelterCombo();
 
@@ -154,7 +154,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
         dropboxShelter = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         txtQuantity = new javax.swing.JTextField();
-        btnCheckout = new javax.swing.JButton();
+        btnSend = new javax.swing.JButton();
         btnMenuShow = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblApplication = new javax.swing.JTable();
@@ -232,13 +232,13 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Quantity");
 
-        btnCheckout.setBackground(new java.awt.Color(122, 72, 221));
-        btnCheckout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCheckout.setForeground(new java.awt.Color(255, 255, 255));
-        btnCheckout.setText("Check Out");
-        btnCheckout.addActionListener(new java.awt.event.ActionListener() {
+        btnSend.setBackground(new java.awt.Color(122, 72, 221));
+        btnSend.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSend.setForeground(new java.awt.Color(255, 255, 255));
+        btnSend.setText("Send Application");
+        btnSend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCheckoutActionPerformed(evt);
+                btnSendActionPerformed(evt);
             }
         });
 
@@ -312,7 +312,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
         orderHistoryJButton.setBackground(new java.awt.Color(122, 72, 221));
         orderHistoryJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         orderHistoryJButton.setForeground(new java.awt.Color(255, 255, 255));
-        orderHistoryJButton.setText("View Order History");
+        orderHistoryJButton.setText("View Application History");
         orderHistoryJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orderHistoryJButtonActionPerformed(evt);
@@ -425,7 +425,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel6)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnCheckout))
+                                .addComponent(btnSend))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -474,14 +474,14 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
                     .addComponent(orderHistoryJButton))
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCheckout)
+                    .addComponent(btnSend)
                     .addComponent(jLabel3)
                     .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAdd, btnCheckout, btnMenuShow, btnSelect, dropboxShelter, jLabel1, jLabel3, orderHistoryJButton, txtQuantity, txtTotal});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAdd, btnMenuShow, btnSelect, btnSend, dropboxShelter, jLabel1, jLabel3, orderHistoryJButton, txtQuantity, txtTotal});
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -489,53 +489,58 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_dropboxShelterActionPerformed
 
-    private void btnCheckoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckoutActionPerformed
+    private void btnSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendActionPerformed
+        int reply = JOptionPane.showConfirmDialog(null, "Are You Sure To Send Application? Application Sent Cannot Be Canceled.", "Warning", JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION) {
+            Random random = new Random();
+            int randNumber = random.nextInt(200000 - 100000 + 1) + 100000;
+            int rowcount = tblApplication.getRowCount();
+            if (rowcount > 0) {
+                String shelterName = dropboxShelter.getSelectedItem().toString();
+                Shelter shelter = ecosystem.getShelterDirectory().getShelter(shelterName);
+                Coordinator coordinator = ecosystem.getCoordinatorDirectory().getCoordinator(account.getEmployee().getName());
+                String status = "Application Sent to Shelter Admin";
 
-        Random random = new Random();
-        int randNumber = random.nextInt(200000 - 100000 + 1) + 100000;
-        int rowcount = tblApplication.getRowCount();
-        if (rowcount > 0) {
-            String shelterName = dropboxShelter.getSelectedItem().toString();
-            Shelter shelter = ecosystem.getShelterDirectory().getShelter(shelterName);
-            Coordinator coordinator = ecosystem.getCoordinatorDirectory().getCoordinator(account.getEmployee().getName());
-            String status = "Application Placed";
+                int selectedRow = tblPerson.getSelectedRow();
+                if (selectedRow < 0) {
+                    JOptionPane.showMessageDialog(null, "Please Select a row from Person table first", "warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                Profile profile = (Profile) tblPerson.getValueAt(selectedRow, 0);
+                Order order = ecosystem.getOrderDirectory().newOrder();
 
-            int selectedRow = tblPerson.getSelectedRow();
-            if (selectedRow < 0) {
-                JOptionPane.showMessageDialog(null, "Please Select a row from Person table first", "warning", JOptionPane.WARNING_MESSAGE);
-                return;
+                order.setCoordinator(coordinator);
+                order.setProfile(profile);
+                order.setOrderId(String.valueOf(randNumber));
+                order.setShelter(shelter);
+                order.setOrderStatus(status);
+                order.setAssign(false);
+
+                int totalQty = 0;
+
+                StringBuilder applicationItems = new StringBuilder();
+                for (Item item : itemList) {
+                    totalQty = item.getQty() + totalQty;
+                    applicationItems.append(" " + item.getItemname() + " : " + item.getQty() + " " + item.getUnit() + ";");
+                }
+                order.setTotalQty(totalQty);
+                order.setApplicationItems(applicationItems.toString());
+
+                JOptionPane.showMessageDialog(null, "Application Sent!");
+
+                DefaultTableModel cartModel = (DefaultTableModel) tblApplication.getModel();
+                cartModel.setRowCount(0);
+                txtTotal.setText("");
+                itemList = new ActivatableArrayList<>();
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Your list is empty", "warning", JOptionPane.WARNING_MESSAGE);
             }
-            Profile profile = (Profile) tblPerson.getValueAt(selectedRow, 0);
-            Order order = ecosystem.getOrderDirectory().newOrder();
-
-            order.setCoordinator(coordinator);
-            order.setProfile(profile);
-            order.setOrderId(String.valueOf(randNumber));
-            order.setShelter(shelter);
-            order.setOrderStatus(status);
-            order.setAssign(false);
-
-            int totalQty = 0;
-
-            StringBuilder applicationItems = new StringBuilder();
-            for (Item item : itemList) {
-                totalQty = item.getQty() + totalQty;
-                applicationItems.append(" " + item.getItemname() + ":" + (item.getQty()) + ",");
-            }
-            order.setTotalQty(totalQty);
-
-            JOptionPane.showMessageDialog(null, "Application Placed!");
-
-            DefaultTableModel cartModel = (DefaultTableModel) tblApplication.getModel();
-            cartModel.setRowCount(0);
-            txtTotal.setText("");
-            itemList = new ActivatableArrayList<>();
-
         } else {
-            JOptionPane.showMessageDialog(null, "Your list is empty", "warning", JOptionPane.WARNING_MESSAGE);
+            return;
         }
 
-    }//GEN-LAST:event_btnCheckoutActionPerformed
+    }//GEN-LAST:event_btnSendActionPerformed
 
     private void btnMenuShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuShowActionPerformed
         if (dropboxShelter.getSelectedIndex() == 0) {
@@ -607,9 +612,9 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnCheckout;
     private javax.swing.JButton btnMenuShow;
     private javax.swing.JButton btnSelect;
+    private javax.swing.JButton btnSend;
     private javax.swing.JComboBox<String> dropboxShelter;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;

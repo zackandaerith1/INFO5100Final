@@ -24,10 +24,19 @@ public class Order extends WorkRequest {
     private String deliveryMan;
     private int quantity;
     private Menu menu;
+    private String applicationItems;
     private String result;
     private boolean assign;
     private int totalQty;
     private Profile profile;
+
+    public String getApplicationItems() {
+        return applicationItems;
+    }
+
+    public void setApplicationItems(String applicationItems) {
+        this.applicationItems = applicationItems;
+    }
 
     public int getTotalQty() {
         return totalQty;
