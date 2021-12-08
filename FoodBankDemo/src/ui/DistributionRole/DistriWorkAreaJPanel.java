@@ -7,15 +7,21 @@ package ui.DistributionRole;
 
 import Business.Enterprise.Enterprise;
 import Business.Organization.DistributionOrganization;
+import Business.Organization.DoctorOrganization;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
+import ui.DoctorRole.RequestLabTestJPanel;
 
 /**
  *
  * @author zhengfang
  */
 public class DistriWorkAreaJPanel extends javax.swing.JPanel {
-
+    private JPanel userProcessContainer;
+    private DoctorOrganization organization;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
     /**
      * Creates new form DistriWorkAreaJPanel
      */
@@ -150,4 +156,8 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel valueLabel;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
+
+    private void populateRequestTable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

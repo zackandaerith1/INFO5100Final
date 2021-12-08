@@ -8,7 +8,9 @@ package ui.CommunicationRole;
 import Business.Enterprise.Enterprise;
 import Business.Organization.CommunicationOrganization;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
+import ui.DoctorRole.RequestLabTestJPanel;
 
 /**
  *
@@ -16,6 +18,10 @@ import javax.swing.JPanel;
  */
 public class CommWorkAreaJPanel extends javax.swing.JPanel {
 
+    private JPanel userProcessContainer;
+    private CommunicationOrganization organization;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
     /**
      * Creates new form CommWorkAreaJPanel
      */
@@ -152,4 +158,8 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel valueLabel;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
+
+    private void populateRequestTable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
