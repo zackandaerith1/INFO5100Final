@@ -7,7 +7,6 @@ package ui.DistributionRole;
 
 import Business.Enterprise.Enterprise;
 import Business.Organization.DistributionOrganization;
-import Business.Organization.DoctorOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -19,18 +18,21 @@ import ui.DoctorRole.RequestLabTestJPanel;
  */
 public class DistriWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
-    private DoctorOrganization organization;
+    private DistributionOrganization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
     /**
      * Creates new form DistriWorkAreaJPanel
      */
-    public DistriWorkAreaJPanel() {
-        initComponents();
-    }
 
-    public DistriWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, DistributionOrganization distributionOrganization, Enterprise enterprise) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public DistriWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, DistributionOrganization organization, Enterprise enterprise) {
+        initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        valueLabel.setText(enterprise.getName());
     }
 
     /**

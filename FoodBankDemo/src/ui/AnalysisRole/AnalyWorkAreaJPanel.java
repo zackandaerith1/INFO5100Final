@@ -23,12 +23,17 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AnalyWorkAreaJPanel
      */
-    public AnalyWorkAreaJPanel() {
-        initComponents();
-    }
 
-    public AnalyWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, AnalysisOrganization analysisOrganization, Enterprise enterprise) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public AnalyWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, AnalysisOrganization organization, Enterprise enterprise) {
+        initComponents();
+
+        this.userProcessContainer = userProcessContainer;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        valueLabel.setText(enterprise.getName());        
+        
+        
     }
 
     /**

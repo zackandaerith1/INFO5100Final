@@ -25,12 +25,16 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CommWorkAreaJPanel
      */
-    public CommWorkAreaJPanel() {
-        initComponents();
-    }
 
-    public CommWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, CommunicationOrganization communicationOrganization, Enterprise enterprise) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+    public CommWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, CommunicationOrganization organization, Enterprise enterprise) {
+        initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        valueLabel.setText(enterprise.getName());
     }
 
     /**
