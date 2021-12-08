@@ -5,7 +5,6 @@
  */
 package ui.ShelterAdminRole;
 
-import Business.DeliveryMan.DeliveryMan;
 import Business.EcoSystem;
 import Business.Order.Order;
 import Business.Order.OrderDirectory;
@@ -42,7 +41,7 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
         this.profileDirectory = ecosystem.getProfileDirectory();
         this.orderDirectory = ecosystem.getOrderDirectory();
         populateTable();
-        populateShelterCombo();
+
     }
 
     public void populateTable() {
@@ -51,24 +50,24 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
 
         for (Order order : ecosystem.getOrderDirectory().getOrderDirectory()) {
             if (account.getEmployee().getName().equals(order.getShelter().getShelterName())) {
-                Object[] row = new Object[5];
+                Object[] row = new Object[14];
                 row[0] = order;
-                row[1] = order.getMessage();
-                row[2] = order.getCoordinator().getName();
+                row[1] = order.getOrderStatus();
+                row[2] = order.getApplicationItems();
                 row[3] = order.getTotalQty();
-                row[4] = order.getOrderStatus();
+                row[4] = order.getMessage();
+                row[5] = order.getProfile().getId();
+                row[6] = order.getProfile().getFirstname();
+                row[7] = order.getProfile().getLastname();
+                row[8] = order.getProfile().getGender();
+                row[9] = order.getProfile().getAge();
+                row[10] = order.getShelter().getShelterName();
+                row[11] = order.getCoordinator().getName();
+                row[12] = order.getCoordinator().getPhoneNumber();
+                row[13] = order.getCoordinator().getEmail();
 
                 dtm.addRow(row);
             }
-        }
-    }
-
-    private void populateShelterCombo() {
-        boxdel.removeAllItems();
-        boxdel.addItem("  ");
-        for (DeliveryMan del : ecosystem.getDeliveryManDirectory().getDeliveryManDirectory()) {
-            //System.out.println("res" + res);
-            boxdel.addItem(del.getName());
         }
     }
 
@@ -84,36 +83,38 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblOrder = new javax.swing.JTable();
         btnCompleted = new javax.swing.JButton();
-        btnAccepted = new javax.swing.JButton();
+        btnProcess = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
-        boxdel = new javax.swing.JComboBox<>();
-        assigndelman = new javax.swing.JButton();
+        btnRejct = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        deny = new javax.swing.JButton();
-        refresh = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtComment = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(54, 33, 89));
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         tblOrder.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         tblOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order ID", "Message", "Reciever", "Price", "Order Status"
+                "Application ID", "Application Status", "Application Items", "Application Item Qty", "Message", "Applicant ID", "Applicant First Name", "Applicant Last Name", "Applicant Gender", "Applicant Age", "Applicant Shelter Name", "Coordinator Name", "Coordinator Phone Number", "Coordinator Email"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -125,20 +126,20 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
         btnCompleted.setBackground(new java.awt.Color(122, 72, 221));
         btnCompleted.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCompleted.setForeground(new java.awt.Color(255, 255, 255));
-        btnCompleted.setText("Complete");
+        btnCompleted.setText("Approved");
         btnCompleted.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCompletedActionPerformed(evt);
             }
         });
 
-        btnAccepted.setBackground(new java.awt.Color(122, 72, 221));
-        btnAccepted.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnAccepted.setForeground(new java.awt.Color(255, 255, 255));
-        btnAccepted.setText("Accept");
-        btnAccepted.addActionListener(new java.awt.event.ActionListener() {
+        btnProcess.setBackground(new java.awt.Color(122, 72, 221));
+        btnProcess.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnProcess.setForeground(new java.awt.Color(255, 255, 255));
+        btnProcess.setText("Process");
+        btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAcceptedActionPerformed(evt);
+                btnProcessActionPerformed(evt);
             }
         });
 
@@ -156,105 +157,72 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
             }
         });
 
-        boxdel.setBackground(new java.awt.Color(122, 72, 221));
-        boxdel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        boxdel.setForeground(new java.awt.Color(255, 255, 255));
-        boxdel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        boxdel.addActionListener(new java.awt.event.ActionListener() {
+        btnRejct.setBackground(new java.awt.Color(122, 72, 221));
+        btnRejct.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnRejct.setForeground(new java.awt.Color(255, 255, 255));
+        btnRejct.setText("Reject");
+        btnRejct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boxdelActionPerformed(evt);
-            }
-        });
-
-        assigndelman.setBackground(new java.awt.Color(122, 72, 221));
-        assigndelman.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        assigndelman.setForeground(new java.awt.Color(255, 255, 255));
-        assigndelman.setText("Assign Delivery Man");
-        assigndelman.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assigndelmanActionPerformed(evt);
+                btnRejctActionPerformed(evt);
             }
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Assign Delivery Man");
+        jLabel2.setText("Comment:");
 
-        deny.setBackground(new java.awt.Color(122, 72, 221));
-        deny.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        deny.setForeground(new java.awt.Color(255, 255, 255));
-        deny.setText("Cancel");
-        deny.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                denyActionPerformed(evt);
-            }
-        });
-
-        refresh.setBackground(new java.awt.Color(122, 72, 221));
-        refresh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        refresh.setForeground(new java.awt.Color(255, 255, 255));
-        refresh.setText("Refresh");
-        refresh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshActionPerformed(evt);
-            }
-        });
+        txtComment.setColumns(20);
+        txtComment.setRows(5);
+        jScrollPane3.setViewportView(txtComment);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(277, 277, 277)
-                        .addComponent(jLabel1)
-                        .addGap(176, 176, 176)
-                        .addComponent(refresh))
+                        .addComponent(btnBack)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(btnBack))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(boxdel, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)
-                                .addComponent(assigndelman))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnProcess)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAccepted)
-                            .addComponent(deny)
-                            .addComponent(btnCompleted))))
-                .addContainerGap(110, Short.MAX_VALUE))
+                        .addComponent(btnRejct, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCompleted)
+                        .addGap(106, 106, 106)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(477, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(472, 472, 472)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(refresh))
+                .addGap(50, 50, 50)
+                .addComponent(jLabel1)
                 .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAccepted)
-                        .addGap(30, 30, 30)
-                        .addComponent(deny)
-                        .addGap(27, 27, 27)
-                        .addComponent(btnCompleted)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(boxdel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(assigndelman))
-                .addGap(26, 26, 26)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnProcess)
+                        .addComponent(btnRejct)
+                        .addComponent(btnCompleted)))
+                .addGap(24, 24, 24)
                 .addComponent(btnBack)
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -266,24 +234,25 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
         }
 
         Order order = (Order) tblOrder.getValueAt(selectedRow, 0);
-        if (order.getOrderStatus().equals("Order Accepted")) {
-            order.setOrderStatus("Order Ready for Pick up");
+        if (order.getOrderStatus().equals("Under Review")) {
+            order.setOrderStatus("Application Approved");
             order.setAssign(true);
-        } else if (order.getOrderStatus().equals("Order Placed")) {
-            JOptionPane.showMessageDialog(null, "Order is should be accepted first");
+        } else if (order.getOrderStatus().equals("Sent")) {
+            JOptionPane.showMessageDialog(null, "Application Need To Be Reviewed First");
             return;
-        } else if (order.getOrderStatus().equals("Order Cancled")) {
-            JOptionPane.showMessageDialog(null, "Order is cancled");
+        } else if (order.getOrderStatus().equals("Rejected")) {
+            JOptionPane.showMessageDialog(null, "Application Has Been Rejected");
             return;
         } else {
-            JOptionPane.showMessageDialog(null, "Order is already ready for pick up");
+            JOptionPane.showMessageDialog(null, "Application Is Approved");
             return;
         }
 
         populateTable();
+        txtComment.setText("");
     }//GEN-LAST:event_btnCompletedActionPerformed
 
-    private void btnAcceptedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptedActionPerformed
+    private void btnProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessActionPerformed
         int selectedRow = tblOrder.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select a row from table first", "warning", JOptionPane.WARNING_MESSAGE);
@@ -291,19 +260,20 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
         }
 
         Order order = (Order) tblOrder.getValueAt(selectedRow, 0);
-        if (order.getOrderStatus().equals("Order Placed")) {
-            order.setOrderStatus("Order Accepted");
-        } else if (order.getOrderStatus().equals("Order Cancled")) {
-            JOptionPane.showMessageDialog(null, "Order is cancled");
+        if (order.getOrderStatus().equals("Sent")) {
+            order.setOrderStatus("Under Review");
+        } else if (order.getOrderStatus().equals("Rejected")) {
+            JOptionPane.showMessageDialog(null, "Application Has Been Rejected.");
             return;
         } else {
-            JOptionPane.showMessageDialog(null, "Order is already accepted or Completed");
+            JOptionPane.showMessageDialog(null, "Application Status Not Processable.");
             return;
         }
 
         populateTable();
+        txtComment.setText("");
 
-    }//GEN-LAST:event_btnAcceptedActionPerformed
+    }//GEN-LAST:event_btnProcessActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
@@ -311,75 +281,60 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void boxdelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxdelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_boxdelActionPerformed
-
-    private void assigndelmanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assigndelmanActionPerformed
-        // TODO add your handling code here:
-
-        int selectedRow = tblOrder.getSelectedRow();
-
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a row");
+    private void btnRejctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRejctActionPerformed
+        String comment = txtComment.getText();
+        if (comment.isEmpty() == true) {
+            JOptionPane.showMessageDialog(null, "Please Leave A Message Explaining Reasons Of Rejection.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        Order order = (Order) tblOrder.getValueAt(selectedRow, 0);
-        String delmanname = boxdel.getSelectedItem().toString();
-        if (order.getOrderStatus().equals("Order Ready for Pick up")) {
-            order.setDeliveryMan(delmanname);
-            order.setOrderStatus("Order Assigned");
-            JOptionPane.showMessageDialog(null, "Order assigned");
-        } else if (order.getOrderStatus().equals("Order Assigned")) {
-            JOptionPane.showMessageDialog(null, "Order Already Assigned");
-            return;
-        } else {
-            JOptionPane.showMessageDialog(null, "Please Accept Order First!");
-            return;
-        }
-        populateTable();
-    }//GEN-LAST:event_assigndelmanActionPerformed
-
-    private void denyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_denyActionPerformed
         int selectedRow = tblOrder.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         } else {
-            int reply = JOptionPane.showConfirmDialog(null, "Are You Sure To Cancel? Order Cannot Be Restore After Cancelation.", "Warning", JOptionPane.YES_NO_OPTION);
+            int reply = JOptionPane.showConfirmDialog(null, "Are You Sure To Reject? Application Cannot Be Restored After Reject.", "Warning", JOptionPane.YES_NO_OPTION);
+
             if (reply == JOptionPane.YES_OPTION) {
+
                 Order order = (Order) tblOrder.getValueAt(selectedRow, 0);
-                order.setOrderStatus("Order Cancled");
-                order.setAssign(true);
+                if (order.getOrderStatus().equals("Sent")) {
+                    JOptionPane.showMessageDialog(null, "Application Need To Be Reviewed First");
+                    return;
+                } else if (order.getOrderStatus().equals("Rejected")) {
+                    JOptionPane.showMessageDialog(null, "Application Has Been Rejected");
+                    return;
+                } else if (order.getOrderStatus().equals("Approved")) {
+                    JOptionPane.showMessageDialog(null, "Application Has Been Approved");
+                    return;
+                } else if (order.getOrderStatus().equals("Under Review")) {
+                    order.setOrderStatus("Application Rejected");
+                    order.setMessage(comment);
+                    order.setAssign(true);
+                }
 
+                JOptionPane.showMessageDialog(null, "Application Rejected");
                 populateTable();
-
-                JOptionPane.showMessageDialog(null, "Order Cancled");
             } else {
                 return;
             }
 
         }
+        txtComment.setText("");
 
-    }//GEN-LAST:event_denyActionPerformed
-
-    private void refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshActionPerformed
-        populateTable();
-    }//GEN-LAST:event_refreshActionPerformed
+    }//GEN-LAST:event_btnRejctActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton assigndelman;
-    private javax.swing.JComboBox<String> boxdel;
-    private javax.swing.JButton btnAccepted;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCompleted;
-    private javax.swing.JButton deny;
+    private javax.swing.JButton btnProcess;
+    private javax.swing.JButton btnRejct;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton refresh;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tblOrder;
+    private javax.swing.JTextArea txtComment;
     // End of variables declaration//GEN-END:variables
 
 }
