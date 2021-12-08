@@ -71,11 +71,12 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
                 row[2] = order.getProfile().getId();
                 row[3] = order.getProfile().getFirstname();
                 row[4] = order.getProfile().getLastname();
-                row[5] = order.getOrderStatus();
-                row[6] = order.getRequestDate();
-                row[7] = order.getResolveDate();
-                row[8] = order.getMessage();
-                row[9] = order.getApplicationItems();
+                row[5] = order.getApplicationItems();
+                row[6] = order.getOrderStatus();
+                row[7] = order.getRequestDate();
+                row[8] = order.getResolveDate();
+                row[9] = order.getMessage();
+
                 model.addRow(row);
             }
         }
