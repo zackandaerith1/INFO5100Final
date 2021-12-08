@@ -16,10 +16,14 @@ import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
 import com.db4o.collections.ActivatableArrayList;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 /**
  *
@@ -62,6 +66,36 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
     public void populateRequestTable() {
         DefaultTableModel model = (DefaultTableModel) tblOrder.getModel();
         model.setRowCount(0);
+        tblOrder.setDefaultRenderer(Object.class, new TableCellRenderer() {
+            private DefaultTableCellRenderer DEFAULT_RENDERER = new DefaultTableCellRenderer();
+            public static final Color VERY_LIGHT_RED = new Color(255, 99, 71);
+            public static final Color LIGHT_BLUE = new Color(135, 206, 250);
+
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                Component c = DEFAULT_RENDERER.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                if (isSelected) {
+                    c.setBackground(LIGHT_BLUE);
+                } else {
+                    if (row % 2 == 0) {
+                        c.setBackground(Color.WHITE);
+
+                    } else {
+                        c.setBackground(Color.LIGHT_GRAY);
+                    }
+                }
+
+                //Add below code here
+                if (table.getColumnModel().getColumn(column).getIdentifier().equals("Application Status")) {//Here `Status` is column name
+                    if (value.toString().equals("Application Rejected")) {//Here `OK` is the value of row
+
+                        c.setBackground(VERY_LIGHT_RED);
+                    }
+                }
+                return c;
+            }
+
+        });
 
         for (Order order : ecosystem.getOrderDirectory().getOrderDirectory()) {
             if (account.getEmployee().getName().equals(order.getCoordinator().getName())) {

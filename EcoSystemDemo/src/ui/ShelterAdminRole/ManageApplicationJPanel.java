@@ -54,12 +54,14 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
         dtm.setRowCount(0);
         tblOrder.setDefaultRenderer(Object.class, new TableCellRenderer() {
             private DefaultTableCellRenderer DEFAULT_RENDERER = new DefaultTableCellRenderer();
+            public static final Color VERY_LIGHT_RED = new Color(255, 99, 71);
+            public static final Color LIGHT_BLUE = new Color(135, 206, 250);
 
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
                 Component c = DEFAULT_RENDERER.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
                 if (isSelected) {
-                    c.setBackground(Color.YELLOW);
+                    c.setBackground(LIGHT_BLUE);
                 } else {
                     if (row % 2 == 0) {
                         c.setBackground(Color.WHITE);
@@ -73,7 +75,7 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
                 if (table.getColumnModel().getColumn(column).getIdentifier().equals("Application Status")) {//Here `Status` is column name
                     if (value.toString().equals("Application Rejected")) {//Here `OK` is the value of row
 
-                        c.setBackground(Color.GREEN);
+                        c.setBackground(VERY_LIGHT_RED);
                     }
                 }
                 return c;

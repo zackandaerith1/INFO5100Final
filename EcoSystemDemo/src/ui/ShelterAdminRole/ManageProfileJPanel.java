@@ -11,17 +11,27 @@ import Business.Profile.ProfileDirectory;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
+import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamPanel;
+import com.github.sarxos.webcam.WebcamResolution;
 import java.awt.CardLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -574,22 +584,56 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void btnChooseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChooseActionPerformed
-        // TODO add your handling code here:
-        JFileChooser chooser = new JFileChooser("C:\\Users\\yibin\\Documents\\GitHub\\INFO5100Final\\EcoSystemDemo\\headshot");
-        FileNameExtensionFilter fnef = new FileNameExtensionFilter("IMAGES", "png", "jpg", "jpeg");
-        chooser.addChoosableFileFilter(fnef);
-        int showOpenDialogue = chooser.showOpenDialog(null);
-        if (showOpenDialogue == JFileChooser.APPROVE_OPTION) {
-            File f = chooser.getSelectedFile();
-            String filename = f.getAbsolutePath();
-            txtFilePath.setText(filename);
-            JOptionPane.showMessageDialog(null, "Image Uploaded!");
 
-            ImageIcon ii = new ImageIcon(filename);
+        // coding for webcam and taking a picture
+        Webcam webcam = Webcam.getDefault();
+        webcam.setViewSize(WebcamResolution.VGA.getSize());
 
-            Image image = ii.getImage().getScaledInstance(photoComponent.getWidth(), photoComponent.getHeight(), Image.SCALE_SMOOTH);
-            photoComponent.setIcon(new ImageIcon(image));
-        }
+        WebcamPanel panel = new WebcamPanel(webcam);
+        panel.setFPSDisplayed(true);
+        panel.setDisplayDebugInfo(true);
+        panel.setImageSizeDisplayed(true);
+        panel.setMirrored(true);
+        JButton button = new JButton("Capture");
+        panel.add(button);
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                // get image
+                BufferedImage image = webcam.getImage();
+                String firstname = txtFirstName.getText();
+                String lastname = txtLastName.getText();
+
+                try {
+                    // save image to PNG file
+                    ImageIO.write(image, "PNG", new File(firstname + " " + lastname + ".png"));
+                } catch (IOException ex) {
+                    Logger.getLogger(ManageProfileJPanel.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //load image from folder
+                JFileChooser chooser = new JFileChooser("C:\\Users\\yibin\\Documents\\GitHub\\INFO5100Final\\EcoSystemDemo");
+                FileNameExtensionFilter fnef = new FileNameExtensionFilter("IMAGES", "png", "jpg", "jpeg");
+                chooser.addChoosableFileFilter(fnef);
+                int showOpenDialogue = chooser.showOpenDialog(null);
+                if (showOpenDialogue == JFileChooser.APPROVE_OPTION) {
+                    File f = chooser.getSelectedFile();
+                    String filename = f.getAbsolutePath();
+                    txtFilePath.setText(filename);
+                    JOptionPane.showMessageDialog(null, "Image Uploaded!");
+
+                    ImageIcon ii = new ImageIcon(filename);
+
+                    Image imagetaken = ii.getImage().getScaledInstance(photoComponent.getWidth(), photoComponent.getHeight(), Image.SCALE_SMOOTH);
+                    photoComponent.setIcon(new ImageIcon(imagetaken));
+                }
+            }
+        });
+
+        JFrame window = new JFrame("Test webcam panel");
+        window.add(panel);
+        window.setResizable(true);
+        window.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        window.pack();
+        window.setVisible(true);
 
     }//GEN-LAST:event_btnChooseActionPerformed
 
@@ -628,4 +672,5 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtPhone;
     private javax.swing.JButton viewBtn;
     // End of variables declaration//GEN-END:variables
+
 }
