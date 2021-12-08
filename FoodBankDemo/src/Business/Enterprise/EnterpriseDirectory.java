@@ -37,7 +37,10 @@ public class EnterpriseDirectory {
         }else if (type == Enterprise.EnterpriseType.FoodBank){
               enterprise=new FoodBankEnterprise(name);
               enterpriseList.add(enterprise);
-        }
-        return enterprise;
+        }else if (type == Enterprise.EnterpriseType.Funding){
+              enterprise=new FundingEnterprise(name);
+              enterpriseList.add(enterprise);
     }
+       return enterprise; 
+}
 }

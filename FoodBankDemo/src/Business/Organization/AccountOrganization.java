@@ -6,7 +6,6 @@
 package Business.Organization;
 
 import Business.Role.AccountRole;
-import Business.Role.LabAssistantRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -15,7 +14,8 @@ import java.util.ArrayList;
  * @author zhengfang
  */
 public class AccountOrganization extends Organization{
-
+    private int funding;
+    
     public AccountOrganization() {
         super(Organization.Type.Account.getValue());
     }
