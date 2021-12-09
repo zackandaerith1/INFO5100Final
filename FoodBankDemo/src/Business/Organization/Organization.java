@@ -30,7 +30,9 @@ public abstract class Organization {
         CommDepart("Communicaton Department"),
         DistriDepart("Distribution Dpartment"),
         AnalyDepart("Analysis Department"),
-        Account("Acconting Department");
+        Account("Acconting Department"),
+        VolunteerDepart("Volunteer Department");
+        
         private String value;
         private Type(String value) {
             this.value = value;
