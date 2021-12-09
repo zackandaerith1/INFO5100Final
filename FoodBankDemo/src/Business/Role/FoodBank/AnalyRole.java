@@ -3,25 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Role;
+package Business.Role.FoodBank;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.DistributionOrganization;
+import Business.Organization.Foodbank.AnalysisOrganization;
 import Business.Organization.Organization;
+import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import ui.DistributionRole.DistriWorkAreaJPanel;
+import ui.AnalysisRole.AnalyWorkAreaJPanel;
 
 /**
  *
  * @author zhengfang
  */
-public class DistriRole extends Role{
+public class AnalyRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new DistriWorkAreaJPanel(userProcessContainer, account, (DistributionOrganization)organization, enterprise);
+        return new AnalyWorkAreaJPanel(userProcessContainer, account, (AnalysisOrganization)organization, enterprise);
     }
     
     

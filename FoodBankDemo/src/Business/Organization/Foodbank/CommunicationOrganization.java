@@ -3,30 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Organization;
+package Business.Organization.Foodbank;
 
+import Business.Organization.Organization;
+import Business.Role.DoctorRole;
 import Business.Role.Role;
-import Business.Role.VolunteerRole;
 import java.util.ArrayList;
 
 /**
  *
  * @author zhengfang
  */
-public class VolunteerOrganization extends Organization{
+public class CommunicationOrganization extends Organization{
 
-    public VolunteerOrganization() {
-        super(Organization.Type.VolunteerDepart.getValue());
+    public CommunicationOrganization() {
+        super(Organization.Type.CommDepart.getValue());
     }
-    
     
 
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new VolunteerRole());
+        roles.add(new CommRole());
         return roles;
     }
-    
     
 }

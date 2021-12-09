@@ -6,7 +6,7 @@
 package ui.AnalysisRole;
 
 import Business.Enterprise.Enterprise;
-import Business.Organization.AnalysisOrganization;
+import Business.Organization.Foodbank.AnalysisOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;

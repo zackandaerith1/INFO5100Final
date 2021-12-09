@@ -6,7 +6,7 @@
 package ui.DistributionRole;
 
 import Business.Enterprise.Enterprise;
-import Business.Organization.DistributionOrganization;
+import Business.Organization.Foodbank.DistributionOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;

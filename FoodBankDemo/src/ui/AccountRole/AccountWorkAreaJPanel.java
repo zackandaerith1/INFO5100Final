@@ -6,7 +6,7 @@
 package ui.AccountRole;
 
 import Business.Enterprise.Enterprise;
-import Business.Organization.AccountOrganization;
+import Business.Organization.Funding.AccountOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;

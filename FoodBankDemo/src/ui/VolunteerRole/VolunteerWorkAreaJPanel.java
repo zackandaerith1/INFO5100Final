@@ -6,7 +6,7 @@
 package ui.VolunteerRole;
 
 import Business.Enterprise.Enterprise;
-import Business.Organization.VolunteerOrganization;
+import Business.Organization.Volunteer.VolunteerOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
