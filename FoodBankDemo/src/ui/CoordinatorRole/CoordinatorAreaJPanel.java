@@ -6,7 +6,6 @@ package ui.CoordinatorRole;
 
 import Business.Coordinator.Coordinator;
 import Business.Coordinator.CoordinatorDirectory;
-import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
 import Business.Menu.Item;
 import Business.Menu.Menu;
