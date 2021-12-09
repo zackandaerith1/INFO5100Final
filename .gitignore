@@ -22,4 +22,7 @@
 
 **.DS_Store
 
+**.xml
+**.properties
+
 /FoodBankDemo/build/
