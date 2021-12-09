@@ -34,7 +34,13 @@ public class EnterpriseDirectory {
         if(type==Enterprise.EnterpriseType.Hospital){
             enterprise=new HospitalEnterprise(name);
             enterpriseList.add(enterprise);
-        }
-        return enterprise;
+        }else if (type == Enterprise.EnterpriseType.FoodBank){
+              enterprise=new FoodBankEnterprise(name);
+              enterpriseList.add(enterprise);
+        }else if (type == Enterprise.EnterpriseType.Funding){
+              enterprise=new FundingEnterprise(name);
+              enterpriseList.add(enterprise);
     }
+       return enterprise; 
+}
 }
