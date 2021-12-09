@@ -21,18 +21,8 @@ public abstract class Organization {
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
     private int organizationID;
-<<<<<<<< HEAD:EcoSystemDemo/src/Business/Organization/Organization.java
     private static int counter = 0;
 
-    public enum Type {
-        RestaurantAdmin("RestaurantAdmin"),
-        Customer("Customer"),
-        DeliveryMan("Delivery"),
-        SysAdmin("Sysadmin");
-
-========
-    private static int counter=0;
-    
     public enum Type{
         Admin("Admin Organization"), 
         Doctor("Doctor Organization"), 
@@ -41,9 +31,10 @@ public abstract class Organization {
         DistriDepart("Distribution Dpartment"),
         AnalyDepart("Analysis Department"),
         Account("Acconting Department"),
-        VolunteerDepart("Volunteer Department");
+        VolunteerDepart("Volunteer Department"),
+        ArraDepart("Arrangement Department"),
+        RegisDepart("Registry");
         
->>>>>>>> main:FoodBankDemo/src/Business/Organization/Organization.java
         private String value;
 
         private Type(String value) {

@@ -4,13 +4,11 @@
  */
 package Business.Role;
 
-import Business.Coordinator.CoordinatorDirectory;
-import Business.DeliveryMan.DeliveryManDirectory;
+
 import Business.EcoSystem;
-import Business.Menu.MenuDirectory;
-import Business.Order.OrderDirectory;
-import Business.Profile.ProfileDirectory;
-import Business.Shelter.ShelterDirectory;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.Organization.Shelter.ArrangementOrganization;
 import Business.UserAccount.UserAccount;
 import Business.UserAccount.UserAccountDirectory;
 import javax.swing.JPanel;
@@ -22,8 +20,14 @@ import ui.CoordinatorRole.CoordinatorAreaJPanel;
  */
 public class CoordinatorRole extends Role {
 
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business, CoordinatorDirectory coordinatorDirectory, ShelterDirectory shelterDirectory, DeliveryManDirectory deliveryManDirectory, ProfileDirectory profileDirectory, OrderDirectory orderDirectory, UserAccountDirectory userAccountDirectory, MenuDirectory menuDirectory) {
-        return new CoordinatorAreaJPanel(userProcessContainer, account, business, coordinatorDirectory, shelterDirectory, deliveryManDirectory, profileDirectory, orderDirectory, menuDirectory);
+
+
+
+
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+       return new CoordinatorAreaJPanel(userProcessContainer, account, (ArrangementOrganization)organization, enterprise);
     }
+
 
 }
