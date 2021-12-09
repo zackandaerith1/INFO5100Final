@@ -13,8 +13,8 @@ import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
 import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamPanel;
-import com.github.sarxos.webcam.WebcamResolution;
 import java.awt.CardLayout;
+import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -127,6 +127,7 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
         radioMale = new javax.swing.JRadioButton();
         radioFemale = new javax.swing.JRadioButton();
         radioOther = new javax.swing.JRadioButton();
+        btnUpload = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(54, 33, 89));
 
@@ -295,7 +296,7 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
         btnChoose.setBackground(new java.awt.Color(122, 72, 221));
         btnChoose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnChoose.setForeground(new java.awt.Color(255, 255, 255));
-        btnChoose.setText("Choose Picture");
+        btnChoose.setText("Take Picture");
         btnChoose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChooseActionPerformed(evt);
@@ -319,6 +320,16 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
         buttonGroup1.add(radioOther);
         radioOther.setForeground(new java.awt.Color(255, 255, 255));
         radioOther.setText("Other");
+
+        btnUpload.setBackground(new java.awt.Color(122, 72, 221));
+        btnUpload.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnUpload.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpload.setText("Upload Picture");
+        btnUpload.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUploadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -358,12 +369,14 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel12)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnChoose, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnChoose)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnUpload))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(253, 253, 253)
                                 .addComponent(txtFilePath, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(photoComponent, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(42, 42, 42)
+                            .addComponent(photoComponent, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -395,7 +408,7 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
                                 .addComponent(viewBtn)
                                 .addGap(93, 93, 93)
                                 .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 144, Short.MAX_VALUE)))
+                        .addGap(0, 134, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -457,9 +470,10 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(btnChoose))
+                    .addComponent(btnChoose)
+                    .addComponent(btnUpload))
                 .addGap(18, 18, 18)
-                .addComponent(photoComponent, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(photoComponent, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtFilePath, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -476,6 +490,7 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtFirstNameActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+
         if (txtFirstName.getText().isEmpty() || txtLastName.getText().isEmpty() || buttonGroup1.getSelection() == null
                 || txtPhone.getText().isEmpty() || jDateChooser.getDate() == null || txtAddress.getText().isEmpty()
                 || txtEmail.getText().isEmpty()) {
@@ -525,6 +540,7 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
         txtEmail.setText("");
         txtComment.setText("");
         photoComponent.setIcon(null);
+        JOptionPane.showMessageDialog(null, "Information Added!");
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -583,7 +599,7 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
 
         // coding for webcam and taking a picture
         Webcam webcam = Webcam.getDefault();
-        webcam.setViewSize(WebcamResolution.VGA.getSize());
+        webcam.setViewSize(new Dimension(640, 480));
 
         WebcamPanel panel = new WebcamPanel(webcam);
         panel.setFPSDisplayed(true);
@@ -592,6 +608,14 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
         panel.setMirrored(true);
         JButton button = new JButton("Capture");
         panel.add(button);
+
+        JFrame window = new JFrame("Test webcam panel");
+        window.add(panel);
+        window.setResizable(true);
+        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        window.pack();
+        window.setVisible(true);
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 // get image
@@ -621,22 +645,21 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
                     Image imagetaken = ii.getImage().getScaledInstance(photoComponent.getWidth(), photoComponent.getHeight(), Image.SCALE_SMOOTH);
                     photoComponent.setIcon(new ImageIcon(imagetaken));
                 }
+                webcam.close();
             }
         });
 
-        JFrame window = new JFrame("Test webcam panel");
-        window.add(panel);
-        window.setResizable(true);
-        window.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        window.pack();
-        window.setVisible(true);
-
     }//GEN-LAST:event_btnChooseActionPerformed
+
+    private void btnUploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadActionPerformed
+
+    }//GEN-LAST:event_btnUploadActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnChoose;
+    private javax.swing.JButton btnUpload;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton delete;
     private com.toedter.calendar.JDateChooser jDateChooser;
