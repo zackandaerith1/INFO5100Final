@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author MyPC1
+ * @author yibin
  */
 public class EnterpriseDirectory {
 
@@ -28,24 +28,35 @@ public class EnterpriseDirectory {
     }
 
     //Create enterprise
-    public Enterprise createAndAddEnterprise(String name, Enterprise.EnterpriseType type) {
-        Enterprise enterprise = null;
-        if (type == Enterprise.EnterpriseType.Hospital) {
-            enterprise = new HospitalEnterprise(name);
+<<<<<<<< HEAD:EcoSystemDemo/src/Business/Enterprise/EnterpriseDirectory.java
+//    public Enterprise createAndAddEnterprise(String name, Enterprise.EnterpriseType type) {
+//        Enterprise enterprise = null;
+//        if (type == Enterprise.EnterpriseType.Hospital) {
+//            enterprise = new HospitalEnterprise(name);
+//            enterpriseList.add(enterprise);
+//        }
+//        return enterprise;
+//    }
+========
+    public Enterprise createAndAddEnterprise(String name,Enterprise.EnterpriseType type){
+        Enterprise enterprise=null;
+        if(type==Enterprise.EnterpriseType.Hospital){
+            enterprise=new HospitalEnterprise(name);
             enterpriseList.add(enterprise);
-        } else if (type == Enterprise.EnterpriseType.FoodBank) {
-            enterprise = new FoodBankEnterprise(name);
-            enterpriseList.add(enterprise);
-        } else if (type == Enterprise.EnterpriseType.Funding) {
-            enterprise = new FundingEnterprise(name);
-            enterpriseList.add(enterprise);
-        } else if (type == Enterprise.EnterpriseType.Shelter) {
-            enterprise = new FundingEnterprise(name);
-            enterpriseList.add(enterprise);
-        } else if (type == Enterprise.EnterpriseType.Volunteer) {
-            enterprise = new FundingEnterprise(name);
-            enterpriseList.add(enterprise);
+        }else if (type == Enterprise.EnterpriseType.FoodBank){
+              enterprise=new FoodBankEnterprise(name);
+              enterpriseList.add(enterprise);
+        }else if (type == Enterprise.EnterpriseType.Funding){
+              enterprise=new FundingEnterprise(name);
+              enterpriseList.add(enterprise);
+        }else if (type == Enterprise.EnterpriseType.Shelter){
+              enterprise=new FundingEnterprise(name);
+              enterpriseList.add(enterprise);
+        }else if (type == Enterprise.EnterpriseType.Volunteer){
+              enterprise=new FundingEnterprise(name);
+              enterpriseList.add(enterprise);
         }
-        return enterprise;
-    }
+       return enterprise; 
+>>>>>>>> main:FoodBankDemo/src/Business/Enterprise/EnterpriseDirectory.java
+}
 }

@@ -6,7 +6,7 @@
 package Business.Enterprise;
 
 import Business.Organization.Organization;
-import Business.Organization.OrganizationDirectory;
+//import Business.Organization.OrganizationDirectory;
 
 /**
  *
@@ -14,21 +14,30 @@ import Business.Organization.OrganizationDirectory;
  */
 public abstract class Enterprise extends Organization {
 
+<<<<<<<< HEAD:EcoSystemDemo/src/Business/Enterprise/Enterprise.java
     private EnterpriseType enterpriseType;
-    private OrganizationDirectory organizationDirectory;
+//    private OrganizationDirectory organizationDirectory;
 
+//    public OrganizationDirectory getOrganizationDirectory() {
+//        return organizationDirectory;
+//    }
+    public enum EnterpriseType {
+        Hospital("Hospital");
+
+========
     public OrganizationDirectory getOrganizationDirectory() {
         return organizationDirectory;
     }
-
-    public enum EnterpriseType {
-
+    
+    public enum EnterpriseType{
+        
         Hospital("Hospital"),
         FoodBank("FoodBank"),
         Shelter("Shelter"),
         Volunteer("Volunteer"),
         Funding("Funding");
-
+        
+>>>>>>>> main:FoodBankDemo/src/Business/Enterprise/Enterprise.java
         private String value;
 
         private EnterpriseType(String value) {
@@ -53,9 +62,9 @@ public abstract class Enterprise extends Organization {
         this.enterpriseType = enterpriseType;
     }
 
-    public Enterprise(String name, EnterpriseType type) {
-        super(name);
-        this.enterpriseType = type;
-        organizationDirectory = new OrganizationDirectory();
-    }
+//    public Enterprise(String name,EnterpriseType type){
+//        super(name);
+//        this.enterpriseType=type;
+//        organizationDirectory=new OrganizationDirectory();
+//    }
 }
