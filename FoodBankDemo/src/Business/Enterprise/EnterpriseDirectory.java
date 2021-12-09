@@ -40,7 +40,13 @@ public class EnterpriseDirectory {
         }else if (type == Enterprise.EnterpriseType.Funding){
               enterprise=new FundingEnterprise(name);
               enterpriseList.add(enterprise);
-    }
+        }else if (type == Enterprise.EnterpriseType.Shelter){
+              enterprise=new FundingEnterprise(name);
+              enterpriseList.add(enterprise);
+        }else if (type == Enterprise.EnterpriseType.Volunteer){
+              enterprise=new FundingEnterprise(name);
+              enterpriseList.add(enterprise);
+        }
        return enterprise; 
 }
 }

@@ -6,7 +6,7 @@
 package ui.CommunicationRole;
 
 import Business.Enterprise.Enterprise;
-import Business.Organization.CommunicationOrganization;
+import Business.Organization.Foodbank.CommunicationOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;

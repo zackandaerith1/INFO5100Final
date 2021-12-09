@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Organization;
+package Business.Organization.Foodbank;
 
-import Business.Role.DistriRole;
+import Business.Organization.Organization;
+import Business.Role.FoodBank.DistriRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
