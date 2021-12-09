@@ -36,6 +36,8 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         valueLabel.setText(enterprise.getName());
         valueLabel1.setText(organization.getName());
+        
+        populatetable();
     }
 
     /**
@@ -205,7 +207,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
 
-        populateRequestTable();
+        populatetable();
 
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
 
@@ -233,7 +235,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 
-    private void populateRequestTable() {
+    private void populatetable() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
