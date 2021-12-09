@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author raunak
+ * @author yibin
  */
 public abstract class Organization {
 
@@ -21,6 +21,16 @@ public abstract class Organization {
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
     private int organizationID;
+<<<<<<<< HEAD:EcoSystemDemo/src/Business/Organization/Organization.java
+    private static int counter = 0;
+
+    public enum Type {
+        RestaurantAdmin("RestaurantAdmin"),
+        Customer("Customer"),
+        DeliveryMan("Delivery"),
+        SysAdmin("Sysadmin");
+
+========
     private static int counter=0;
     
     public enum Type{
@@ -33,10 +43,13 @@ public abstract class Organization {
         Account("Acconting Department"),
         VolunteerDepart("Volunteer Department");
         
+>>>>>>>> main:FoodBankDemo/src/Business/Organization/Organization.java
         private String value;
+
         private Type(String value) {
             this.value = value;
         }
+
         public String getValue() {
             return value;
         }
@@ -51,8 +64,12 @@ public abstract class Organization {
         ++counter;
     }
 
+    public Organization() {
+
+    }
+
     public abstract ArrayList<Role> getSupportedRole();
-    
+
     public UserAccountDirectory getUserAccountDirectory() {
         return userAccountDirectory;
     }
@@ -64,7 +81,7 @@ public abstract class Organization {
     public EmployeeDirectory getEmployeeDirectory() {
         return employeeDirectory;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -85,6 +102,4 @@ public abstract class Organization {
     public String toString() {
         return name;
     }
-    
-    
 }
