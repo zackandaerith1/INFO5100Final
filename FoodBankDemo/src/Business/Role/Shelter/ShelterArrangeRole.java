@@ -5,7 +5,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
-import ui.ShelterAdminRole.AdminWorkAreaJPanel;
+import ui.ShelterArrangerRole.AdminWorkAreaJPanel;
 
 import javax.swing.*;
 

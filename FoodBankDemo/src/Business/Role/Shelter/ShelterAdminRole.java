@@ -8,6 +8,7 @@ import Business.UserAccount.UserAccount;
 import ui.ShelterAdminRole.AdminWorkAreaJPanel;
 
 import javax.swing.*;
+import ui.ShelterAdminRole.ShelterAdminWorkAreaJPanel;
 
 /**
  * @author Zheng Fang
@@ -16,6 +17,6 @@ import javax.swing.*;
 public class ShelterAdminRole extends Role {
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new Syst;
+        return new ShelterAdminWorkAreaJPanel(userProcessContainer, business, coordinatorDirectory, shelterDirectory, deliveryManDirectory, userAccountDirectory);
     }
 }

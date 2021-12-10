@@ -30,16 +30,90 @@ public class ShelterEnteriprise extends Enterprise {
     private MenuDirectory menuDirectory;
     private UserAccount userAccount;
 
-    public ShelterEnteriprise(String naem, Enterprise.Type type, ShelterDirectory shelterDirectory, CoordinatorDirectory coordinatorDirectory, DeliveryManDirectory deliveryManDirectory) {
+    public ShelterEnteriprise(String name, Enterprise.Type type) {
+        super(name, EnterpriseType.Shelter);
+    
+        this.shelterDirectory= new ShelterDirectory();
+        this.coordinatorDirectory = new CoordinatorDirectory();
+        this.deliveryManDirectory = new DeliveryManDirectory();
+        this.orderDirectory = new OrderDirectory();
+        this.profileDirectory = new ProfileDirectory();
+        this.menuDirectory = new MenuDirectory();
+        this.userAccount = new UserAccount();
         
-        this.shelterDirectory = shelterDirectory;
-        this.coordinatorDirectory = coordinatorDirectory;
-        this.deliveryManDirectory = deliveryManDirectory;
+        
+   
     }
 
     ShelterEnteriprise(String name) {
         super(name, EnterpriseType.Shelter);
     }
+
+    public static EcoSystem getBusiness() {
+        return business;
+    }
+
+    public static void setBusiness(EcoSystem business) {
+        ShelterEnteriprise.business = business;
+    }
+
+    public ShelterDirectory getShelterDirectory() {
+        return shelterDirectory;
+    }
+
+    public void setShelterDirectory(ShelterDirectory shelterDirectory) {
+        this.shelterDirectory = shelterDirectory;
+    }
+
+    public CoordinatorDirectory getCoordinatorDirectory() {
+        return coordinatorDirectory;
+    }
+
+    public void setCoordinatorDirectory(CoordinatorDirectory coordinatorDirectory) {
+        this.coordinatorDirectory = coordinatorDirectory;
+    }
+
+    public DeliveryManDirectory getDeliveryManDirectory() {
+        return deliveryManDirectory;
+    }
+
+    public void setDeliveryManDirectory(DeliveryManDirectory deliveryManDirectory) {
+        this.deliveryManDirectory = deliveryManDirectory;
+    }
+
+    public OrderDirectory getOrderDirectory() {
+        return orderDirectory;
+    }
+
+    public void setOrderDirectory(OrderDirectory orderDirectory) {
+        this.orderDirectory = orderDirectory;
+    }
+
+    public ProfileDirectory getProfileDirectory() {
+        return profileDirectory;
+    }
+
+    public void setProfileDirectory(ProfileDirectory profileDirectory) {
+        this.profileDirectory = profileDirectory;
+    }
+
+    public MenuDirectory getMenuDirectory() {
+        return menuDirectory;
+    }
+
+    public void setMenuDirectory(MenuDirectory menuDirectory) {
+        this.menuDirectory = menuDirectory;
+    }
+
+    public UserAccount getUserAccount() {
+        return userAccount;
+    }
+
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
+    }
+    
+    
 
     @Override
     public ArrayList<Role> getSupportedRole() {
