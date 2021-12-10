@@ -18,8 +18,9 @@ public abstract class Role {
     
     public enum RoleType{
         Admin("Admin"),
-        Doctor("Doctor"),
-        LabAssistant("Lab Assistant");
+        ShelterAdminRole("Shelter Adminstration"),
+        Coordinator("Shelter Coordinator"),
+        ShelterArranger("Shelter Arrangement");
         
         private String value;
         private RoleType(String value){

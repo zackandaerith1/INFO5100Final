@@ -7,10 +7,12 @@ package ui.CoordinatorRole;
 import Business.Coordinator.CoordinatorDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
+import Business.Enterprise.ShelterEnteriprise;
 import Business.Menu.Item;
 import Business.Menu.MenuDirectory;
 import Business.Order.Order;
 import Business.Order.OrderDirectory;
+import Business.Organization.Shelter.RegistrationOrganization;
 import Business.Profile.ProfileDirectory;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
@@ -31,7 +33,7 @@ import javax.swing.table.TableCellRenderer;
 public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private EcoSystem ecosystem;
+    private EcoSystem business;
     private UserAccount account;
     private CoordinatorDirectory coordinatorDirectory;
     private ShelterDirectory shelterDirectory;
@@ -43,19 +45,17 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
 
     ArrayList<Item> arrayListItems = new ActivatableArrayList<>();
 
-    public CoordinatorApplicationListJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem,
-            CoordinatorDirectory coordinatorDirectory, ShelterDirectory shelterDirectory,
-            DeliveryManDirectory deliveryManDirectory, ProfileDirectory profileDirectory, OrderDirectory orderDirectory) {
+    public CoordinatorApplicationListJPanel(JPanel userProcessContainer, UserAccount account, RegistrationOrganization organization, ShelterEnteriprise enterprise, EcoSystem business) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;
         this.account = account;
-        this.ecosystem = ecosystem;
-        this.coordinatorDirectory = ecosystem.getCoordinatorDirectory();
-        this.shelterDirectory = ecosystem.getShelterDirectory();
-        this.profileDirectory = ecosystem.getProfileDirectory();
-        this.deliveryManDirectory = ecosystem.getDeliveryManDirectory();
-        this.orderDirectory = ecosystem.getOrderDirectory();
+        this.business = business;
+        this.coordinatorDirectory = enterprise.getCoordinatorDirectory();
+        this.shelterDirectory = enterprise.getShelterDirectory();
+        this.profileDirectory = enterprise.getProfileDirectory();
+        this.deliveryManDirectory = enterprise.getDeliveryManDirectory();
+        this.orderDirectory = enterprise.getOrderDirectory();
         valueLabel.setText(account.getEmployee().getName());
 
         populateRequestTable();
@@ -67,8 +67,8 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         tblOrder.setDefaultRenderer(Object.class, new TableCellRenderer() {
             private DefaultTableCellRenderer DEFAULT_RENDERER = new DefaultTableCellRenderer();
-            public static final Color VERY_LIGHT_RED = new Color(255, 99, 71);
-            public static final Color LIGHT_BLUE = new Color(135, 206, 250);
+            public final Color VERY_LIGHT_RED = new Color(255, 99, 71);
+            public final Color LIGHT_BLUE = new Color(135, 206, 250);
 
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
@@ -96,7 +96,7 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
 
         });
 
-        for (Order order : ecosystem.getOrderDirectory().getOrderDirectory()) {
+        for (Order order : orderDirectory.getOrderDirectory()) {
             if (account.getEmployee().getName().equals(order.getCoordinator().getName())) {
                 Object[] row = new Object[10];
                 row[0] = order;

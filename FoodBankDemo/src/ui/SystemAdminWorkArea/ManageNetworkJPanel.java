@@ -4,6 +4,7 @@
  */
 package ui.SystemAdminWorkArea;
 
+import ui.ShelterAdminRole.ShelterAdminWorkAreaJPanel;
 import Business.EcoSystem;
 import Business.Network.Network;
 import java.awt.CardLayout;
@@ -156,7 +157,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
          Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        ShelterAdminWorkAreaJPanel sysAdminwjp = (ShelterAdminWorkAreaJPanel) component;
         sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);

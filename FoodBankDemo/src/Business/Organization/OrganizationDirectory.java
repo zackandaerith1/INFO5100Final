@@ -4,7 +4,13 @@
  */
 package Business.Organization;
 
+import Business.Organization.Foodbank.AnalysisOrganization;
+import Business.Organization.Foodbank.CommunicationOrganization;
+import Business.Organization.Foodbank.DistributionOrganization;
+import Business.Organization.Funding.AccountOrganization;
 import Business.Organization.Organization.Type;
+import Business.Organization.Shelter.ArrangementOrganization;
+import Business.Organization.Shelter.RegistrationOrganization;
 import java.util.ArrayList;
 
 /**
@@ -25,12 +31,24 @@ public class OrganizationDirectory {
     
     public Organization createOrganization(Type type){
         Organization organization = null;
-        if (type.getValue().equals(Type.Doctor.getValue())){
-            organization = new DoctorOrganization();
+        if (type.getValue().equals(Type.CommDepart.getValue())){
+            organization = new CommunicationOrganization();
             organizationList.add(organization);
         }
-        else if (type.getValue().equals(Type.Lab.getValue())){
-            organization = new LabOrganization();
+        else if (type.getValue().equals(Type.AnalyDepart.getValue())){
+            organization = new AnalysisOrganization();
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Type.DistriDepart.getValue())){
+            organization = new DistributionOrganization();
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Type.Account.getValue())){
+            organization = new AccountOrganization();
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Type.ArraDepart.getValue())){
+            organization = new ArrangementOrganization();
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Type.RegisDepart.getValue())){
+            organization = new RegistrationOrganization();
             organizationList.add(organization);
         }
         return organization;
