@@ -6,12 +6,15 @@ package ui.CoordinatorRole;
 
 import Business.Coordinator.Coordinator;
 import Business.Coordinator.CoordinatorDirectory;
+import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 import Business.Menu.Item;
 import Business.Menu.Menu;
 import Business.Menu.MenuDirectory;
 import Business.Order.Order;
 import Business.Order.OrderDirectory;
+import Business.Organization.Shelter.ArrangementOrganization;
 import Business.Profile.Profile;
 import Business.Profile.ProfileDirectory;
 import Business.Shelter.Shelter;
@@ -63,6 +66,10 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
         populateApplicationTable();
         populateShelterCombo();
 
+    }
+
+    public CoordinatorAreaJPanel(JPanel userProcessContainer, UserAccount account, ArrangementOrganization arrangementOrganization, Enterprise enterprise) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public void populatePersonTable() {

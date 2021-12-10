@@ -8,7 +8,7 @@ package ui.SystemAdminWorkArea;
 import Business.Coordinator.CoordinatorDirectory;
 import Business.EcoSystem;
 import Business.Employee.Employee;
-import Business.Role.CoordinatorRole;
+import Business.Role.Shelter.CoordinatorRole;
 import Business.Shelter.Shelter;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
