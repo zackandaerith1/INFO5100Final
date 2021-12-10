@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Organization.Foodbank;
+package Business.Role.FoodBank;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Organization.Foodbank.CommunicationOrganization;
 import Business.Organization.Foodbank.CommunicationOrganization;
 import Business.Organization.Organization;
 import Business.Role.Role;
