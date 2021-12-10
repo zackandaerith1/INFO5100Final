@@ -47,6 +47,15 @@ public class ShelterEnteriprise extends Enterprise {
 
     ShelterEnteriprise(String name) {
         super(name, EnterpriseType.Shelter);
+        
+        this.shelterDirectory= new ShelterDirectory();
+        this.coordinatorDirectory = new CoordinatorDirectory();
+        this.deliveryManDirectory = new DeliveryManDirectory();
+        this.orderDirectory = new OrderDirectory();
+        this.profileDirectory = new ProfileDirectory();
+        this.menuDirectory = new MenuDirectory();
+        this.userAccount = new UserAccount();
+        
     }
 
     public static EcoSystem getBusiness() {

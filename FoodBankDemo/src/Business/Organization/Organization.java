@@ -25,13 +25,12 @@ public abstract class Organization {
 
     public enum Type{
         Admin("Admin Organization"), 
-        Doctor("Doctor Organization"), 
-        Lab("Lab Organization"),
         CommDepart("Communicaton Department"),
         DistriDepart("Distribution Dpartment"),
         AnalyDepart("Analysis Department"),
         Account("Acconting Department"),
         VolunteerDepart("Volunteer Department"),
+        ShelterAdmin("Shelter Adminstration"),
         ArraDepart("Arrangement Department"),
         RegisDepart("Registry");
         

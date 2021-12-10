@@ -9,12 +9,15 @@ import Business.Coordinator.CoordinatorDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.ShelterEnteriprise;
 import Business.Menu.Item;
 import Business.Menu.Menu;
 import Business.Menu.MenuDirectory;
 import Business.Order.Order;
 import Business.Order.OrderDirectory;
+import Business.Organization.Organization;
 import Business.Organization.Shelter.ArrangementOrganization;
+import Business.Organization.Shelter.RegistrationOrganization;
 import Business.Profile.Profile;
 import Business.Profile.ProfileDirectory;
 import Business.Shelter.Shelter;
@@ -35,8 +38,10 @@ import javax.swing.table.DefaultTableModel;
 public class CoordinatorAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private EcoSystem ecosystem;
+    private EcoSystem business;
     private UserAccount account;
+    private RegistrationOrganization organization;
+    private ShelterEnteriprise enterprise;
     private CoordinatorDirectory coordinatorDirectory;
     private ShelterDirectory shelterDirectory;
     private DeliveryManDirectory deliveryManDirectory;
@@ -47,20 +52,20 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
 
     ArrayList<Item> itemList = new ActivatableArrayList<>();
 
-    public CoordinatorAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem,
-            CoordinatorDirectory coordinatorDirectory, ShelterDirectory shelterDirectory,
-            DeliveryManDirectory deliveryManDirectory, ProfileDirectory profileDirectory, OrderDirectory orderDirectory, MenuDirectory menuDirectory) {
+    public CoordinatorAreaJPanel(JPanel userProcessContainer, UserAccount account, RegistrationOrganization organization, ShelterEnteriprise enterprise, EcoSystem business) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;
         this.account = account;
-        this.ecosystem = ecosystem;
-        this.coordinatorDirectory = ecosystem.getCoordinatorDirectory();
-        this.shelterDirectory = ecosystem.getShelterDirectory();
-        this.profileDirectory = ecosystem.getProfileDirectory();
-        this.deliveryManDirectory = ecosystem.getDeliveryManDirectory();
-        this.orderDirectory = ecosystem.getOrderDirectory();
-        this.menuDirectory = ecosystem.getMenuDirectory();
+        this.business = business;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.coordinatorDirectory = enterprise.getCoordinatorDirectory();
+        this.shelterDirectory = enterprise.getShelterDirectory();
+        this.profileDirectory = enterprise.getProfileDirectory();
+        this.deliveryManDirectory = enterprise.getDeliveryManDirectory();
+        this.orderDirectory = enterprise.getOrderDirectory();
+        this.menuDirectory = enterprise.getMenuDirectory();
 
         valueLabel.setText(account.getEmployee().getName());
         populateApplicationTable();
@@ -68,8 +73,8 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
 
     }
 
-    public CoordinatorAreaJPanel(JPanel userProcessContainer, UserAccount account, ArrangementOrganization arrangementOrganization, Enterprise enterprise) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public CoordinatorAreaJPanel(JPanel userProcessContainer, UserAccount account, RegistrationOrganization arrangementOrganization, Enterprise enterprise) {
+        
     }
 
     public void populatePersonTable() {
@@ -77,8 +82,8 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel dtm = (DefaultTableModel) tblPerson.getModel();
         dtm.setRowCount(0);
         String shelterName = dropboxShelter.getSelectedItem().toString();
-        Shelter shelter = ecosystem.getShelterDirectory().getShelter(shelterName);
-        for (Profile profile : ecosystem.getProfileDirectory().getProfileDirectory()) {
+        Shelter shelter = shelterDirectory.getShelter(shelterName);
+        for (Profile profile : profileDirectory.getProfileDirectory()) {
             if (shelter.getShelterName().equals(profile.getShelterName())) {
                 Object[] row = new Object[9];
                 row[0] = profile;
@@ -99,7 +104,8 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel dtm = (DefaultTableModel) tblItem.getModel();
         dtm.setRowCount(0);
         String shelterName = dropboxShelter.getSelectedItem().toString();
-        Shelter shelter = ecosystem.getShelterDirectory().getShelter(shelterName);
+        Shelter shelter;
+        shelter = shelterDirectory.getShelter(shelterName);
         for (Menu menu : menuDirectory.getMenuDirectory()) {
             if (menu.getShelterName().equals(shelterName)) {
                 Object[] row = new Object[5];
@@ -116,7 +122,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
     public void populateShelterCombo() {
         dropboxShelter.removeAllItems();
         dropboxShelter.addItem("  ");
-        for (Shelter res : ecosystem.getShelterDirectory().getShelterDirectory()) {
+        for (Shelter res : shelterDirectory.getShelterDirectory()) {
             dropboxShelter.addItem(res.getShelterName());
         }
     }
@@ -503,8 +509,8 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
             int rowcount = tblApplication.getRowCount();
             if (rowcount > 0) {
                 String shelterName = dropboxShelter.getSelectedItem().toString();
-                Shelter shelter = ecosystem.getShelterDirectory().getShelter(shelterName);
-                Coordinator coordinator = ecosystem.getCoordinatorDirectory().getCoordinator(account.getEmployee().getName());
+                Shelter shelter = shelterDirectory.getShelter(shelterName);
+                Coordinator coordinator = coordinatorDirectory.getCoordinator(account.getEmployee().getName());
                 String status = "Sent";
 
                 int selectedRow = tblPerson.getSelectedRow();
@@ -513,7 +519,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
                     return;
                 }
                 Profile profile = (Profile) tblPerson.getValueAt(selectedRow, 0);
-                Order order = ecosystem.getOrderDirectory().newOrder();
+                Order order = orderDirectory.newOrder();
 
                 order.setCoordinator(coordinator);
                 order.setProfile(profile);
@@ -572,9 +578,8 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
 
     private void orderHistoryJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderHistoryJButtonActionPerformed
 
-        CoordinatorApplicationListJPanel ccjp = new CoordinatorApplicationListJPanel(userProcessContainer, account, ecosystem,
-                coordinatorDirectory, shelterDirectory,
-                deliveryManDirectory, profileDirectory, orderDirectory);
+        CoordinatorApplicationListJPanel ccjp = new CoordinatorApplicationListJPanel(userProcessContainer, account, organization,
+                enterprise,business);
 
         JFrame window = new JFrame("CoordinatorApplicationDetailFrame");
 

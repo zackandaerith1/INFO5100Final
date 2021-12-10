@@ -2,11 +2,11 @@ package Business.Role.Shelter;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.ShelterEnteriprise;
 import Business.Organization.Organization;
+import Business.Organization.Shelter.RegistrationOrganization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
-import ui.ShelterAdminRole.AdminWorkAreaJPanel;
-
 import javax.swing.*;
 import ui.ShelterAdminRole.ShelterAdminWorkAreaJPanel;
 
@@ -15,8 +15,12 @@ import ui.ShelterAdminRole.ShelterAdminWorkAreaJPanel;
  */
 
 public class ShelterAdminRole extends Role {
+
+    public ShelterAdminRole() {
+    }
+    
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new ShelterAdminWorkAreaJPanel(userProcessContainer, business, coordinatorDirectory, shelterDirectory, deliveryManDirectory, userAccountDirectory);
+        return new ShelterAdminWorkAreaJPanel(userProcessContainer, account, (RegistrationOrganization)organization, (ShelterEnteriprise)enterprise);
     }
 }

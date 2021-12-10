@@ -9,6 +9,7 @@ import Business.Coordinator.CoordinatorDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.ShelterEnteriprise;
 import Business.Menu.MenuDirectory;
 import Business.Order.OrderDirectory;
 import Business.Organization.Organization;
@@ -39,7 +40,7 @@ public class CoordinatorRole extends Role {
      */
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-       return new CoordinatorAreaJPanel(userProcessContainer, account, (ArrangementOrganization)organization, enterprise);
+       return new CoordinatorAreaJPanel(userProcessContainer, account, (RegistrationOrganization)organization, (ShelterEnteriprise)enterprise);
        
     }
 //    @Override
@@ -47,8 +48,8 @@ public class CoordinatorRole extends Role {
 //       return new CoordinatorAreaJPanel(userProcessContainer, account, (RegistrationOrganization)organization, enterprise);
 //       
 //    }
-    public JPanel createCoordinatorWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business, CoordinatorDirectory coordinatorDirectory, ShelterDirectory shelterDirectory, DeliveryManDirectory deliveryManDirectory, ProfileDirectory profileDirectory, OrderDirectory orderDirectory, UserAccountDirectory userAccountDirectory, MenuDirectory menuDirectory) {
-        return new CoordinatorAreaJPanel(userProcessContainer, account, business, coordinatorDirectory, shelterDirectory, deliveryManDirectory, profileDirectory, orderDirectory, menuDirectory);
-    }
+//    public JPanel createCoordinatorWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business, CoordinatorDirectory coordinatorDirectory, ShelterDirectory shelterDirectory, DeliveryManDirectory deliveryManDirectory, ProfileDirectory profileDirectory, OrderDirectory orderDirectory, UserAccountDirectory userAccountDirectory, MenuDirectory menuDirectory) {
+//        return new CoordinatorAreaJPanel(userProcessContainer, account, business, coordinatorDirectory, shelterDirectory, deliveryManDirectory, profileDirectory, orderDirectory, menuDirectory);
+//    }
 
 }

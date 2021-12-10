@@ -10,8 +10,11 @@ import Business.Coordinator.CoordinatorDirectory;
 import Business.DeliveryMan.DeliveryMan;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
+import Business.Enterprise.ShelterEnteriprise;
+import Business.Organization.Shelter.RegistrationOrganization;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
+import Business.UserAccount.UserAccount;
 import Business.UserAccount.UserAccountDirectory;
 import java.awt.CardLayout;
 import java.util.ArrayList;
@@ -45,6 +48,10 @@ public class ShelterAdminWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccountDirectory = ecosystem.getUserAccountDirectory();
         populateTree();
 
+    }
+
+    public ShelterAdminWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, RegistrationOrganization registrationOrganization, ShelterEnteriprise shelterEnteriprise) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public void populateTree() {
