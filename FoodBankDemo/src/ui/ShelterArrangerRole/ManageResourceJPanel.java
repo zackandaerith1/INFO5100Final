@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.ShelterAdminRole;
+package ui.ShelterArrangerRole;
 
 import Business.EcoSystem;
 import Business.Menu.Menu;
@@ -11,6 +11,8 @@ import Business.Menu.MenuDirectory;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
+import ui.ShelterAdminRole.ModifyResourceJPanel;
+
 import java.awt.CardLayout;
 import java.util.Random;
 import javax.swing.JOptionPane;

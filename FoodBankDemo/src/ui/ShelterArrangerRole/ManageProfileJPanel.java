@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.ShelterAdminRole;
+package ui.ShelterArrangerRole;
 
 import Business.EcoSystem;
 import Business.Profile.Profile;
@@ -13,6 +13,8 @@ import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
 import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamPanel;
+import ui.ShelterAdminRole.ModifyProfileJPanel;
+
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Image;

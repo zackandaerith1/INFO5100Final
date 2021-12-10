@@ -1,4 +1,4 @@
-package ui.ShelterAdminRole;
+package ui.ShelterArrangerRole;
 
 import Business.Coordinator.CoordinatorDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
@@ -8,6 +8,10 @@ import Business.Order.OrderDirectory;
 import Business.Profile.ProfileDirectory;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
+import ui.ShelterAdminRole.ManageApplicationJPanel;
+import ui.ShelterAdminRole.ManageProfileJPanel;
+import ui.ShelterAdminRole.ManageResourceJPanel;
+
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 

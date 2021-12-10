@@ -2,12 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591f858a-1eca-4385-ad11-b86830c9f999" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Databank.db4o" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Business/Organization/Foodbank/FoodbankOrganizationDirectory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Business/Role/Shelter/ShelterAdminRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Business/Role/Shelter/ShelterArrangeRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Business/Enterprise/EnterpriseDirectory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Business/Enterprise/EnterpriseDirectory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Business/Role/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Business/Role/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ShelterAdminRole/AdminWorkAreaJPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShelterArrangerRole/AdminWorkAreaJPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ShelterAdminRole/AdminWorkAreaJPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShelterArrangerRole/AdminWorkAreaJPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ShelterAdminRole/ManageApplicationJPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShelterArrangerRole/ManageApplicationJPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ShelterAdminRole/ManageApplicationJPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShelterArrangerRole/ManageApplicationJPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ShelterAdminRole/ManageProfileJPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShelterArrangerRole/ManageProfileJPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ShelterAdminRole/ManageProfileJPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShelterArrangerRole/ManageProfileJPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ShelterAdminRole/ManageResourceJPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShelterArrangerRole/ManageResourceJPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ShelterAdminRole/ManageResourceJPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShelterArrangerRole/ManageResourceJPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -23,6 +43,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ui/ShelterArrangerRole" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -45,5 +70,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

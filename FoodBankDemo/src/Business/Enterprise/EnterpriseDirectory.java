@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author MyPC1
+ * @author zheng Fang
  */
 public class EnterpriseDirectory {
     private ArrayList<Enterprise> enterpriseList;
@@ -33,6 +33,15 @@ public class EnterpriseDirectory {
         Enterprise enterprise=null;
         if(type==Enterprise.EnterpriseType.FoodBank){
             enterprise=new FoodBankEnterprise(name);
+            enterpriseList.add(enterprise);
+        }else if (type == Enterprise.EnterpriseType.Shelter){
+            enterprise = new ShelterEnteriprise(name);
+            enterpriseList.add(enterprise);
+        }else if (type == Enterprise.EnterpriseType.Volunteer ){
+            enterpriseList.add(enterprise);
+            enterpriseList.add(enterprise);
+        }else if (type == Enterprise.EnterpriseType.Funding){
+            enterpriseList.add(enterprise);
             enterpriseList.add(enterprise);
         }
         return enterprise;
