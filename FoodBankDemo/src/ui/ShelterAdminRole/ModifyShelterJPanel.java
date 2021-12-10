@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.SystemAdminWorkArea;
+package ui.ShelterAdminRole;
 
+import ui.ShelterAdminRole.ManageShelterJPanel;
 import Business.EcoSystem;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
