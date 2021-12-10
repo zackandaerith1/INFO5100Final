@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.CoordinatorRole;
+package ui.ShelterAdminRole;
 
 import ui.CoordinatorRole.CreateCoordinatorJPanel;
 import Business.Coordinator.Coordinator;

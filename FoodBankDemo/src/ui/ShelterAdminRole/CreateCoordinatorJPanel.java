@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.CoordinatorRole;
+package ui.ShelterAdminRole;
 
 import Business.Coordinator.CoordinatorDirectory;
 import Business.EcoSystem;
