@@ -8,6 +8,7 @@ package ui.ShelterAdminRole;
 import Business.Coordinator.CoordinatorDirectory;
 import Business.EcoSystem;
 import Business.Employee.Employee;
+import Business.Enterprise.ShelterEnteriprise;
 import Business.Role.Shelter.CoordinatorRole;
 import Business.Shelter.Shelter;
 import Business.UserAccount.UserAccount;
@@ -23,17 +24,18 @@ import javax.swing.JPanel;
 public class CreateCoordinatorJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private EcoSystem ecosystem;
+//    private EcoSystem ecosystem;
+    private ShelterEnteriprise enterprise;
     private CoordinatorDirectory coordinatorDirectory;
 
     /**
      * Creates new form CreateCoordinatorJPanel
      */
-    public CreateCoordinatorJPanel(JPanel userProcessContainer, EcoSystem ecosystem, CoordinatorDirectory coordinatorDirectory) {
+    public CreateCoordinatorJPanel(JPanel userProcessContainer, ShelterEnteriprise enterprise, CoordinatorDirectory coordinatorDirectory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.ecosystem = ecosystem;
-        this.coordinatorDirectory = ecosystem.getCoordinatorDirectory();
+        this.enterprise = enterprise;
+        this.coordinatorDirectory = enterprise.getCoordinatorDirectory();
 
         populateShelterCombo();
     }
@@ -41,7 +43,7 @@ public class CreateCoordinatorJPanel extends javax.swing.JPanel {
     public void populateShelterCombo() {
         dropboxShelter.removeAllItems();
         dropboxShelter.addItem("  ");
-        for (Shelter res : ecosystem.getShelterDirectory().getShelterDirectory()) {
+        for (Shelter res : enterprise.getShelterDirectory().getShelterDirectory()) {
             dropboxShelter.addItem(res.getShelterName());
         }
     }
@@ -269,7 +271,7 @@ public class CreateCoordinatorJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Last Name format incorrect!(Start with Uppercase + lowercase)", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        for (UserAccount account : ecosystem.getUserAccountDirectory().getUserAccountList()) {
+        for (UserAccount account : enterprise.getUserAccountDirectory().getUserAccountList()) {
             if (account.getUsername().equals(usernameTxt.getText())) {
                 JOptionPane.showMessageDialog(null, "Username Already exist", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
@@ -288,10 +290,10 @@ public class CreateCoordinatorJPanel extends javax.swing.JPanel {
         String fullname = firstnameTxt.getText() + lastnameTxt.getText();
         String shelterName = dropboxShelter.getSelectedItem().toString();
 
-        ecosystem.getCoordinatorDirectory().newCoordinator(firstnameTxt.getText(), lastnameTxt.getText(), fullname, emailaddressTxt.getText(), phonenumberTxt.getText(), homeaddressTxt.getText(), usernameTxt.getText(), shelterName);
+        enterprise.getCoordinatorDirectory().newCoordinator(firstnameTxt.getText(), lastnameTxt.getText(), fullname, emailaddressTxt.getText(), phonenumberTxt.getText(), homeaddressTxt.getText(), usernameTxt.getText(), shelterName);
 
-        Employee employee = ecosystem.getEmployeeDirectory().createEmployee(fullname);
-        UserAccount userAccount = ecosystem.getUserAccountDirectory().createUserAccount(usernameTxt.getText(), passwordTxt.getText(), employee, new CoordinatorRole());
+        Employee employee = enterprise.getEmployeeDirectory().createEmployee(fullname);
+        UserAccount userAccount = enterprise.getUserAccountDirectory().createUserAccount(usernameTxt.getText(), passwordTxt.getText(), employee, new CoordinatorRole());
 
         JOptionPane.showMessageDialog(null, "Coordinator Profile Created Successfully", "Warning", JOptionPane.WARNING_MESSAGE);
 

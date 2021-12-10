@@ -7,6 +7,7 @@ package ui.ShelterAdminRole;
 
 import Business.EcoSystem;
 import Business.Employee.Employee;
+import Business.Enterprise.ShelterEnteriprise;
 import Business.Role.AdminRole;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
@@ -22,17 +23,18 @@ import javax.swing.JPanel;
 public class CreateShelterJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private EcoSystem ecosystem;
+//    private EcoSystem ecosystem;
+    private ShelterEnteriprise enterprise;
     private ShelterDirectory shelterDirectory;
 
     /**
      * Creates new form CreateRetaurantJPanel
      */
-    public CreateShelterJPanel(JPanel userProcessContainer, EcoSystem ecosystem, ShelterDirectory shelterDirectory) {
+    public CreateShelterJPanel(JPanel userProcessContainer, ShelterEnteriprise enterprise, ShelterDirectory shelterDirectory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.ecosystem = ecosystem;
-        this.shelterDirectory = ecosystem.getShelterDirectory();
+        this.enterprise = enterprise;
+        this.shelterDirectory = enterprise.getShelterDirectory();
     }
 
     /**
@@ -263,7 +265,7 @@ public class CreateShelterJPanel extends javax.swing.JPanel {
         }
 
         String managerName = firstnameTxt.getText() + lastnameTxt.getText();
-        for (UserAccount account : ecosystem.getUserAccountDirectory().getUserAccountList()) {
+        for (UserAccount account : enterprise.getUserAccountDirectory().getUserAccountList()) {
             if (account.getUsername().equals(usernameTxt.getText())) {
                 JOptionPane.showMessageDialog(null, "Username Already exist", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
@@ -289,9 +291,9 @@ public class CreateShelterJPanel extends javax.swing.JPanel {
             return;
         }
 
-        ecosystem.getShelterDirectory().newShelter(shelternameTxt.getText(), addressTxt.getText(), managerName, firstnameTxt.getText(), lastnameTxt.getText(), phonenumberTxt.getText(), emailTxt.getText());
-        Employee employee = ecosystem.getEmployeeDirectory().createEmployee(shelternameTxt.getText());
-        UserAccount userAccount = ecosystem.getUserAccountDirectory().createUserAccount(usernameTxt.getText(), passwordTxt.getText(), employee, new AdminRole());
+        enterprise.getShelterDirectory().newShelter(shelternameTxt.getText(), addressTxt.getText(), managerName, firstnameTxt.getText(), lastnameTxt.getText(), phonenumberTxt.getText(), emailTxt.getText());
+        Employee employee = enterprise.getEmployeeDirectory().createEmployee(shelternameTxt.getText());
+        UserAccount userAccount = enterprise.getUserAccountDirectory().createUserAccount(usernameTxt.getText(), passwordTxt.getText(), employee, new AdminRole());
 
         JOptionPane.showMessageDialog(null, "Shelter Created Succesfully");
 

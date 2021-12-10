@@ -5,10 +5,11 @@
  */
 package ui.ShelterAdminRole;
 
-import ui.CoordinatorRole.CreateCoordinatorJPanel;
+import ui.ShelterAdminRole.CreateCoordinatorJPanel;
 import Business.Coordinator.Coordinator;
 import Business.Coordinator.CoordinatorDirectory;
 import Business.EcoSystem;
+import Business.Enterprise.ShelterEnteriprise;
 import Business.UserAccount.UserAccount;
 import Business.UserAccount.UserAccountDirectory;
 import java.awt.CardLayout;
@@ -24,18 +25,18 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
 //    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
-    private EcoSystem ecosystem;
+    private ShelterEnteriprise enterprise;
     private CoordinatorDirectory coordinatorDirectory;
     private UserAccountDirectory userAccountDirectory;
 
     /**
      * Creates new form ManageCoordinator
      */
-    public ManageCoordinatorJPanel(JPanel userProcessContainer, EcoSystem ecosystem, CoordinatorDirectory coordinatorDirectory, UserAccountDirectory userAccountDirectory) {
+    public ManageCoordinatorJPanel(JPanel userProcessContainer, ShelterEnteriprise enterprise, CoordinatorDirectory coordinatorDirectory, UserAccountDirectory userAccountDirectory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.ecosystem = ecosystem;
-        this.coordinatorDirectory = ecosystem.getCoordinatorDirectory();
+        this.enterprise = enterprise;
+        this.coordinatorDirectory = enterprise.getCoordinatorDirectory();
         this.userAccountDirectory = userAccountDirectory;
         populateTable();
 
@@ -44,11 +45,11 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
     public void populateTable() {
         DefaultTableModel dtm = (DefaultTableModel) viewtbl.getModel();
         dtm.setRowCount(0);
-        for (Coordinator coordinator : ecosystem.getCoordinatorDirectory().getCoordinatorDirectory()) {
+        for (Coordinator coordinator : enterprise.getCoordinatorDirectory().getCoordinatorDirectory()) {
             Object[] row = new Object[7];
             row[0] = coordinator;
             row[1] = coordinator.getShelter();
-            row[2] = ecosystem.getUserAccountDirectory().getUserAccountList().get(1);
+            row[2] = enterprise.getUserAccountDirectory().getUserAccountList().get(1);
             row[3] = coordinator.getName();
             row[4] = coordinator.getEmail();
             row[5] = coordinator.getHomeAddress();
@@ -61,11 +62,11 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
     public void refreshTable() {
         DefaultTableModel dtm = (DefaultTableModel) viewtbl.getModel();
         dtm.setRowCount(0);
-        for (Coordinator coordinator : ecosystem.getCoordinatorDirectory().getCoordinatorDirectory()) {
+        for (Coordinator coordinator : enterprise.getCoordinatorDirectory().getCoordinatorDirectory()) {
             Object[] row = new Object[7];
             row[0] = coordinator;
             row[1] = coordinator.getShelter();
-            row[2] = ecosystem.getUserAccountDirectory().getUserAccountList().get(1);
+            row[2] = enterprise.getUserAccountDirectory().getUserAccountList().get(1);
             row[3] = coordinator.getName();
             row[4] = coordinator.getEmail();
             row[5] = coordinator.getHomeAddress();
@@ -228,7 +229,7 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
             return;
         }
         Coordinator coordinator = (Coordinator) viewtbl.getValueAt(selectedRow, 0);
-        ModifyCoordinatorJPanel modifyCoordinator = new ModifyCoordinatorJPanel(userProcessContainer, ecosystem, coordinatorDirectory, coordinator);
+        ModifyCoordinatorJPanel modifyCoordinator = new ModifyCoordinatorJPanel(userProcessContainer, enterprise, coordinatorDirectory, coordinator);
         userProcessContainer.add("ModifyCoordinatorsJPanel", modifyCoordinator);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -236,7 +237,7 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        CreateCoordinatorJPanel createCoordinator = new CreateCoordinatorJPanel(userProcessContainer, ecosystem, coordinatorDirectory);
+        CreateCoordinatorJPanel createCoordinator = new CreateCoordinatorJPanel(userProcessContainer, enterprise, coordinatorDirectory);
         userProcessContainer.add("CreateCoordinatorsJPanel", createCoordinator);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

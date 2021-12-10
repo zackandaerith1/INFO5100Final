@@ -6,6 +6,10 @@
 package ui.ShelterArrangerRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Enterprise.ShelterEnteriprise;
+import Business.Organization.Organization;
+import Business.Organization.Shelter.ArrangementOrganization;
 import Business.Profile.Profile;
 import Business.Profile.ProfileDirectory;
 import Business.Shelter.Shelter;
@@ -44,20 +48,20 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private UserAccount account;
-    private EcoSystem ecosystem;
+//    private EcoSystem ecosystem;
+    private ShelterEnteriprise enterprise;
     private ShelterDirectory shelterDirectory;
     private ProfileDirectory profileDirectory;
     private Shelter shelter;
     private Profile profile;
 
-    public ModifyProfileJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem,
-            ShelterDirectory shelterDirectory, ProfileDirectory profileDirectory, Profile profile) throws ParseException {
+    public ModifyProfileJPanel(JPanel userProcessContainer, UserAccount account, ShelterEnteriprise enterprise, ShelterDirectory shelterDirectory, ProfileDirectory profiledirectory, Profile profile) throws ParseException {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
-        this.ecosystem = ecosystem;
-        this.shelterDirectory = ecosystem.getShelterDirectory();
-        this.profileDirectory = ecosystem.getProfileDirectory();
+        this.enterprise = enterprise;
+        this.shelterDirectory = enterprise.getShelterDirectory();
+        this.profileDirectory = enterprise.getProfileDirectory();
         this.profile = profile;
         txtID.setText(profile.getId());
         txtFirstName.setText(profile.getFirstname());
@@ -117,7 +121,7 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtComment = new javax.swing.JTextArea();
-        jDateChooser = new com.toedter.calendar.JDateChooser();
+        jDateChooser = new org.netbeans.modules.form.InvalidComponent();
         jLabel12 = new javax.swing.JLabel();
         btnChoose = new javax.swing.JButton();
         photoComponent = new javax.swing.JLabel();
@@ -529,7 +533,7 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnChoose;
     private javax.swing.JButton btnUpdate;
-    private com.toedter.calendar.JDateChooser jDateChooser;
+    private org.netbeans.modules.form.InvalidComponent jDateChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

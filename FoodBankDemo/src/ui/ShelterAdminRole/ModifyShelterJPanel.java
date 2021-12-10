@@ -7,6 +7,7 @@ package ui.ShelterAdminRole;
 
 import ui.ShelterAdminRole.ManageShelterJPanel;
 import Business.EcoSystem;
+import Business.Enterprise.ShelterEnteriprise;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
@@ -22,23 +23,24 @@ import javax.swing.JPanel;
 public class ModifyShelterJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private EcoSystem ecosystem;
+//    private EcoSystem ecosystem;
+    private ShelterEnteriprise enterprise;
     private ShelterDirectory shelterDirectory;
     private Shelter shelter;
 
     /**
      * Creates new form ModifyManagerJPanel
      */
-    public ModifyShelterJPanel(JPanel userProcessContainer, EcoSystem ecosystem, ShelterDirectory shelterDirectory, Shelter shelter) {
+    public ModifyShelterJPanel(JPanel userProcessContainer, ShelterEnteriprise enterprise, ShelterDirectory shelterDirectory, Shelter shelter) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.ecosystem = ecosystem;
+        this.enterprise = enterprise;
         this.shelter = shelter;
-        this.shelterDirectory = ecosystem.getShelterDirectory();
+        this.shelterDirectory = enterprise.getShelterDirectory();
 
         shelternameTxt.setText(shelter.getShelterName());
-        usernameTxt.setText(ecosystem.getUserAccountDirectory().getUserAccountList().get(2).getUsername());
-        passwordTxt.setText(ecosystem.getUserAccountDirectory().getUserAccountList().get(2).getPassword());
+        usernameTxt.setText(enterprise.getUserAccountDirectory().getUserAccountList().get(2).getUsername());
+        passwordTxt.setText(enterprise.getUserAccountDirectory().getUserAccountList().get(2).getPassword());
         firstnameTxt.setText(shelter.getAdminfirstname());
         lastnameTxt.setText(shelter.getAdminlastname());
         addressTxt.setText(shelter.getAddress());
@@ -270,7 +272,7 @@ public class ModifyShelterJPanel extends javax.swing.JPanel {
         }
 
         String managerName = firstnameTxt.getText() + lastnameTxt.getText();
-        for (UserAccount account : ecosystem.getUserAccountDirectory().getUserAccountList()) {
+        for (UserAccount account : enterprise.getUserAccountDirectory().getUserAccountList()) {
             if (account.getUsername().equals(usernameTxt.getText())) {
                 JOptionPane.showMessageDialog(null, "Username Already exist", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
@@ -297,8 +299,8 @@ public class ModifyShelterJPanel extends javax.swing.JPanel {
         }
 
         shelter.setShelterName(shelternameTxt.getText());
-        ecosystem.getUserAccountDirectory().getUserAccountList().get(2).setPassword(passwordTxt.getText());
-        ecosystem.getUserAccountDirectory().getUserAccountList().get(2).setUsername(usernameTxt.getText());
+        enterprise.getUserAccountDirectory().getUserAccountList().get(2).setPassword(passwordTxt.getText());
+        enterprise.getUserAccountDirectory().getUserAccountList().get(2).setUsername(usernameTxt.getText());
         shelter.setAdminfirstname(firstnameTxt.getText());
         shelter.setAdminlastname(lastnameTxt.getText());
         shelter.setAdminName(managerName);

@@ -7,6 +7,7 @@ package ui.ShelterAdminRole;
 
 import ui.ShelterAdminRole.CreateShelterJPanel;
 import Business.EcoSystem;
+import Business.Enterprise.ShelterEnteriprise;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
@@ -23,7 +24,8 @@ import javax.swing.table.DefaultTableModel;
 public class ManageShelterJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private EcoSystem ecosystem;
+//    private EcoSystem ecosystem;
+    private ShelterEnteriprise enterprise;
 //    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     private ShelterDirectory shelterDirectory;
     private UserAccountDirectory userAccountDirectory;
@@ -31,11 +33,11 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageShelterJPanel
      */
-    public ManageShelterJPanel(JPanel userProcessContainer, EcoSystem ecosystem, ShelterDirectory shelterDirectory, UserAccountDirectory userAccountDirectory) {
+    public ManageShelterJPanel(JPanel userProcessContainer, ShelterEnteriprise enterprise, ShelterDirectory shelterDirectory, UserAccountDirectory userAccountDirectory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.ecosystem = ecosystem;
-        this.shelterDirectory = ecosystem.getShelterDirectory();
+        this.enterprise = enterprise;
+        this.shelterDirectory = enterprise.getShelterDirectory();
         this.userAccountDirectory = userAccountDirectory;
         populateTable();
     }
@@ -43,11 +45,11 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
     public void populateTable() {
         DefaultTableModel dtm = (DefaultTableModel) tblShelter.getModel();
         dtm.setRowCount(0);
-        for (Shelter shelter : ecosystem.getShelterDirectory().getShelterDirectory()) {
+        for (Shelter shelter : enterprise.getShelterDirectory().getShelterDirectory()) {
             Object[] row = new Object[6];
             row[0] = shelter;
             row[1] = shelter.getShelterName();
-            row[2] = ecosystem.getUserAccountDirectory().getUserAccountList().get(1);
+            row[2] = enterprise.getUserAccountDirectory().getUserAccountList().get(1);
             row[3] = shelter.getAdminName();
             row[4] = shelter.getPhoneNumber();
             row[5] = shelter.getAddress();
@@ -61,7 +63,7 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
         for (Shelter shelter : shelterDirectory.getShelterDirectory()) {
             Object[] row = new Object[5];
             row[0] = shelter;
-            row[1] = ecosystem.getUserAccountDirectory().getUserAccountList().get(1);
+            row[1] = enterprise.getUserAccountDirectory().getUserAccountList().get(1);
             row[2] = shelter.getAdminName();
             row[3] = shelter.getPhoneNumber();
             row[4] = shelter.getAddress();
@@ -234,7 +236,7 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
             return;
         }
         Shelter shelter = (Shelter) tblShelter.getValueAt(select, 0);
-        ModifyShelterJPanel modifyManager = new ModifyShelterJPanel(userProcessContainer, ecosystem, shelterDirectory, shelter);
+        ModifyShelterJPanel modifyManager = new ModifyShelterJPanel(userProcessContainer, enterprise, shelterDirectory, shelter);
         userProcessContainer.add(modifyManager);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -242,7 +244,7 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        CreateShelterJPanel createShelter = new CreateShelterJPanel(userProcessContainer, ecosystem, shelterDirectory);
+        CreateShelterJPanel createShelter = new CreateShelterJPanel(userProcessContainer, enterprise, shelterDirectory);
         userProcessContainer.add(createShelter);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

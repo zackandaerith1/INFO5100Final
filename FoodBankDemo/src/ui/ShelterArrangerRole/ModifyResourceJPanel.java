@@ -6,8 +6,12 @@
 package ui.ShelterArrangerRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Enterprise.ShelterEnteriprise;
 import Business.Menu.Menu;
 import Business.Menu.MenuDirectory;
+import Business.Organization.Organization;
+import Business.Organization.Shelter.ArrangementOrganization;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
@@ -24,20 +28,20 @@ public class ModifyResourceJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private UserAccount account;
-    private EcoSystem ecosystem;
+//    private EcoSystem ecosystem;
+    private ShelterEnteriprise enterprise;
     private ShelterDirectory shelterDirectory;
     private MenuDirectory menuDirectory;
     private Shelter shelter;
     private Menu menu;
 
-    public ModifyResourceJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem,
-            ShelterDirectory shelterDirectory, MenuDirectory menuDirectory, Menu menu) {
+    public ModifyResourceJPanel(JPanel userProcessContainer, UserAccount account,ShelterEnteriprise enterprise, ShelterDirectory shelterDirectory, MenuDirectory menuDirectory, Menu menu) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
-        this.ecosystem = ecosystem;
-        this.shelterDirectory = ecosystem.getShelterDirectory();
-        this.menuDirectory = ecosystem.getMenuDirectory();
+        this.enterprise = enterprise;
+        this.shelterDirectory = enterprise.getShelterDirectory();
+        this.menuDirectory = enterprise.getMenuDirectory();
         this.menu = menu;
 
         txtItemName.setText(menu.getItemName());

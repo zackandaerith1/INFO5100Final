@@ -6,12 +6,16 @@
 package ui.ShelterArrangerRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Enterprise.ShelterEnteriprise;
 import Business.Menu.Menu;
 import Business.Menu.MenuDirectory;
+import Business.Organization.Organization;
+import Business.Organization.Shelter.ArrangementOrganization;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
-import ui.ShelterAdminRole.ModifyResourceJPanel;
+import ui.ShelterArrangerRole.ModifyResourceJPanel;
 
 import java.awt.CardLayout;
 import java.util.Random;
@@ -27,19 +31,19 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private UserAccount account;
-    private EcoSystem ecosystem;
+//    private EcoSystem ecosystem;
+    private ShelterEnteriprise enterprise;
     private ShelterDirectory shelterDirectory;
     private MenuDirectory menuDirectory;
     private Shelter shelter;
 
-    public ManageResourceJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem,
-            ShelterDirectory shelterDirectory, MenuDirectory menuDirectory) {
+    public ManageResourceJPanel(JPanel userProcessContainer, UserAccount account, ShelterEnteriprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
-        this.ecosystem = ecosystem;
-        this.shelterDirectory = ecosystem.getShelterDirectory();
-        this.menuDirectory = ecosystem.getMenuDirectory();
+        this.enterprise = enterprise;
+        this.shelterDirectory = enterprise.getShelterDirectory();
+        this.menuDirectory = enterprise.getMenuDirectory();
         populateTable();
     }
 
@@ -361,7 +365,7 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
             return;
         }
         Menu menu = (Menu) tblResource.getValueAt(selectedRow, 0);
-        ModifyResourceJPanel modifyResource = new ModifyResourceJPanel(userProcessContainer, account, ecosystem,
+        ModifyResourceJPanel modifyResource = new ModifyResourceJPanel(userProcessContainer, account, enterprise,
                 shelterDirectory, menuDirectory, menu);
         userProcessContainer.add("ModifyProfileJPanel", modifyResource);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();

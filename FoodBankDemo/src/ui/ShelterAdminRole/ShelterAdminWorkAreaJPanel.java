@@ -10,7 +10,9 @@ import Business.Coordinator.CoordinatorDirectory;
 import Business.DeliveryMan.DeliveryMan;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 import Business.Enterprise.ShelterEnteriprise;
+import Business.Organization.Organization;
 import Business.Organization.Shelter.RegistrationOrganization;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
@@ -31,28 +33,27 @@ public class ShelterAdminWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ShelterAdminWorkAreaJPanel
      */
-    JPanel userProcessContainer;
-    EcoSystem ecosystem;
-    CoordinatorDirectory coordinatorDirectory;
-    ShelterDirectory shelterDirectory;
-    DeliveryManDirectory deliveryManDirectory;
-    UserAccountDirectory userAccountDirectory;
+    private JPanel userProcessContainer;
+    private EcoSystem business;
+    private ShelterEnteriprise enterprise;
+    private CoordinatorDirectory coordinatorDirectory;
+    private ShelterDirectory shelterDirectory;
+    private DeliveryManDirectory deliveryManDirectory;
+    private UserAccountDirectory userAccountDirectory;
 
-    public ShelterAdminWorkAreaJPanel(JPanel userProcessContainer, EcoSystem ecosystem, CoordinatorDirectory coordinatorDirectory, ShelterDirectory shelterDirectory, DeliveryManDirectory deliveryManDirectory, UserAccountDirectory userAccountDirectory) {
+    public ShelterAdminWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, ShelterEnteriprise enterprise, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.ecosystem = ecosystem;
-        this.coordinatorDirectory = ecosystem.getCoordinatorDirectory();
-        this.deliveryManDirectory = ecosystem.getDeliveryManDirectory();
-        this.shelterDirectory = ecosystem.getShelterDirectory();
-        this.userAccountDirectory = ecosystem.getUserAccountDirectory();
+        this.business = business;
+        this.enterprise = enterprise;
+        this.coordinatorDirectory = enterprise.getCoordinatorDirectory();
+        this.deliveryManDirectory = enterprise.getDeliveryManDirectory();
+        this.shelterDirectory = enterprise.getShelterDirectory();
+        this.userAccountDirectory = enterprise.getUserAccountDirectory();
         populateTree();
 
     }
 
-    public ShelterAdminWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, RegistrationOrganization registrationOrganization, ShelterEnteriprise shelterEnteriprise) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     public void populateTree() {
         DefaultTreeModel model = (DefaultTreeModel) jTree.getModel();
@@ -63,9 +64,9 @@ public class ShelterAdminWorkAreaJPanel extends javax.swing.JPanel {
         root.removeAllChildren();
         root.insert(networks, 0);
 
-        ArrayList<Coordinator> coordinatorList = ecosystem.getCoordinatorDirectory().getCoordinatorDirectory();
-        ArrayList<DeliveryMan> deliveryList = ecosystem.getDeliveryManDirectory().getDeliveryManDirectory();
-        ArrayList<Shelter> shelterList = ecosystem.getShelterDirectory().getShelterDirectory();
+        ArrayList<Coordinator> coordinatorList = coordinatorDirectory.getCoordinatorDirectory();
+        ArrayList<DeliveryMan> deliveryList = deliveryManDirectory.getDeliveryManDirectory();
+        ArrayList<Shelter> shelterList = shelterDirectory.getShelterDirectory();
 
         Coordinator coordinator;
         DeliveryMan deliveryMan;
@@ -226,14 +227,14 @@ public class ShelterAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnCoordinatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCoordinatorActionPerformed
 
-        ManageCoordinatorJPanel mcjp = new ManageCoordinatorJPanel(userProcessContainer, ecosystem, coordinatorDirectory, userAccountDirectory);
+        ManageCoordinatorJPanel mcjp = new ManageCoordinatorJPanel(userProcessContainer, enterprise, coordinatorDirectory, userAccountDirectory);
         userProcessContainer.add(mcjp);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnCoordinatorActionPerformed
 
     private void btnShelterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShelterActionPerformed
-        ManageShelterJPanel mrjp = new ManageShelterJPanel(userProcessContainer, ecosystem, shelterDirectory, userAccountDirectory);
+        ManageShelterJPanel mrjp = new ManageShelterJPanel(userProcessContainer, enterprise, shelterDirectory, userAccountDirectory);
         userProcessContainer.add(mrjp);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

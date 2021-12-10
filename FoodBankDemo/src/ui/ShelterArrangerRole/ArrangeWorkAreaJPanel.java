@@ -26,7 +26,8 @@ public class ArrangeWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private UserAccount account;
-    private EcoSystem ecosystem;
+//    private EcoSystem ecosystem;
+    private ShelterEnteriprise enterprise;
     private CoordinatorDirectory customerDirectory;
     private ShelterDirectory shelterDirectory;
     private DeliveryManDirectory deliveryManDirectory;
@@ -41,7 +42,8 @@ public class ArrangeWorkAreaJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
-        this.ecosystem = business;
+//        this.ecosystem = business;
+        this.enterprise = enterprise;
         this.customerDirectory = enterprise.getCoordinatorDirectory();
         this.shelterDirectory = enterprise.getShelterDirectory();
         this.deliveryManDirectory = enterprise.getDeliveryManDirectory();
@@ -160,7 +162,7 @@ public class ArrangeWorkAreaJPanel extends javax.swing.JPanel {
 
     private void managePersonBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managePersonBtnActionPerformed
 
-        ManageProfileJPanel manageprofile = new ManageProfileJPanel(userProcessContainer, account, ecosystem, shelterDirectory, profileDirectory);
+        ManageProfileJPanel manageprofile = new ManageProfileJPanel(userProcessContainer, account, enterprise);
         userProcessContainer.add(manageprofile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -168,15 +170,14 @@ public class ArrangeWorkAreaJPanel extends javax.swing.JPanel {
 
     private void manageApplicationBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageApplicationBtnActionPerformed
 
-        ManageApplicationJPanel manageorder = new ManageApplicationJPanel(userProcessContainer, account, ecosystem, shelterDirectory, profileDirectory, orderDirectory);
+        ManageApplicationJPanel manageorder = new ManageApplicationJPanel(userProcessContainer, account, enterprise);
         userProcessContainer.add(manageorder);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_manageApplicationBtnActionPerformed
 
     private void manageResourceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageResourceBtnActionPerformed
-        ManageResourceJPanel manageresource = new ManageResourceJPanel(userProcessContainer, account, ecosystem,
-                shelterDirectory, menuDirectory);
+        ManageResourceJPanel manageresource = new ManageResourceJPanel(userProcessContainer, account, enterprise);
         userProcessContainer.add(manageresource);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

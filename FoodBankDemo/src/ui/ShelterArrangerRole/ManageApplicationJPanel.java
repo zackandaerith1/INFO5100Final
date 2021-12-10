@@ -6,6 +6,7 @@
 package ui.ShelterArrangerRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.ShelterEnteriprise;
 import Business.Order.Order;
 import Business.Order.OrderDirectory;
 import Business.Profile.ProfileDirectory;
@@ -29,7 +30,8 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private UserAccount account;
-    private EcoSystem ecosystem;
+//    private EcoSystem ecosystem;
+    private ShelterEnteriprise enterprise;
     private ShelterDirectory shelterDirectory;
     private ProfileDirectory profileDirectory;
     private OrderDirectory orderDirectory;
@@ -37,14 +39,14 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageOrderJPanel
      */
-    public ManageApplicationJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem, ShelterDirectory shelterDirectory, ProfileDirectory profileDirectory, OrderDirectory orderDirectory) {
+    public ManageApplicationJPanel(JPanel userProcessContainer, UserAccount account, ShelterEnteriprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.ecosystem = ecosystem;
+        this.enterprise = enterprise;
         this.account = account;
-        this.shelterDirectory = ecosystem.getShelterDirectory();
-        this.profileDirectory = ecosystem.getProfileDirectory();
-        this.orderDirectory = ecosystem.getOrderDirectory();
+        this.shelterDirectory = enterprise.getShelterDirectory();
+        this.profileDirectory = enterprise.getProfileDirectory();
+        this.orderDirectory = enterprise.getOrderDirectory();
         populateTable();
 
     }
@@ -54,8 +56,8 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
         dtm.setRowCount(0);
         tblOrder.setDefaultRenderer(Object.class, new TableCellRenderer() {
             private DefaultTableCellRenderer DEFAULT_RENDERER = new DefaultTableCellRenderer();
-            public static final Color VERY_LIGHT_RED = new Color(255, 99, 71);
-            public static final Color LIGHT_BLUE = new Color(135, 206, 250);
+            public final Color VERY_LIGHT_RED = new Color(255, 99, 71);
+            public final Color LIGHT_BLUE = new Color(135, 206, 250);
 
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
@@ -83,7 +85,7 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
 
         });
 
-        for (Order order : ecosystem.getOrderDirectory().getOrderDirectory()) {
+        for (Order order : enterprise.getOrderDirectory().getOrderDirectory()) {
             if (account.getEmployee().getName().equals(order.getShelter().getShelterName())) {
                 Object[] row = new Object[14];
                 row[0] = order;

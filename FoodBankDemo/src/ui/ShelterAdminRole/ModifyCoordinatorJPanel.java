@@ -5,10 +5,11 @@
  */
 package ui.ShelterAdminRole;
 
-import ui.CoordinatorRole.ManageCoordinatorJPanel;
+import ui.ShelterAdminRole.ManageCoordinatorJPanel;
 import Business.Coordinator.Coordinator;
 import Business.Coordinator.CoordinatorDirectory;
 import Business.EcoSystem;
+import Business.Enterprise.ShelterEnteriprise;
 import Business.UserAccount.UserAccountDirectory;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -22,7 +23,8 @@ import javax.swing.JPanel;
 public class ModifyCoordinatorJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private EcoSystem ecosystem;
+//    private EcoSystem ecosystem;
+    private ShelterEnteriprise enterprise;
     private Coordinator customer;
     private UserAccountDirectory userAccountDirectory;
     private CoordinatorDirectory customerDirectory;
@@ -30,18 +32,18 @@ public class ModifyCoordinatorJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ModifyCoordinatorJPanel
      */
-    public ModifyCoordinatorJPanel(JPanel userProcessContainer, EcoSystem ecosystem, CoordinatorDirectory customerDirectory, Coordinator customer) {
+    public ModifyCoordinatorJPanel(JPanel userProcessContainer, ShelterEnteriprise enterprise, CoordinatorDirectory customerDirectory, Coordinator customer) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.ecosystem = ecosystem;
+        this.enterprise = enterprise;
         this.customer = customer;
-        this.customerDirectory = ecosystem.getCoordinatorDirectory();
+        this.customerDirectory = enterprise.getCoordinatorDirectory();
         System.out.println(firstnameTxt.getText());
         System.out.println(lastnameTxt.getText());
         firstnameTxt.setText(customer.getFirstname());
         lastnameTxt.setText(customer.getLastname());
-        usernameTxt.setText(ecosystem.getUserAccountDirectory().getUserAccountList().get(1).getUsername());
-        passwordTxt.setText(ecosystem.getUserAccountDirectory().getUserAccountList().get(1).getPassword());
+        usernameTxt.setText(enterprise.getUserAccountDirectory().getUserAccountList().get(1).getUsername());
+        passwordTxt.setText(enterprise.getUserAccountDirectory().getUserAccountList().get(1).getPassword());
         emailaddressTxt.setText(customer.getEmail());
         homeaddressTxt.setText(customer.getHomeAddress());
         phonenumberTxt.setText(customer.getPhoneNumber());
@@ -271,8 +273,8 @@ public class ModifyCoordinatorJPanel extends javax.swing.JPanel {
         customer.setLastname(lastnameTxt.getText());
         customer.setName(firstnameTxt.getText() + lastnameTxt.getText());
 
-        ecosystem.getUserAccountDirectory().getUserAccountList().get(1).setPassword(passwordTxt.getText());
-        ecosystem.getUserAccountDirectory().getUserAccountList().get(1).setUsername(usernameTxt.getText());
+        enterprise.getUserAccountDirectory().getUserAccountList().get(1).setPassword(passwordTxt.getText());
+        enterprise.getUserAccountDirectory().getUserAccountList().get(1).setUsername(usernameTxt.getText());
         customer.setEmail(emailaddressTxt.getText());
         customer.setPhoneNumber(phonenumberTxt.getText());
         customer.setHomeAddress(homeaddressTxt.getText());

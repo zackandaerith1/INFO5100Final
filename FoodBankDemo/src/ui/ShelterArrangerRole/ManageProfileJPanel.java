@@ -6,6 +6,8 @@
 package ui.ShelterArrangerRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.ShelterEnteriprise;
+import Business.Organization.Shelter.ArrangementOrganization;
 import Business.Profile.Profile;
 import Business.Profile.ProfileDirectory;
 import Business.Shelter.Shelter;
@@ -13,7 +15,7 @@ import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
 import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamPanel;
-import ui.ShelterAdminRole.ModifyProfileJPanel;
+import ui.ShelterArrangerRole.ModifyProfileJPanel;
 
 import java.awt.CardLayout;
 import java.awt.Dimension;
@@ -47,22 +49,21 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private UserAccount account;
-    private EcoSystem ecosystem;
+//    private EcoSystem ecosystem;
+    private ShelterEnteriprise enterprise;
     private ShelterDirectory shelterDirectory;
     private ProfileDirectory profileDirectory;
     private Shelter shelter;
 
-    public ManageProfileJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem,
-            ShelterDirectory shelterDirectory, ProfileDirectory profileDirectory) {
+    public ManageProfileJPanel(JPanel userProcessContainer, UserAccount account,  ShelterEnteriprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
-        this.ecosystem = ecosystem;
-        this.shelterDirectory = ecosystem.getShelterDirectory();
-        this.profileDirectory = ecosystem.getProfileDirectory();
+        this.enterprise = enterprise;
+        this.shelterDirectory = enterprise.getShelterDirectory();
+        this.profileDirectory = enterprise.getProfileDirectory();
 
         populateTable();
-
     }
 
     public void populateTable() {
@@ -571,7 +572,7 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
                 return;
             }
             Profile profile = (Profile) tblProfile.getValueAt(selectedRow, 0);
-            ModifyProfileJPanel modifyProfile = new ModifyProfileJPanel(userProcessContainer, account, ecosystem,
+            ModifyProfileJPanel modifyProfile = new ModifyProfileJPanel(userProcessContainer, account, enterprise,
                     shelterDirectory, profileDirectory, profile);
             userProcessContainer.add("ModifyProfileJPanel", modifyProfile);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();

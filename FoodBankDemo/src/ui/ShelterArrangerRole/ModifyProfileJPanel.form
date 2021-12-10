@@ -360,7 +360,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser">
+    <Component class="org.netbeans.modules.form.InvalidComponent" name="jDateChooser">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">
       <Properties>
