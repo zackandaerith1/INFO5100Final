@@ -13,6 +13,10 @@ import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.text.ParseException;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -130,13 +134,13 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "First name", "Last name", "Phone", "Amount"
+                "First name", "Last name", "Phone", "Date", "Amount"
             }
         ));
         jScrollPane2.setViewportView(jTable1);
@@ -163,6 +167,11 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         btnDeleteDonator.setText("Delete Donator");
+        btnDeleteDonator.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteDonatorActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Fitst Name:");
 
@@ -306,6 +315,7 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
         d.setFname(txtfname.getText());
         d.setLname(txtlname.getText());
         d.setPhone(Integer.getInteger(txtphone.getText()));
+        d.setDate(new Date());
         
         DonatorDirectory dlist = organization.getDlist();
         dlist.getDonatorlist().add(d);
@@ -322,22 +332,51 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
     private void btnupdateDonatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateDonatorActionPerformed
         // TODO add your handling code here:
         try {
-            int selectedRow = tblProfile.getSelectedRow();
+            int selectedRow = jTable1.getSelectedRow();
             if (selectedRow < 0) {
                 JOptionPane.showMessageDialog(null, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-            Profile profile = (Profile) tblProfile.getValueAt(selectedRow, 0);
-            ModifyProfileJPanel modifyProfile = new ModifyProfileJPanel(userProcessContainer, account, enterprise,
-                    shelterDirectory, profileDirectory, profile);
-            userProcessContainer.add("ModifyProfileJPanel", modifyProfile);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
-        } catch (ParseException ex) {
-            Logger.getLogger(ManageProfileJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            Donator d = (Donator) jTable1.getValueAt(selectedRow, 0);
+            d.setFname(txtfname.getName());
+            d.setLname(txtlname.getName());
+            d.setDate(new Date());
+            d.setAmount(Integer.getInteger(txtamount.getText()));
+            d.setPhone(Integer.getInteger(txtphone.getText()));
+            
+            
+            txtfname.setText("");
+            txtlname.setText("");
+            txtphone.setText("");
+            txtamount.setText("");
+        
+        populateDonatorTable();
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
         }
         
     }//GEN-LAST:event_btnupdateDonatorActionPerformed
+
+    private void btnDeleteDonatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDonatorActionPerformed
+        // TODO add your handling code here:
+        try {
+            int selectedRow = jTable1.getSelectedRow();
+            if (selectedRow < 0) {
+                JOptionPane.showMessageDialog(null, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            Donator d = (Donator) jTable1.getValueAt(selectedRow, 0);
+            organization.getDlist().getDonatorlist().remove(d);
+            
+
+        
+        populateDonatorTable();
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDeleteDonatorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -406,11 +445,12 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
 
         for (Donator order : organization.getDlist().getDonatorlist()) {
 
-                Object[] row = new Object[4];
+                Object[] row = new Object[5];
                 row[0] = order;
                 row[1] = order.getLname();
                 row[2] = order.getPhone();
-                row[3] = order.getAmount();
+                row[3] = order.getDate().toString();
+                row[4] = order.getAmount();
 
 
                 dtm.addRow(row);

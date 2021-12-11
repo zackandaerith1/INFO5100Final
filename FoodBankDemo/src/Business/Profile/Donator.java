@@ -4,6 +4,8 @@
  */
 package Business.Profile;
 
+import java.util.Date;
+
 /**
  *
  * @author zhengfang
@@ -13,6 +15,7 @@ public class Donator {
     private String lname;
     private int phone;
     private int amount;
+    private Date date;
 
     public Donator(int amount) {
         this.fname = "";
@@ -54,6 +57,15 @@ public class Donator {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+    
 
     @Override
     public String toString() {

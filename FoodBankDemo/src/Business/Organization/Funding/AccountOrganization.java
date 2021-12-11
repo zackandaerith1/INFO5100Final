@@ -42,6 +42,7 @@ public class AccountOrganization extends Organization{
     public void setDlist(DonatorDirectory Dlist) {
         this.Dlist = Dlist;
     }
+    
 
     @Override
     public ArrayList<Role> getSupportedRole() {
