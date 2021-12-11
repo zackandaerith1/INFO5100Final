@@ -5,6 +5,8 @@
  */
 package Business.Enterprise;
 
+import Business.Profile.Donator;
+import Business.Profile.DonatorDirectory;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -13,11 +15,22 @@ import java.util.ArrayList;
  * @author zhengfang
  */
 public class FundingEnterprise extends Enterprise{
-
-    public FundingEnterprise(String name) {
-        super(name, EnterpriseType.Funding);
-    }
     
+    private DonatorDirectory Dlist;
+
+    public FundingEnterprise(String name, EnterpriseType type) {
+        super(name, type);
+        this.Dlist = new DonatorDirectory();
+    }
+
+    public DonatorDirectory getDlist() {
+        return Dlist;
+    }
+
+    public void setDlist(DonatorDirectory Dlist) {
+        this.Dlist = Dlist;
+    }
+
 
     @Override
     public ArrayList<Role> getSupportedRole() {

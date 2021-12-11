@@ -80,7 +80,7 @@ public class ArrangeWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Shelter Admin Work Area");
+        jLabel1.setText("Shelter Arranger Work Area");
 
         managePersonBtn.setBackground(new java.awt.Color(122, 72, 221));
         managePersonBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -139,7 +139,7 @@ public class ArrangeWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addComponent(jLabel1)))
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

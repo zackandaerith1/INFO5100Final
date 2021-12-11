@@ -14,11 +14,11 @@ import java.util.ArrayList;
  */
 public class VolunteerEnterprise extends Enterprise {
 
-    public VolunteerEnterprise(String name) {
-        super(name, EnterpriseType.Volunteer);
+    public VolunteerEnterprise(String name, EnterpriseType type) {
+        super(name, type);
     }
-    
-    
+
+
     
 
     @Override

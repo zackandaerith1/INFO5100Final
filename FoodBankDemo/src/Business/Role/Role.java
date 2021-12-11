@@ -20,7 +20,12 @@ public abstract class Role {
         Admin("Admin"),
         ShelterAdminRole("Shelter Adminstration"),
         Coordinator("Shelter Coordinator"),
-        ShelterArranger("Shelter Arrangement");
+        ShelterArranger("Shelter Arrangement"),
+        CommRole("Communicator"),
+        DistriRole("Distributor"),
+        AnalyRole("Analysitor"),
+        AccountRole("Accountor"),
+        VoluntRole("Volunteer");
         
         private String value;
         private RoleType(String value){

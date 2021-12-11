@@ -32,16 +32,16 @@ public class EnterpriseDirectory {
     public Enterprise createAndAddEnterprise(String name,Enterprise.EnterpriseType type){
         Enterprise enterprise=null;
         if(type==Enterprise.EnterpriseType.FoodBank){
-            enterprise=new FoodBankEnterprise(name);
+            enterprise=new FoodBankEnterprise(name,type);
             enterpriseList.add(enterprise);
         }else if (type == Enterprise.EnterpriseType.Shelter){
-            enterprise = new ShelterEnteriprise(name);
+            enterprise = new ShelterEnteriprise(name,type);
             enterpriseList.add(enterprise);
         }else if (type == Enterprise.EnterpriseType.Volunteer ){
-            enterpriseList.add(enterprise);
+            enterprise = new VolunteerEnterprise(name, type);
             enterpriseList.add(enterprise);
         }else if (type == Enterprise.EnterpriseType.Funding){
-            enterpriseList.add(enterprise);
+            enterprise = new FundingEnterprise(name, type);
             enterpriseList.add(enterprise);
         }
         return enterprise;
