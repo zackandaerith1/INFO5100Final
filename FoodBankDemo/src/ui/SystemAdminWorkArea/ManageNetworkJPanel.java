@@ -4,13 +4,13 @@
  */
 package ui.SystemAdminWorkArea;
 
-import ui.ShelterAdminRole.ShelterAdminWorkAreaJPanel;
 import Business.EcoSystem;
 import Business.Network.Network;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import ui.ShelterAdminRole.ShelterAdminWorkAreaJPanel;
 
 /**
  *
@@ -61,6 +61,12 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         txtNetworkName = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(233, 230, 225));
+        setForeground(new java.awt.Color(43, 71, 92));
+
+        networkJTable.setBackground(new java.awt.Color(247, 247, 247));
+        networkJTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        networkJTable.setForeground(new java.awt.Color(43, 71, 92));
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
@@ -92,8 +98,13 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             networkJTable.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        lblName.setText("Name:");
+        lblName.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        lblName.setForeground(new java.awt.Color(43, 71, 92));
+        lblName.setText("Network Name:");
 
+        btnSubmit.setBackground(new java.awt.Color(94, 138, 117));
+        btnSubmit.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(43, 71, 92));
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +112,10 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setText("<< Back");
+        btnBack.setBackground(new java.awt.Color(94, 138, 117));
+        btnBack.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(43, 71, 92));
+        btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -125,8 +139,11 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSubmit))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addContainerGap(225, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnBack, btnSubmit});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -139,7 +156,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                     .addComponent(btnSubmit)
                     .addComponent(txtNetworkName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblName))
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addContainerGap(246, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -155,7 +172,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
-         Component[] componentArray = userProcessContainer.getComponents();
+        Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         ShelterAdminWorkAreaJPanel sysAdminwjp = (ShelterAdminWorkAreaJPanel) component;
         sysAdminwjp.populateTree();
