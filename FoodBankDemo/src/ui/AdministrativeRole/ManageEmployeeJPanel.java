@@ -19,47 +19,48 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     private OrganizationDirectory organizationDir;
     private JPanel userProcessContainer;
-    
+
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageEmployeeJPanel(JPanel userProcessContainer,OrganizationDirectory organizationDir) {
+    public ManageEmployeeJPanel(JPanel userProcessContainer, OrganizationDirectory organizationDir) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organizationDir = organizationDir;
-        
+
         populateOrganizationComboBox();
         populateOrganizationEmpComboBox();
     }
-    
-    public void populateOrganizationComboBox(){
+
+    public void populateOrganizationComboBox() {
         organizationJComboBox.removeAllItems();
-        
-        for (Organization organization : organizationDir.getOrganizationList()){
+
+        for (Organization organization : organizationDir.getOrganizationList()) {
             organizationJComboBox.addItem(organization);
         }
     }
-    
-    public void populateOrganizationEmpComboBox(){
+
+    public void populateOrganizationEmpComboBox() {
         organizationEmpJComboBox.removeAllItems();
-        
-        for (Organization organization : organizationDir.getOrganizationList()){
+
+        for (Organization organization : organizationDir.getOrganizationList()) {
             organizationEmpJComboBox.addItem(organization);
         }
     }
 
-    private void populateTable(Organization organization){
+    private void populateTable(Organization organization) {
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
-        
+
         model.setRowCount(0);
-        
-        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
+
+        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
             Object[] row = new Object[2];
             row[0] = employee.getId();
             row[1] = employee.getName();
             model.addRow(row);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -80,6 +81,11 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         organizationEmpJComboBox = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(233, 230, 225));
+        setForeground(new java.awt.Color(43, 71, 92));
+
+        organizationJTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        organizationJTable.setForeground(new java.awt.Color(43, 71, 92));
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -112,6 +118,9 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             organizationJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
+        addJButton.setBackground(new java.awt.Color(233, 230, 225));
+        addJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        addJButton.setForeground(new java.awt.Color(43, 71, 92));
         addJButton.setText("Create Employee");
         addJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,6 +128,9 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             }
         });
 
+        organizationJComboBox.setBackground(new java.awt.Color(94, 138, 117));
+        organizationJComboBox.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        organizationJComboBox.setForeground(new java.awt.Color(43, 71, 92));
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,8 +138,13 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Organization");
 
+        backJButton.setBackground(new java.awt.Color(233, 230, 225));
+        backJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        backJButton.setForeground(new java.awt.Color(43, 71, 92));
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,22 +152,29 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(43, 71, 92));
         jLabel2.setText("Name");
 
+        organizationEmpJComboBox.setBackground(new java.awt.Color(94, 138, 117));
+        organizationEmpJComboBox.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        organizationEmpJComboBox.setForeground(new java.awt.Color(43, 71, 92));
         organizationEmpJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setText("Organization");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addComponent(backJButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(306, 306, 306)
                 .addComponent(addJButton)
-                .addGap(175, 175, 175))
+                .addContainerGap(175, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -181,7 +205,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(organizationEmpJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -198,13 +222,13 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
-        
+
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
         String name = nameJTextField.getText();
-        
+
         organization.getEmployeeDirectory().createEmployee(name);
         populateTable(organization);
-        
+
     }//GEN-LAST:event_addJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -216,7 +240,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-        if (organization != null){
+        if (organization != null) {
             populateTable(organization);
         }
     }//GEN-LAST:event_organizationJComboBoxActionPerformed

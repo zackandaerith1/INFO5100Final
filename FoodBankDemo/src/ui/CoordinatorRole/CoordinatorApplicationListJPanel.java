@@ -129,12 +129,13 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(54, 33, 89));
+        setBackground(new java.awt.Color(233, 230, 225));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        tblOrder.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        tblOrder.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        tblOrder.setForeground(new java.awt.Color(43, 71, 92));
         tblOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
@@ -172,8 +173,8 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
             tblOrder.getColumnModel().getColumn(5).setPreferredWidth(100);
         }
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
+        enterpriseLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(43, 71, 92));
         enterpriseLabel.setText("Coordinator:");
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
