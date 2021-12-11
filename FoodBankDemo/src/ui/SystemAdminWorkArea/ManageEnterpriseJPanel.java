@@ -4,7 +4,6 @@
  */
 package ui.SystemAdminWorkArea;
 
-import ui.ShelterAdminRole.ShelterAdminWorkAreaJPanel;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
@@ -13,6 +12,7 @@ import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import ui.ShelterAdminRole.ShelterAdminWorkAreaJPanel;
 
 /**
  *
@@ -85,6 +85,11 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         submitJButton = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(233, 230, 225));
+        setForeground(new java.awt.Color(43, 71, 92));
+
+        enterpriseJTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        enterpriseJTable.setForeground(new java.awt.Color(43, 71, 92));
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -106,16 +111,34 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(enterpriseJTable);
 
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Network");
 
+        networkJComboBox.setBackground(new java.awt.Color(94, 138, 117));
+        networkJComboBox.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        networkJComboBox.setForeground(new java.awt.Color(43, 71, 92));
         networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(43, 71, 92));
         jLabel2.setText("Name");
 
+        nameJTextField.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        nameJTextField.setForeground(new java.awt.Color(43, 71, 92));
+
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setText("Enterprise Type");
 
+        enterpriseTypeJComboBox.setBackground(new java.awt.Color(94, 138, 117));
+        enterpriseTypeJComboBox.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        enterpriseTypeJComboBox.setForeground(new java.awt.Color(43, 71, 92));
         enterpriseTypeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        submitJButton.setBackground(new java.awt.Color(94, 138, 117));
+        submitJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        submitJButton.setForeground(new java.awt.Color(43, 71, 92));
         submitJButton.setText("Submit");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,7 +146,10 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         });
 
-        backJButton.setText("<< Back");
+        backJButton.setBackground(new java.awt.Color(94, 138, 117));
+        backJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        backJButton.setForeground(new java.awt.Color(43, 71, 92));
+        backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
@@ -158,6 +184,9 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                         .addComponent(submitJButton)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {backJButton, submitJButton});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -179,7 +208,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(submitJButton)
                     .addComponent(backJButton))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -203,7 +232,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         userProcessContainer.remove(this);
-         Component[] componentArray = userProcessContainer.getComponents();
+        Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         ShelterAdminWorkAreaJPanel sysAdminwjp = (ShelterAdminWorkAreaJPanel) component;
         sysAdminwjp.populateTree();
