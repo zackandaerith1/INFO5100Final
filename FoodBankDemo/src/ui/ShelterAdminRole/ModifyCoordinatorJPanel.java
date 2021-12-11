@@ -5,10 +5,8 @@
  */
 package ui.ShelterAdminRole;
 
-import ui.ShelterAdminRole.ManageCoordinatorJPanel;
 import Business.Coordinator.Coordinator;
 import Business.Coordinator.CoordinatorDirectory;
-import Business.EcoSystem;
 import Business.Enterprise.ShelterEnteriprise;
 import Business.UserAccount.UserAccountDirectory;
 import java.awt.CardLayout;
@@ -80,35 +78,36 @@ public class ModifyCoordinatorJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(54, 33, 89));
+        jPanel1.setBackground(new java.awt.Color(233, 230, 225));
+        jPanel1.setForeground(new java.awt.Color(43, 71, 92));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Modify Coordinator");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(43, 71, 92));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("First Name:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(43, 71, 92));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Email Address:");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(43, 71, 92));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Home Address:");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(43, 71, 92));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Phone Number:");
 
-        btnUpdate.setBackground(new java.awt.Color(122, 72, 221));
-        btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdate.setBackground(new java.awt.Color(94, 138, 117));
+        btnUpdate.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(43, 71, 92));
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,9 +115,9 @@ public class ModifyCoordinatorJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(122, 72, 221));
-        btnBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setBackground(new java.awt.Color(94, 138, 117));
+        btnBack.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(43, 71, 92));
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,18 +125,18 @@ public class ModifyCoordinatorJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(43, 71, 92));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Username:");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(43, 71, 92));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Password:");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Last Name:");
 
@@ -178,7 +177,7 @@ public class ModifyCoordinatorJPanel extends javax.swing.JPanel {
                                     .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(firstnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel2, jLabel4, jLabel6, jLabel7, jLabel8, jLabel9});
@@ -222,7 +221,7 @@ public class ModifyCoordinatorJPanel extends javax.swing.JPanel {
                 .addComponent(btnUpdate)
                 .addGap(18, 18, 18)
                 .addComponent(btnBack)
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnBack, btnUpdate});

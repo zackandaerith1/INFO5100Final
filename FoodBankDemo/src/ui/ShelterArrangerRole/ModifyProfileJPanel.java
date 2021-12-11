@@ -62,7 +62,15 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
         txtID.setText(profile.getId());
         txtFirstName.setText(profile.getFirstname());
         txtLastName.setText(profile.getLastname());
-        txtGender.setText(profile.getGender());
+
+        String gender = profile.getGender();
+        if (gender.equals("Male")) {
+            radioMale.setSelected(true);
+        } else if (gender.equals("Female")) {
+            radioFemale.setSelected(true);
+        } else {
+            radioOther.setSelected(true);
+        }
         txtPhone.setText(profile.getPhone());
         String birthdate = profile.getBirth();
         Date date = new SimpleDateFormat("MM-dd-yyyy").parse(birthdate);
@@ -76,7 +84,9 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
         txtID.setEnabled(false);
         txtFirstName.setEnabled(false);
         txtLastName.setEnabled(false);
-        txtGender.setEnabled(false);
+        radioMale.setEnabled(false);
+        radioFemale.setEnabled(false);
+        radioOther.setEnabled(false);
         jDateChooser.setEnabled(false);
 
     }
@@ -98,6 +108,7 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtFirstName = new javax.swing.JTextField();
@@ -111,7 +122,6 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
-        txtGender = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -124,15 +134,19 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
         jDateChooser = new com.toedter.calendar.JDateChooser();
+        radioMale = new javax.swing.JRadioButton();
+        radioFemale = new javax.swing.JRadioButton();
+        radioOther = new javax.swing.JRadioButton();
 
-        setBackground(new java.awt.Color(54, 33, 89));
+        setBackground(new java.awt.Color(233, 230, 225));
+        setForeground(new java.awt.Color(43, 71, 92));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Person Information");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setText("First Name:");
 
         txtFirstName.addActionListener(new java.awt.event.ActionListener() {
@@ -141,9 +155,9 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnUpdate.setBackground(new java.awt.Color(122, 72, 221));
-        btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdate.setBackground(new java.awt.Color(94, 138, 117));
+        btnUpdate.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(43, 71, 92));
         btnUpdate.setText("Update Record");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,9 +165,9 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(122, 72, 221));
-        btnBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setBackground(new java.awt.Color(94, 138, 117));
+        btnBack.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(43, 71, 92));
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,8 +175,8 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(43, 71, 92));
         jLabel5.setText("Last Name:");
 
         txtLastName.addActionListener(new java.awt.event.ActionListener() {
@@ -171,8 +185,8 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(43, 71, 92));
         jLabel6.setText("Phone Number:");
 
         txtPhone.addActionListener(new java.awt.event.ActionListener() {
@@ -181,16 +195,16 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(43, 71, 92));
         jLabel7.setText("Birth Day:");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(43, 71, 92));
         jLabel8.setText("Gender:");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(43, 71, 92));
         jLabel9.setText("Home Address:");
 
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
@@ -199,14 +213,8 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        txtGender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtGenderActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(43, 71, 92));
         jLabel10.setText("Email Address:");
 
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -215,21 +223,21 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(43, 71, 92));
         jLabel11.setText("Comment:");
 
         txtComment.setColumns(20);
         txtComment.setRows(5);
         jScrollPane2.setViewportView(txtComment);
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(43, 71, 92));
         jLabel12.setText("Upload Picture:");
 
-        btnChoose.setBackground(new java.awt.Color(122, 72, 221));
-        btnChoose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnChoose.setForeground(new java.awt.Color(255, 255, 255));
+        btnChoose.setBackground(new java.awt.Color(94, 138, 117));
+        btnChoose.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnChoose.setForeground(new java.awt.Color(43, 71, 92));
         btnChoose.setText("Update Picture");
         btnChoose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,8 +251,8 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
         txtFilePath.setBackground(new java.awt.Color(54, 33, 89));
         txtFilePath.setForeground(new java.awt.Color(54, 33, 89));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(43, 71, 92));
         jLabel4.setText("ID:");
 
         txtID.addActionListener(new java.awt.event.ActionListener() {
@@ -252,6 +260,24 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
                 txtIDActionPerformed(evt);
             }
         });
+
+        radioMale.setBackground(new java.awt.Color(94, 138, 117));
+        buttonGroup1.add(radioMale);
+        radioMale.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        radioMale.setForeground(new java.awt.Color(43, 71, 92));
+        radioMale.setText("Male");
+
+        radioFemale.setBackground(new java.awt.Color(94, 138, 117));
+        buttonGroup1.add(radioFemale);
+        radioFemale.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        radioFemale.setForeground(new java.awt.Color(43, 71, 92));
+        radioFemale.setText("Female");
+
+        radioOther.setBackground(new java.awt.Color(94, 138, 117));
+        buttonGroup1.add(radioOther);
+        radioOther.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        radioOther.setForeground(new java.awt.Color(43, 71, 92));
+        radioOther.setText("Other");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -261,49 +287,6 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnBack)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(56, 56, 56)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnChoose, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jDateChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(231, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(photoComponent, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
@@ -312,9 +295,57 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                         .addComponent(txtFilePath, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45))))
+                        .addGap(45, 45, 45))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel10)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnBack)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(56, 56, 56)
+                                    .addComponent(jLabel1))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel12)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(btnChoose, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jDateChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(radioMale)
+                                .addGap(18, 18, 18)
+                                .addComponent(radioFemale)
+                                .addGap(18, 18, 18)
+                                .addComponent(radioOther)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel10, jLabel11, jLabel12, jLabel3, jLabel5, jLabel6, jLabel7, jLabel8, jLabel9});
@@ -339,7 +370,10 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(radioMale)
+                                .addComponent(radioFemale)
+                                .addComponent(radioOther))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -388,7 +422,7 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         //Not null check
-        if (txtFirstName.getText().isEmpty() || txtLastName.getText().isEmpty() || txtGender.getText().isEmpty()
+        if (txtFirstName.getText().isEmpty() || txtLastName.getText().isEmpty() || buttonGroup1.getSelection() == null
                 || txtPhone.getText().isEmpty() || jDateChooser.getDate() == null || txtAddress.getText().isEmpty()
                 || txtEmail.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Fields cannot be empty(except Comment)", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -404,6 +438,7 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
             String email = txtEmail.getText();
             String comment = txtComment.getText();
             String imagePath = txtFilePath.getText();
+
             profile.setPhone(phone);
             profile.setAddress(address);
             profile.setEmail(email);
@@ -417,7 +452,7 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
 
         txtFirstName.setText("");
         txtLastName.setText("");
-        txtGender.setText("");
+        buttonGroup1.clearSelection();
         txtPhone.setText("");
         jDateChooser.setCalendar(null);
         txtAddress.setText("");
@@ -455,10 +490,6 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
     private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAddressActionPerformed
-
-    private void txtGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtGenderActionPerformed
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
@@ -528,6 +559,7 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnChoose;
     private javax.swing.JButton btnUpdate;
+    private javax.swing.ButtonGroup buttonGroup1;
     private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -542,12 +574,14 @@ public class ModifyProfileJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel photoComponent;
+    private javax.swing.JRadioButton radioFemale;
+    private javax.swing.JRadioButton radioMale;
+    private javax.swing.JRadioButton radioOther;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextArea txtComment;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JLabel txtFilePath;
     private javax.swing.JTextField txtFirstName;
-    private javax.swing.JTextField txtGender;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtLastName;
     private javax.swing.JTextField txtPhone;

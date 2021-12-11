@@ -5,10 +5,8 @@
  */
 package ui.ShelterAdminRole;
 
-import ui.ShelterAdminRole.CreateCoordinatorJPanel;
 import Business.Coordinator.Coordinator;
 import Business.Coordinator.CoordinatorDirectory;
-import Business.EcoSystem;
 import Business.Enterprise.ShelterEnteriprise;
 import Business.UserAccount.UserAccount;
 import Business.UserAccount.UserAccountDirectory;
@@ -93,14 +91,15 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(54, 33, 89));
+        setBackground(new java.awt.Color(233, 230, 225));
+        setForeground(new java.awt.Color(43, 71, 92));
 
         jLabel1.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Manage Coordinator");
 
-        viewtbl.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        viewtbl.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         viewtbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -139,9 +138,9 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
             viewtbl.getColumnModel().getColumn(6).setPreferredWidth(50);
         }
 
-        btnModify.setBackground(new java.awt.Color(122, 72, 221));
-        btnModify.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnModify.setForeground(new java.awt.Color(255, 255, 255));
+        btnModify.setBackground(new java.awt.Color(94, 138, 117));
+        btnModify.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnModify.setForeground(new java.awt.Color(43, 71, 92));
         btnModify.setText("Modify Coordinator");
         btnModify.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,9 +148,9 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnCreate.setBackground(new java.awt.Color(122, 72, 221));
-        btnCreate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreate.setBackground(new java.awt.Color(94, 138, 117));
+        btnCreate.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnCreate.setForeground(new java.awt.Color(43, 71, 92));
         btnCreate.setText("Create Coordinator");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,9 +158,9 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(122, 72, 221));
-        btnDelete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setBackground(new java.awt.Color(94, 138, 117));
+        btnDelete.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(43, 71, 92));
         btnDelete.setText("Delete Coordinator");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,9 +168,9 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(122, 72, 221));
-        btnBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setBackground(new java.awt.Color(94, 138, 117));
+        btnBack.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(43, 71, 92));
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,7 +216,7 @@ public class ManageCoordinatorJPanel extends javax.swing.JPanel {
                     .addComponent(btnDelete))
                 .addGap(18, 18, 18)
                 .addComponent(btnBack)
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

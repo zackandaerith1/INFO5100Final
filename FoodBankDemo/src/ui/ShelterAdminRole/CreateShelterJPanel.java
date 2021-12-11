@@ -5,7 +5,6 @@
  */
 package ui.ShelterAdminRole;
 
-import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.ShelterEnteriprise;
 import Business.Role.AdminRole;
@@ -66,11 +65,12 @@ public class CreateShelterJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         emailTxt = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(54, 33, 89));
+        setBackground(new java.awt.Color(233, 230, 225));
+        setForeground(new java.awt.Color(43, 71, 92));
 
-        btnBack.setBackground(new java.awt.Color(122, 72, 221));
-        btnBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setBackground(new java.awt.Color(94, 138, 117));
+        btnBack.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(43, 71, 92));
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,17 +78,17 @@ public class CreateShelterJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Create Shelter");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(43, 71, 92));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Shelter Name:");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(43, 71, 92));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Shelter Admin First Name:");
 
@@ -98,19 +98,19 @@ public class CreateShelterJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(43, 71, 92));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Shelter Phone Number:");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Shelter Address:");
 
-        btnCreate.setBackground(new java.awt.Color(122, 72, 221));
-        btnCreate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreate.setBackground(new java.awt.Color(94, 138, 117));
+        btnCreate.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnCreate.setForeground(new java.awt.Color(43, 71, 92));
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,18 +118,18 @@ public class CreateShelterJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(43, 71, 92));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Shelter Admin Username:");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(43, 71, 92));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Shelter Admin Password:");
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(43, 71, 92));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("Shelter Admin Last Name:");
 
@@ -139,8 +139,8 @@ public class CreateShelterJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(43, 71, 92));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Shelter Email Address:");
 
@@ -187,7 +187,7 @@ public class CreateShelterJPanel extends javax.swing.JPanel {
                                         .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(lastnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnBack, btnCreate});
@@ -235,7 +235,7 @@ public class CreateShelterJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBack)
                     .addComponent(btnCreate))
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnBack, btnCreate});
