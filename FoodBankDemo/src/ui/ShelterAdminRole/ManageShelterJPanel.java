@@ -5,8 +5,6 @@
  */
 package ui.ShelterAdminRole;
 
-import ui.ShelterAdminRole.CreateShelterJPanel;
-import Business.EcoSystem;
 import Business.Enterprise.ShelterEnteriprise;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
@@ -91,13 +89,15 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(54, 33, 89));
+        jPanel1.setBackground(new java.awt.Color(233, 230, 225));
+        jPanel1.setForeground(new java.awt.Color(43, 71, 92));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Manage Shelter");
 
-        tblShelter.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tblShelter.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        tblShelter.setForeground(new java.awt.Color(43, 71, 92));
         tblShelter.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -130,9 +130,9 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
             tblShelter.getColumnModel().getColumn(0).setMaxWidth(0);
         }
 
-        btnModify.setBackground(new java.awt.Color(122, 72, 221));
-        btnModify.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnModify.setForeground(new java.awt.Color(255, 255, 255));
+        btnModify.setBackground(new java.awt.Color(43, 71, 92));
+        btnModify.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnModify.setForeground(new java.awt.Color(94, 138, 117));
         btnModify.setText("Modify Shelter");
         btnModify.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,9 +140,9 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnCreate.setBackground(new java.awt.Color(122, 72, 221));
-        btnCreate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreate.setBackground(new java.awt.Color(43, 71, 92));
+        btnCreate.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnCreate.setForeground(new java.awt.Color(94, 138, 117));
         btnCreate.setText("Create Shelter");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,9 +150,9 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(122, 72, 221));
-        btnDelete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setBackground(new java.awt.Color(43, 71, 92));
+        btnDelete.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(94, 138, 117));
         btnDelete.setText("Delete Shelter");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,9 +160,9 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(122, 72, 221));
-        btnBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setBackground(new java.awt.Color(43, 71, 92));
+        btnBack.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(94, 138, 117));
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,7 +209,7 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
                     .addComponent(btnDelete))
                 .addGap(18, 18, 18)
                 .addComponent(btnBack)
-                .addContainerGap(401, Short.MAX_VALUE))
+                .addContainerGap(390, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

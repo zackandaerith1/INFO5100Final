@@ -152,7 +152,7 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        tblOrder.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        tblOrder.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         tblOrder.setForeground(new java.awt.Color(43, 71, 92));
         tblOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -85,7 +85,7 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(233, 230, 225));
         setForeground(new java.awt.Color(43, 71, 92));
 
-        tblResource.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        tblResource.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         tblResource.setForeground(new java.awt.Color(43, 71, 92));
         tblResource.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

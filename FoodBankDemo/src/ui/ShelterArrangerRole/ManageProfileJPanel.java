@@ -134,7 +134,7 @@ public class ManageProfileJPanel extends javax.swing.JPanel {
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setAutoscrolls(true);
 
-        tblProfile.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        tblProfile.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         tblProfile.setForeground(new java.awt.Color(43, 71, 92));
         tblProfile.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
