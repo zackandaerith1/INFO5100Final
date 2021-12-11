@@ -11,6 +11,8 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -30,6 +32,13 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         system = dB4OUtil.retrieveSystem();
         this.setSize(1680, 1050);
+
+        String filename = "C:\\Users\\yibin\\Documents\\GitHub\\INFO5100Final\\FoodBankDemo\\huskyfoodbanklogo.png";
+
+        ImageIcon ii = new ImageIcon(filename);
+
+        Image logoimage = ii.getImage().getScaledInstance(1000, 600, Image.SCALE_SMOOTH);
+        logo.setIcon(new ImageIcon(logoimage));
     }
 
     /**
@@ -52,6 +61,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         container = new javax.swing.JPanel();
+        logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,6 +145,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         container.setBackground(new java.awt.Color(247, 247, 247));
         container.setLayout(new java.awt.CardLayout());
+        container.add(logo, "card2");
+
         jScrollPane1.setViewportView(container);
 
         jSplitPane1.setRightComponent(jScrollPane1);
@@ -263,6 +275,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton loginJButton;
     private javax.swing.JLabel loginJLabel;
+    private javax.swing.JLabel logo;
     private javax.swing.JButton logoutJButton;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField userNameJTextField;
