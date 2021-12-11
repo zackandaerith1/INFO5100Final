@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591f858a-1eca-4385-ad11-b86830c9f999" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/ui/ShelterAdminRole/ModifyProfileJPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShelterArrangerRole/ModifyProfileJPanel.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ShelterAdminRole/ModifyProfileJPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShelterArrangerRole/ModifyProfileJPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ShelterAdminRole/ModifyResourceJPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShelterArrangerRole/ModifyResourceJPanel.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ShelterAdminRole/ModifyResourceJPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ShelterArrangerRole/ModifyResourceJPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +66,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ui/ShelterArrangerRole/ManageResourceJPanel.java</url>
-          <line>40</line>
+          <line>44</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
