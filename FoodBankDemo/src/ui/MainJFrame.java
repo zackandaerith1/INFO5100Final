@@ -58,8 +58,8 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(233, 230, 225));
 
         loginJButton.setBackground(new java.awt.Color(94, 138, 117));
-        loginJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        loginJButton.setForeground(new java.awt.Color(196, 181, 160));
+        loginJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        loginJButton.setForeground(new java.awt.Color(43, 71, 92));
         loginJButton.setText("Login");
         loginJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,8 +72,8 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel1.setText("User Name");
 
         logoutJButton.setBackground(new java.awt.Color(94, 138, 117));
-        logoutJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        logoutJButton.setForeground(new java.awt.Color(196, 181, 160));
+        logoutJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        logoutJButton.setForeground(new java.awt.Color(43, 71, 92));
         logoutJButton.setText("Logout");
         logoutJButton.setEnabled(false);
         logoutJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +125,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(logoutJButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginJLabel)
-                .addContainerGap(350, Short.MAX_VALUE))
+                .addContainerGap(342, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
