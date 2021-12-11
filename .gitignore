@@ -26,3 +26,5 @@
 **.properties
 
 /FoodBankDemo/build/
+FoodBankDemo/src/.DS_Store
+FoodBankDemo/src/Business/.DS_Store
