@@ -149,7 +149,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         backJButton.setBackground(new java.awt.Color(94, 138, 117));
         backJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         backJButton.setForeground(new java.awt.Color(43, 71, 92));
-        backJButton.setText("Back");
+        backJButton.setText("<<Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
