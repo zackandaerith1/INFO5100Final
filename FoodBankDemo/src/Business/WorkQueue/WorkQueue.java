@@ -24,7 +24,7 @@ public class WorkQueue {
         return workRequestList;
     }
 
-    public ArrayList<FoodbankToFundingWorkRequest> getFundingworkrequestlist() {
+    public ArrayList<FoodbankToFundingWorkRequest> getFoodbankToFundingworkrequestlist() {
         return Fundingworkrequestlist;
     }
     
