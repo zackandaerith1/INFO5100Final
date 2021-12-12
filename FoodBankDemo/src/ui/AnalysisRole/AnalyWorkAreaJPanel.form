@@ -30,7 +30,7 @@
                           <Component id="VolunteerData" min="-2" max="-2" attributes="0"/>
                           <Component id="FoobankDataJButton" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="378" max="32767" attributes="0"/>
+                      <EmptySpace pref="370" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="ShowDataJButton" min="-2" max="-2" attributes="0"/>
                           <Component id="FundingDataJButton" min="-2" max="-2" attributes="0"/>
@@ -38,6 +38,11 @@
                       <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="428" max="-2" attributes="0"/>
+              <Component id="NetWorkData" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -54,7 +59,9 @@
                   <Component id="ShowDataJButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="FoobankDataJButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <Component id="NetWorkData" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="VolunteerData" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="FundingDataJButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -108,6 +115,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FundingDataJButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="NetWorkData">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Network Data"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NetWorkDataActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

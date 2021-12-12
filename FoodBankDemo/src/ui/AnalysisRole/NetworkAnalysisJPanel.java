@@ -4,6 +4,10 @@
  */
 package ui.AnalysisRole;
 
+import Business.EcoSystem;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author zhengfang
@@ -15,6 +19,10 @@ public class NetworkAnalysisJPanel extends javax.swing.JPanel {
      */
     public NetworkAnalysisJPanel() {
         initComponents();
+    }
+
+    NetworkAnalysisJPanel(JPanel userProcessContainer, UserAccount userAccount, EcoSystem business) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**

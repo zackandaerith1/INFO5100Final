@@ -56,6 +56,7 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
         FoobankDataJButton = new javax.swing.JButton();
         VolunteerData = new javax.swing.JButton();
         FundingDataJButton = new javax.swing.JButton();
+        NetWorkData = new javax.swing.JButton();
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
@@ -90,6 +91,13 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        NetWorkData.setText("Network Data");
+        NetWorkData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NetWorkDataActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,11 +114,15 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(VolunteerData)
                             .addComponent(FoobankDataJButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 378, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 370, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ShowDataJButton)
                             .addComponent(FundingDataJButton))
                         .addGap(218, 218, 218))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(428, 428, 428)
+                .addComponent(NetWorkData)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +135,9 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ShowDataJButton)
                     .addComponent(FoobankDataJButton))
-                .addGap(107, 107, 107)
+                .addGap(42, 42, 42)
+                .addComponent(NetWorkData)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VolunteerData)
                     .addComponent(FundingDataJButton))
@@ -164,10 +178,19 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_FundingDataJButtonActionPerformed
 
+    private void NetWorkDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NetWorkDataActionPerformed
+
+        NetworkAnalysisJPanel dataanalysis = new NetworkAnalysisJPanel(userProcessContainer, userAccount, business);
+        userProcessContainer.add(dataanalysis);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);        
+    }//GEN-LAST:event_NetWorkDataActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton FoobankDataJButton;
     private javax.swing.JButton FundingDataJButton;
+    private javax.swing.JButton NetWorkData;
     private javax.swing.JButton ShowDataJButton;
     private javax.swing.JButton VolunteerData;
     private javax.swing.JLabel enterpriseLabel;
