@@ -26,14 +26,20 @@ public class VolunteerAdminWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btnAssign = new javax.swing.JButton();
+        btnReceive = new javax.swing.JButton();
+        btnManageVolunteer = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(54, 33, 89));
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Volunteer Admin Work Area");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Volunteer Admin Work Area");
+        btnAssign.setText("Assign Works");
+
+        btnReceive.setText("Receive Works");
+
+        btnManageVolunteer.setText("Manage Volunteers");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -41,19 +47,35 @@ public class VolunteerAdminWorkAreaJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(214, 214, 214)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnReceive, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(btnAssign, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnManageVolunteer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(415, Short.MAX_VALUE))
+                .addComponent(jLabel2)
+                .addGap(80, 80, 80)
+                .addComponent(btnManageVolunteer)
+                .addGap(18, 18, 18)
+                .addComponent(btnAssign)
+                .addGap(18, 18, 18)
+                .addComponent(btnReceive)
+                .addContainerGap(229, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnAssign;
+    private javax.swing.JButton btnManageVolunteer;
+    private javax.swing.JButton btnReceive;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
