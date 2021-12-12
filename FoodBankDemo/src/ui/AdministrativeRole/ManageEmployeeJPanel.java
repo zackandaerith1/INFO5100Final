@@ -84,6 +84,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(233, 230, 225));
 
         organizationJTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        organizationJTable.setForeground(new java.awt.Color(43, 71, 92));
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
