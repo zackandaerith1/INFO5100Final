@@ -5,10 +5,7 @@
  */
 package ui.VolunteerRole;
 
-import ui.ShelterArrangerRole.*;
-import Business.EcoSystem;
 import Business.Enterprise.ShelterEnteriprise;
-import Business.Organization.Shelter.ArrangementOrganization;
 import Business.Profile.Profile;
 import Business.Profile.ProfileDirectory;
 import Business.Shelter.Shelter;
@@ -16,8 +13,6 @@ import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
 import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamPanel;
-import ui.ShelterArrangerRole.ModifyProfileJPanel;
-import com.toedter.calendar.JDateChooser;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Image;
@@ -41,6 +36,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import ui.ShelterArrangerRole.ModifyProfileJPanel;
 
 /**
  *
@@ -56,7 +52,7 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
     private ProfileDirectory profileDirectory;
     private Shelter shelter;
 
-    public ManageVolunteerProfileJPanel(JPanel userProcessContainer, UserAccount account,  ShelterEnteriprise enterprise) {
+    public ManageVolunteerProfileJPanel(JPanel userProcessContainer, UserAccount account, ShelterEnteriprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
@@ -133,13 +129,14 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
         btnUpload = new javax.swing.JButton();
         jDateChooser = new com.toedter.calendar.JDateChooser();
 
-        setBackground(new java.awt.Color(54, 33, 89));
+        setBackground(new java.awt.Color(233, 230, 225));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setAutoscrolls(true);
 
-        tblProfile.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        tblProfile.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        tblProfile.setForeground(new java.awt.Color(43, 71, 92));
         tblProfile.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -177,12 +174,12 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
             tblProfile.getColumnModel().getColumn(0).setMaxWidth(0);
         }
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Register Person");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setText("First Name:");
 
         txtFirstName.addActionListener(new java.awt.event.ActionListener() {
@@ -191,9 +188,9 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnAdd.setBackground(new java.awt.Color(122, 72, 221));
-        btnAdd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdd.setBackground(new java.awt.Color(94, 138, 117));
+        btnAdd.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(43, 71, 92));
         btnAdd.setText("Add Record");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,9 +198,9 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(122, 72, 221));
-        btnBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setBackground(new java.awt.Color(94, 138, 117));
+        btnBack.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(43, 71, 92));
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,9 +208,9 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        delete.setBackground(new java.awt.Color(122, 72, 221));
-        delete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        delete.setForeground(new java.awt.Color(255, 255, 255));
+        delete.setBackground(new java.awt.Color(94, 138, 117));
+        delete.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        delete.setForeground(new java.awt.Color(43, 71, 92));
         delete.setText("Delete Record");
         delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,9 +218,9 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        viewBtn.setBackground(new java.awt.Color(122, 72, 221));
-        viewBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        viewBtn.setForeground(new java.awt.Color(255, 255, 255));
+        viewBtn.setBackground(new java.awt.Color(94, 138, 117));
+        viewBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        viewBtn.setForeground(new java.awt.Color(43, 71, 92));
         viewBtn.setText("View/Update Record");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,8 +228,8 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(43, 71, 92));
         jLabel5.setText("Last Name:");
 
         txtLastName.addActionListener(new java.awt.event.ActionListener() {
@@ -241,8 +238,8 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(43, 71, 92));
         jLabel6.setText("Phone Number:");
 
         txtPhone.addActionListener(new java.awt.event.ActionListener() {
@@ -251,16 +248,16 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(43, 71, 92));
         jLabel7.setText("Birth Day:");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(43, 71, 92));
         jLabel8.setText("Gender:");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(43, 71, 92));
         jLabel9.setText("Home Address:");
 
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
@@ -269,8 +266,8 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(43, 71, 92));
         jLabel10.setText("Email Address:");
 
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -279,8 +276,8 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(43, 71, 92));
         jLabel11.setText("Comment:");
 
         txtComment.setColumns(20);
@@ -289,17 +286,17 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(43, 71, 92));
         jLabel2.setText("Person List");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(43, 71, 92));
         jLabel12.setText("Upload Picture:");
 
-        btnChoose.setBackground(new java.awt.Color(122, 72, 221));
-        btnChoose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnChoose.setForeground(new java.awt.Color(255, 255, 255));
+        btnChoose.setBackground(new java.awt.Color(94, 138, 117));
+        btnChoose.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnChoose.setForeground(new java.awt.Color(43, 71, 92));
         btnChoose.setText("Take Picture");
         btnChoose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -313,21 +310,27 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
         txtFilePath.setForeground(new java.awt.Color(54, 33, 89));
         txtFilePath.setToolTipText("");
 
+        radioMale.setBackground(new java.awt.Color(94, 138, 117));
         buttonGroup1.add(radioMale);
-        radioMale.setForeground(new java.awt.Color(255, 255, 255));
+        radioMale.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        radioMale.setForeground(new java.awt.Color(43, 71, 92));
         radioMale.setText("Male");
 
+        radioFemale.setBackground(new java.awt.Color(94, 138, 117));
         buttonGroup1.add(radioFemale);
-        radioFemale.setForeground(new java.awt.Color(255, 255, 255));
+        radioFemale.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        radioFemale.setForeground(new java.awt.Color(43, 71, 92));
         radioFemale.setText("Female");
 
+        radioOther.setBackground(new java.awt.Color(94, 138, 117));
         buttonGroup1.add(radioOther);
-        radioOther.setForeground(new java.awt.Color(255, 255, 255));
+        radioOther.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        radioOther.setForeground(new java.awt.Color(43, 71, 92));
         radioOther.setText("Other");
 
-        btnUpload.setBackground(new java.awt.Color(122, 72, 221));
-        btnUpload.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnUpload.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpload.setBackground(new java.awt.Color(94, 138, 117));
+        btnUpload.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnUpload.setForeground(new java.awt.Color(43, 71, 92));
         btnUpload.setText("Upload Picture");
         btnUpload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -399,21 +402,18 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(radioOther)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(274, 274, 274)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(171, 171, 171)
-                                .addComponent(viewBtn)
-                                .addGap(93, 93, 93)
-                                .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 134, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(274, 274, 274)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(viewBtn)
+                        .addGap(93, 93, 93)
+                        .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 808, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel10, jLabel11, jLabel12, jLabel3, jLabel5, jLabel6, jLabel7, jLabel8, jLabel9});
