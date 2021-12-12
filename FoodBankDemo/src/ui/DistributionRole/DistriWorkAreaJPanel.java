@@ -84,6 +84,7 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
+        requestTestJButton.setBackground(new java.awt.Color(94, 138, 117));
         requestTestJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         requestTestJButton.setForeground(new java.awt.Color(43, 71, 92));
         requestTestJButton.setText("Process the request");
@@ -93,10 +94,12 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        viewdetailJButton.setBackground(new java.awt.Color(94, 138, 117));
         viewdetailJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         viewdetailJButton.setForeground(new java.awt.Color(43, 71, 92));
         viewdetailJButton.setText("View");
 
+        refreshTestJButton.setBackground(new java.awt.Color(94, 138, 117));
         refreshTestJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         refreshTestJButton.setForeground(new java.awt.Color(43, 71, 92));
         refreshTestJButton.setText("Refresh");

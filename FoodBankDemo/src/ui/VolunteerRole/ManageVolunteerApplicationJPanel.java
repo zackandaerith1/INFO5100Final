@@ -228,7 +228,7 @@ public class ManageVolunteerApplicationJPanel extends javax.swing.JPanel {
 
         jLabel13.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(43, 71, 92));
-        jLabel13.setText("Manage Application");
+        jLabel13.setText("Manage Volunteer Application");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -252,12 +252,13 @@ public class ManageVolunteerApplicationJPanel extends javax.swing.JPanel {
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(499, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(600, 600, 600)
-                .addComponent(jLabel13)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(600, 600, 600)
+                        .addComponent(jLabel13))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

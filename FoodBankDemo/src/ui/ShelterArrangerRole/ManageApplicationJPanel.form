@@ -197,13 +197,13 @@
     <Component class="javax.swing.JButton" name="btnCompleted">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="5c" green="47" red="2b" type="rgb"/>
+          <Color blue="75" green="8a" red="5e" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="75" green="8a" red="5e" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Approved"/>
       </Properties>
@@ -214,13 +214,13 @@
     <Component class="javax.swing.JButton" name="btnProcess">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="5c" green="47" red="2b" type="rgb"/>
+          <Color blue="75" green="8a" red="5e" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="75" green="8a" red="5e" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Process"/>
       </Properties>
@@ -231,13 +231,13 @@
     <Component class="javax.swing.JButton" name="btnBack">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="5c" green="47" red="2b" type="rgb"/>
+          <Color blue="75" green="8a" red="5e" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="75" green="8a" red="5e" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&lt;&lt; Back"/>
       </Properties>
@@ -248,13 +248,13 @@
     <Component class="javax.swing.JButton" name="btnRejct">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="5c" green="47" red="2b" type="rgb"/>
+          <Color blue="75" green="8a" red="5e" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="75" green="8a" red="5e" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Reject"/>
       </Properties>

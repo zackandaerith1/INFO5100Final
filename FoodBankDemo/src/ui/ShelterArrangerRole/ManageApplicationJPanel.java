@@ -177,9 +177,9 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblOrder);
 
-        btnCompleted.setBackground(new java.awt.Color(43, 71, 92));
+        btnCompleted.setBackground(new java.awt.Color(94, 138, 117));
         btnCompleted.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        btnCompleted.setForeground(new java.awt.Color(94, 138, 117));
+        btnCompleted.setForeground(new java.awt.Color(43, 71, 92));
         btnCompleted.setText("Approved");
         btnCompleted.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,9 +187,9 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnProcess.setBackground(new java.awt.Color(43, 71, 92));
+        btnProcess.setBackground(new java.awt.Color(94, 138, 117));
         btnProcess.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        btnProcess.setForeground(new java.awt.Color(94, 138, 117));
+        btnProcess.setForeground(new java.awt.Color(43, 71, 92));
         btnProcess.setText("Process");
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,9 +197,9 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(43, 71, 92));
+        btnBack.setBackground(new java.awt.Color(94, 138, 117));
         btnBack.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(94, 138, 117));
+        btnBack.setForeground(new java.awt.Color(43, 71, 92));
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,9 +207,9 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnRejct.setBackground(new java.awt.Color(43, 71, 92));
+        btnRejct.setBackground(new java.awt.Color(94, 138, 117));
         btnRejct.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        btnRejct.setForeground(new java.awt.Color(94, 138, 117));
+        btnRejct.setForeground(new java.awt.Color(43, 71, 92));
         btnRejct.setText("Reject");
         btnRejct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
