@@ -8,7 +8,7 @@ package Business.WorkQueue;
  *
  * @author zhengfang
  */
-public class ShelterrequestWorkRequest extends WorkRequest{
+public class ShelterToFoodbankWorkRequest extends WorkRequest{
     
     
 }

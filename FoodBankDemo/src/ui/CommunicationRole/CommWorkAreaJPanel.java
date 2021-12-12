@@ -11,7 +11,7 @@ import Business.Organization.Foodbank.CommunicationOrganization;
 import Business.Organization.Funding.AccountOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.FundingrequestWorkRequest;
+import Business.WorkQueue.FoodbankToFundingWorkRequest;
 import java.awt.CardLayout;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -284,7 +284,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         String amount = txtamount.getText();
         
-        FundingrequestWorkRequest request = new FundingrequestWorkRequest();
+        FoodbankToFundingWorkRequest request = new FoodbankToFundingWorkRequest();
         request.setAmount(Integer.parseInt(amount));
         request.setSender(userAccount);
         request.setStatus("Sent");
@@ -314,7 +314,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-            FundingrequestWorkRequest d = (FundingrequestWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+            FoodbankToFundingWorkRequest d = (FoodbankToFundingWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
 
             d.setAmount(Integer.getInteger(txtamount.getText()));   
 
@@ -371,7 +371,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         
         model.setRowCount(0);
-        for (FundingrequestWorkRequest request : userAccount.getWorkQueue().getFundingworkrequestlist()){
+        for (FoodbankToFundingWorkRequest request : userAccount.getWorkQueue().getFundingworkrequestlist()){
             Object[] row = new Object[4];
             row[0] = request;
             row[1] = request.getReceiver();

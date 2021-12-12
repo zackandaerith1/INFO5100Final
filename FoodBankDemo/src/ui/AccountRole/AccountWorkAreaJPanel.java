@@ -10,7 +10,7 @@ import Business.Organization.Funding.AccountOrganization;
 import Business.Profile.Donator;
 import Business.Profile.DonatorDirectory;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.FundingrequestWorkRequest;
+import Business.WorkQueue.FoodbankToFundingWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -306,7 +306,7 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
         
         if (selectedRow < 0) return;
         
-        FundingrequestWorkRequest request = (FundingrequestWorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        FoodbankToFundingWorkRequest request = (FoodbankToFundingWorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
         request.setReceiver(userAccount);
         request.setStatus("Pending");
         populateRequestTable();
@@ -332,7 +332,7 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
 
                 total = + order.getAmount();
         }
-        for(FundingrequestWorkRequest request : organization.getWorkQueue().getFundingworkrequestlist()){
+        for(FoodbankToFundingWorkRequest request : organization.getWorkQueue().getFundingworkrequestlist()){
             if (request.getStatus().equals("Completed")){
                 total = -request.getAmount();
             }
@@ -424,7 +424,7 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
         if (selectedRow < 0){
             return;
         }
-        FundingrequestWorkRequest request = (FundingrequestWorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        FoodbankToFundingWorkRequest request = (FoodbankToFundingWorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
         
         request.setStatus("Processing");
         
@@ -470,7 +470,7 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         
-        for(FundingrequestWorkRequest request : organization.getWorkQueue().getFundingworkrequestlist()){
+        for(FoodbankToFundingWorkRequest request : organization.getWorkQueue().getFundingworkrequestlist()){
             Object[] row = new Object[4];
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();

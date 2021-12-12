@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class WorkQueue {
     
     private ArrayList<WorkRequest> workRequestList;
-    private ArrayList<FundingrequestWorkRequest> Fundingworkrequestlist;
+    private ArrayList<FoodbankToFundingWorkRequest> Fundingworkrequestlist;
 
     public WorkQueue() {
         workRequestList = new ArrayList();
@@ -24,7 +24,7 @@ public class WorkQueue {
         return workRequestList;
     }
 
-    public ArrayList<FundingrequestWorkRequest> getFundingworkrequestlist() {
+    public ArrayList<FoodbankToFundingWorkRequest> getFundingworkrequestlist() {
         return Fundingworkrequestlist;
     }
     

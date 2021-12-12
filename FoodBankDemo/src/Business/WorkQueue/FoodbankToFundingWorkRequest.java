@@ -9,7 +9,7 @@ package Business.WorkQueue;
  *
  * @author zhengfang
  */
-public class FundingrequestWorkRequest extends WorkRequest{
+public class FoodbankToFundingWorkRequest extends WorkRequest{
     private int amount;
 
     public int getAmount() {

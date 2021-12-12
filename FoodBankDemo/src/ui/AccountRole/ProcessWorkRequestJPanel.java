@@ -4,7 +4,7 @@
  */
 package ui.AccountRole;
 
-import Business.WorkQueue.FundingrequestWorkRequest;
+import Business.WorkQueue.FoodbankToFundingWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
@@ -17,13 +17,13 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 
     
     private JPanel userProcessContainer;
-    private FundingrequestWorkRequest request;
+    private FoodbankToFundingWorkRequest request;
     /**
      * Creates new form ProcessWorkRequestJPanel
      */
 
 
-    ProcessWorkRequestJPanel(JPanel userProcessContainer, FundingrequestWorkRequest request) {
+    ProcessWorkRequestJPanel(JPanel userProcessContainer, FoodbankToFundingWorkRequest request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
