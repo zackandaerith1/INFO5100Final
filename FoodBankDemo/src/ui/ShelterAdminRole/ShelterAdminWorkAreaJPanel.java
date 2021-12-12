@@ -10,10 +10,7 @@ import Business.Coordinator.CoordinatorDirectory;
 import Business.DeliveryMan.DeliveryMan;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
 import Business.Enterprise.ShelterEnteriprise;
-import Business.Organization.Organization;
-import Business.Organization.Shelter.RegistrationOrganization;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
@@ -53,7 +50,6 @@ public class ShelterAdminWorkAreaJPanel extends javax.swing.JPanel {
         populateTree();
 
     }
-
 
     public void populateTree() {
         DefaultTreeModel model = (DefaultTreeModel) jTree.getModel();
@@ -130,7 +126,7 @@ public class ShelterAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
-        jTree.setBackground(new java.awt.Color(54, 33, 89));
+        jTree.setBackground(new java.awt.Color(233, 230, 225));
         jTree.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTree.setForeground(new java.awt.Color(255, 255, 255));
         jTree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
@@ -145,7 +141,7 @@ public class ShelterAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         jPanel1Layout.setVerticalGroup(
@@ -155,19 +151,19 @@ public class ShelterAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane.setLeftComponent(jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(54, 33, 89));
+        jPanel2.setBackground(new java.awt.Color(233, 230, 225));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setBackground(new java.awt.Color(94, 138, 117));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Selected Node:");
 
-        lblSelectedNode.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblSelectedNode.setForeground(new java.awt.Color(255, 255, 255));
+        lblSelectedNode.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblSelectedNode.setForeground(new java.awt.Color(43, 71, 92));
 
-        btnCoordinator.setBackground(new java.awt.Color(122, 72, 221));
-        btnCoordinator.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCoordinator.setForeground(new java.awt.Color(255, 255, 255));
+        btnCoordinator.setBackground(new java.awt.Color(94, 138, 117));
+        btnCoordinator.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnCoordinator.setForeground(new java.awt.Color(43, 71, 92));
         btnCoordinator.setText("Manage Coordinators");
         btnCoordinator.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,9 +171,9 @@ public class ShelterAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnShelter.setBackground(new java.awt.Color(122, 72, 221));
-        btnShelter.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnShelter.setForeground(new java.awt.Color(255, 255, 255));
+        btnShelter.setBackground(new java.awt.Color(94, 138, 117));
+        btnShelter.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnShelter.setForeground(new java.awt.Color(43, 71, 92));
         btnShelter.setText("Manage Shelter");
         btnShelter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,7 +197,7 @@ public class ShelterAdminWorkAreaJPanel extends javax.swing.JPanel {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnShelter, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnCoordinator))))
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCoordinator, btnShelter});
@@ -210,14 +206,14 @@ public class ShelterAdminWorkAreaJPanel extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblSelectedNode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblSelectedNode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(btnShelter)
                 .addGap(30, 30, 30)
                 .addComponent(btnCoordinator)
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addContainerGap(247, Short.MAX_VALUE))
         );
 
         jSplitPane.setRightComponent(jPanel2);

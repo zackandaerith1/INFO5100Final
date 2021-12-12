@@ -5,21 +5,16 @@
  */
 package ui.AccountRole;
 
-import Business.Enterprise.Enterprise;
 import Business.Enterprise.FundingEnterprise;
 import Business.Organization.Funding.AccountOrganization;
 import Business.Profile.Donator;
 import Business.Profile.DonatorDirectory;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.FoodbankToFundingWorkRequest;
-import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.text.ParseException;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -37,13 +32,14 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
     private AccountOrganization organization;
     private FundingEnterprise enterprise;
     private UserAccount userAccount;
+
     /**
      * Creates new form AccountWorkAreaJPanel
      */
     public AccountWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, AccountOrganization organization, FundingEnterprise enterprise) {
 
         initComponents();
-        
+
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
@@ -87,6 +83,10 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(233, 230, 225));
+
+        workRequestJTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        workRequestJTable.setForeground(new java.awt.Color(43, 71, 92));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -115,6 +115,9 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
+        ApproverequestJButton.setBackground(new java.awt.Color(94, 138, 117));
+        ApproverequestJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        ApproverequestJButton.setForeground(new java.awt.Color(43, 71, 92));
         ApproverequestJButton.setText("Accept request");
         ApproverequestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +125,9 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        refreshDonatorJButton.setBackground(new java.awt.Color(94, 138, 117));
+        refreshDonatorJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        refreshDonatorJButton.setForeground(new java.awt.Color(43, 71, 92));
         refreshDonatorJButton.setText("Refresh");
         refreshDonatorJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,11 +135,17 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(43, 71, 92));
         enterpriseLabel.setText("EnterPrise :");
 
+        valueLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        valueLabel.setForeground(new java.awt.Color(43, 71, 92));
         valueLabel.setText("<value>");
 
+        btndenyrequest.setBackground(new java.awt.Color(94, 138, 117));
+        btndenyrequest.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btndenyrequest.setForeground(new java.awt.Color(43, 71, 92));
         btndenyrequest.setText("Process Request");
         btndenyrequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +153,8 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jTable1.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(43, 71, 92));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -154,6 +168,9 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTable1);
 
+        refreshTestJButton1.setBackground(new java.awt.Color(94, 138, 117));
+        refreshTestJButton1.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        refreshTestJButton1.setForeground(new java.awt.Color(43, 71, 92));
         refreshTestJButton1.setText("Refresh");
         refreshTestJButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,6 +178,9 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnaddDonator.setBackground(new java.awt.Color(94, 138, 117));
+        btnaddDonator.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnaddDonator.setForeground(new java.awt.Color(43, 71, 92));
         btnaddDonator.setText("Add Donator");
         btnaddDonator.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,6 +188,9 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnupdateDonator.setBackground(new java.awt.Color(94, 138, 117));
+        btnupdateDonator.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnupdateDonator.setForeground(new java.awt.Color(43, 71, 92));
         btnupdateDonator.setText("Update Donator");
         btnupdateDonator.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,6 +198,9 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnDeleteDonator.setBackground(new java.awt.Color(94, 138, 117));
+        btnDeleteDonator.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnDeleteDonator.setForeground(new java.awt.Color(43, 71, 92));
         btnDeleteDonator.setText("Delete Donator");
         btnDeleteDonator.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,16 +208,28 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Fitst Name:");
 
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(43, 71, 92));
         jLabel2.setText("Telephone: ");
 
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setText("Last Name:");
 
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(43, 71, 92));
         jLabel4.setText("Amount:");
 
+        valueLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        valueLabel1.setForeground(new java.awt.Color(43, 71, 92));
         valueLabel1.setText("<value>");
 
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(43, 71, 92));
         jLabel5.setText("Total $:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -237,7 +275,7 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
                                 .addGap(52, 52, 52)
                                 .addComponent(btnDeleteDonator)))
                         .addGap(18, 18, 18)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,7 +327,7 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtamount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(valueLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
@@ -304,10 +342,12 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
 
     private void ApproverequestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApproverequestJButtonActionPerformed
         int selectedRow = workRequestJTable.getSelectedRow();
-        
-        if (selectedRow < 0) return;
-        
-        FoodbankToFundingWorkRequest request = (FoodbankToFundingWorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+
+        if (selectedRow < 0) {
+            return;
+        }
+
+        FoodbankToFundingWorkRequest request = (FoodbankToFundingWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         request.setReceiver(userAccount);
         request.setStatus("Pending");
         populateRequestTable();
@@ -325,22 +365,22 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
     private void refreshTestJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButton1ActionPerformed
         // TODO add your handling code here:
 
-       populateRequestTable();
-        
-        int total=0;
+        populateRequestTable();
+
+        int total = 0;
 
         for (Donator order : organization.getDlist().getDonatorlist()) {
 
-                total = + order.getAmount();
+            total = +order.getAmount();
         }
-        for(FoodbankToFundingWorkRequest request : organization.getWorkQueue().getFoodbankToFundingworkrequestlist()){
-            if (request.getStatus().equals("Completed")){
+        for (FoodbankToFundingWorkRequest request : organization.getWorkQueue().getFoodbankToFundingworkrequestlist()) {
+            if (request.getStatus().equals("Completed")) {
                 total = -request.getAmount();
             }
-        } 
-        
+        }
+
         valueLabel1.setText(String.valueOf(total));
-        
+
     }//GEN-LAST:event_refreshTestJButton1ActionPerformed
 
     private void btnaddDonatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddDonatorActionPerformed
@@ -349,23 +389,22 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Amount Fields cannot be empty", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
+
         int amount = Integer.getInteger(txtamount.getText());
-        Donator d =new Donator(amount);
+        Donator d = new Donator(amount);
         d.setFname(txtfname.getText());
         d.setLname(txtlname.getText());
         d.setPhone(Integer.getInteger(txtphone.getText()));
         d.setDate(new Date());
-        
+
         DonatorDirectory dlist = organization.getDlist();
         dlist.getDonatorlist().add(d);
-        
-        
+
         txtfname.setText("");
         txtlname.setText("");
         txtphone.setText("");
         txtamount.setText("");
-        
+
         populateDonatorTable();
     }//GEN-LAST:event_btnaddDonatorActionPerformed
 
@@ -383,19 +422,18 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
             d.setDate(new Date());
             d.setAmount(Integer.getInteger(txtamount.getText()));
             d.setPhone(Integer.getInteger(txtphone.getText()));
-            
-            
+
             txtfname.setText("");
             txtlname.setText("");
             txtphone.setText("");
             txtamount.setText("");
-        
-        populateDonatorTable();
+
+            populateDonatorTable();
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-        
+
     }//GEN-LAST:event_btnupdateDonatorActionPerformed
 
     private void btnDeleteDonatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDonatorActionPerformed
@@ -408,10 +446,8 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
             }
             Donator d = (Donator) jTable1.getValueAt(selectedRow, 0);
             organization.getDlist().getDonatorlist().remove(d);
-            
 
-        
-        populateDonatorTable();
+            populateDonatorTable();
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -421,24 +457,20 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
     private void btndenyrequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndenyrequestActionPerformed
         // TODO add your handling code here:
         int selectedRow = workRequestJTable.getSelectedRow();
-        
-        if (selectedRow < 0){
+
+        if (selectedRow < 0) {
             return;
         }
-        FoodbankToFundingWorkRequest request = (FoodbankToFundingWorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
-        
+        FoodbankToFundingWorkRequest request = (FoodbankToFundingWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+
         request.setStatus("Processing");
-        
+
         ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, request);
         userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-        
-        
-        
-        
-    }//GEN-LAST:event_btndenyrequestActionPerformed
 
+    }//GEN-LAST:event_btndenyrequestActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ApproverequestJButton;
@@ -467,23 +499,23 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     public void populateRequestTable() {
-        DefaultTableModel model = (DefaultTableModel)workRequestJTable.getModel();
-        
+        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
+
         model.setRowCount(0);
-        
-        for(FoodbankToFundingWorkRequest request : organization.getWorkQueue().getFoodbankToFundingworkrequestlist()){
+
+        for (FoodbankToFundingWorkRequest request : organization.getWorkQueue().getFoodbankToFundingworkrequestlist()) {
             Object[] row = new Object[4];
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();
             row[2] = request.getStatus();
             row[3] = request.getMessage();
-            
+
             model.addRow(row);
-        }    
+        }
     }
 
     private void populateDonatorTable() {
-        
+
         DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
         dtm.setRowCount(0);
         jTable1.setDefaultRenderer(Object.class, new TableCellRenderer() {
@@ -519,16 +551,15 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
 
         for (Donator order : organization.getDlist().getDonatorlist()) {
 
-                Object[] row = new Object[5];
-                row[0] = order;
-                row[1] = order.getLname();
-                row[2] = order.getPhone();
-                row[3] = order.getDate().toString();
-                row[4] = order.getAmount();
+            Object[] row = new Object[5];
+            row[0] = order;
+            row[1] = order.getLname();
+            row[2] = order.getPhone();
+            row[3] = order.getDate().toString();
+            row[4] = order.getAmount();
 
+            dtm.addRow(row);
 
-                dtm.addRow(row);
-            
         }
     }
 }

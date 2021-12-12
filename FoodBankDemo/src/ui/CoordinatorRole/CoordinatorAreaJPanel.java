@@ -13,9 +13,11 @@ import Business.Enterprise.ShelterEnteriprise;
 import Business.Menu.Item;
 import Business.Menu.Menu;
 import Business.Menu.MenuDirectory;
+
 import Business.WorkQueue.Order;
 import Business.WorkQueue.OrderDirectory;
 import Business.Organization.Organization;
+
 import Business.Organization.Shelter.ArrangementOrganization;
 import Business.Organization.Shelter.RegistrationOrganization;
 import Business.Profile.Profile;
@@ -74,7 +76,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
     }
 
     public CoordinatorAreaJPanel(JPanel userProcessContainer, UserAccount account, RegistrationOrganization arrangementOrganization, Enterprise enterprise) {
-        
+
     }
 
     public void populatePersonTable() {
@@ -184,10 +186,11 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
         lblPerson = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(54, 33, 89));
+        setBackground(new java.awt.Color(233, 230, 225));
+        setForeground(new java.awt.Color(43, 71, 92));
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
+        enterpriseLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(43, 71, 92));
         enterpriseLabel.setText("Coordinator:");
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -230,9 +233,9 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
             tblPerson.getColumnModel().getColumn(0).setMaxWidth(0);
         }
 
-        dropboxShelter.setBackground(new java.awt.Color(122, 72, 221));
-        dropboxShelter.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        dropboxShelter.setForeground(new java.awt.Color(255, 255, 255));
+        dropboxShelter.setBackground(new java.awt.Color(94, 138, 117));
+        dropboxShelter.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        dropboxShelter.setForeground(new java.awt.Color(43, 71, 92));
         dropboxShelter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         dropboxShelter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -240,13 +243,14 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setBackground(new java.awt.Color(94, 138, 117));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Quantity");
 
-        btnSend.setBackground(new java.awt.Color(122, 72, 221));
-        btnSend.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnSend.setForeground(new java.awt.Color(255, 255, 255));
+        btnSend.setBackground(new java.awt.Color(94, 138, 117));
+        btnSend.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnSend.setForeground(new java.awt.Color(43, 71, 92));
         btnSend.setText("Send Application");
         btnSend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -254,9 +258,9 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnMenuShow.setBackground(new java.awt.Color(122, 72, 221));
-        btnMenuShow.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnMenuShow.setForeground(new java.awt.Color(255, 255, 255));
+        btnMenuShow.setBackground(new java.awt.Color(94, 138, 117));
+        btnMenuShow.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnMenuShow.setForeground(new java.awt.Color(43, 71, 92));
         btnMenuShow.setText("Show Person List & Item List");
         btnMenuShow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -301,9 +305,9 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
             tblApplication.getColumnModel().getColumn(0).setMaxWidth(0);
         }
 
-        btnSelect.setBackground(new java.awt.Color(122, 72, 221));
-        btnSelect.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnSelect.setForeground(new java.awt.Color(255, 255, 255));
+        btnSelect.setBackground(new java.awt.Color(94, 138, 117));
+        btnSelect.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnSelect.setForeground(new java.awt.Color(43, 71, 92));
         btnSelect.setText("Select");
         btnSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -311,19 +315,21 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setBackground(new java.awt.Color(94, 138, 117));
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setText("Total");
 
         txtTotal.setEditable(false);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setBackground(new java.awt.Color(94, 138, 117));
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(43, 71, 92));
         jLabel4.setText("Application List For:");
 
-        orderHistoryJButton.setBackground(new java.awt.Color(122, 72, 221));
-        orderHistoryJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        orderHistoryJButton.setForeground(new java.awt.Color(255, 255, 255));
+        orderHistoryJButton.setBackground(new java.awt.Color(94, 138, 117));
+        orderHistoryJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        orderHistoryJButton.setForeground(new java.awt.Color(43, 71, 92));
         orderHistoryJButton.setText("View Application History");
         orderHistoryJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -368,17 +374,19 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
             tblItem.getColumnModel().getColumn(0).setMaxWidth(0);
         }
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setBackground(new java.awt.Color(94, 138, 117));
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(43, 71, 92));
         jLabel2.setText("Person List");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setBackground(new java.awt.Color(94, 138, 117));
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(43, 71, 92));
         jLabel5.setText("Item List");
 
-        btnAdd.setBackground(new java.awt.Color(122, 72, 221));
-        btnAdd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdd.setBackground(new java.awt.Color(94, 138, 117));
+        btnAdd.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(43, 71, 92));
         btnAdd.setText("Add");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -389,8 +397,9 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
         lblPerson.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblPerson.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setBackground(new java.awt.Color(94, 138, 117));
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(43, 71, 92));
         jLabel6.setText("items");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -490,7 +499,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel3)
                     .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAdd, btnMenuShow, btnSelect, btnSend, dropboxShelter, jLabel1, jLabel3, orderHistoryJButton, txtQuantity, txtTotal});
@@ -579,7 +588,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
     private void orderHistoryJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderHistoryJButtonActionPerformed
 
         CoordinatorApplicationListJPanel ccjp = new CoordinatorApplicationListJPanel(userProcessContainer, account,
-                enterprise,business);
+                enterprise, business);
 
         JFrame window = new JFrame("CoordinatorApplicationDetailFrame");
 

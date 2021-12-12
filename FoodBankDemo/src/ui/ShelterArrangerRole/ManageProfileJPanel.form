@@ -7,7 +7,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="59" green="21" red="36" type="rgb"/>
+      <Color blue="e1" green="e6" red="e9" type="rgb"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -117,7 +117,7 @@
                               <Component id="delete" min="-2" pref="141" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="134" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="155" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -314,10 +314,10 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="24" style="1"/>
+          <Font name="Yu Gothic UI" size="18" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Register Person"/>
       </Properties>
@@ -325,10 +325,10 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="1"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="First Name:"/>
       </Properties>
@@ -341,13 +341,13 @@
     <Component class="javax.swing.JButton" name="btnAdd">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="dd" green="48" red="7a" type="rgb"/>
+          <Color blue="75" green="8a" red="5e" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="14" style="1"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Add Record"/>
       </Properties>
@@ -358,13 +358,13 @@
     <Component class="javax.swing.JButton" name="btnBack">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="dd" green="48" red="7a" type="rgb"/>
+          <Color blue="75" green="8a" red="5e" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="14" style="1"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&lt;&lt;Back"/>
       </Properties>
@@ -375,13 +375,13 @@
     <Component class="javax.swing.JButton" name="delete">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="dd" green="48" red="7a" type="rgb"/>
+          <Color blue="75" green="8a" red="5e" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="14" style="1"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Delete Record"/>
       </Properties>
@@ -392,13 +392,13 @@
     <Component class="javax.swing.JButton" name="viewBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="dd" green="48" red="7a" type="rgb"/>
+          <Color blue="75" green="8a" red="5e" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="14" style="1"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="View/Update Record"/>
       </Properties>
@@ -409,10 +409,10 @@
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="1"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Last Name:"/>
       </Properties>
@@ -425,10 +425,10 @@
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="1"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Phone Number:"/>
       </Properties>
@@ -441,10 +441,10 @@
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="1"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Birth Day:"/>
       </Properties>
@@ -452,10 +452,10 @@
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="1"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Gender:"/>
       </Properties>
@@ -463,10 +463,10 @@
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="1"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Home Address:"/>
       </Properties>
@@ -479,10 +479,10 @@
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="1"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Email Address:"/>
       </Properties>
@@ -495,10 +495,10 @@
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="1"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Comment:"/>
       </Properties>
@@ -526,10 +526,10 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="24" style="1"/>
+          <Font name="Yu Gothic UI" size="18" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Person List"/>
       </Properties>
@@ -537,10 +537,10 @@
     <Component class="javax.swing.JLabel" name="jLabel12">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="1"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Upload Picture:"/>
       </Properties>
@@ -548,13 +548,13 @@
     <Component class="javax.swing.JButton" name="btnChoose">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="dd" green="48" red="7a" type="rgb"/>
+          <Color blue="75" green="8a" red="5e" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="12" style="0"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Take Picture"/>
       </Properties>
@@ -584,33 +584,51 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="radioMale">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="75" green="8a" red="5e" type="rgb"/>
+        </Property>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>
         </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Yu Gothic UI" size="14" style="1"/>
+        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Male"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="radioFemale">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="75" green="8a" red="5e" type="rgb"/>
+        </Property>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>
         </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Yu Gothic UI" size="14" style="1"/>
+        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Female"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="radioOther">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="75" green="8a" red="5e" type="rgb"/>
+        </Property>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>
         </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Yu Gothic UI" size="14" style="1"/>
+        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Other"/>
       </Properties>
@@ -618,13 +636,13 @@
     <Component class="javax.swing.JButton" name="btnUpload">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="dd" green="48" red="7a" type="rgb"/>
+          <Color blue="75" green="8a" red="5e" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="12" style="0"/>
+          <Font name="Yu Gothic UI" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="5c" green="47" red="2b" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Upload Picture"/>
       </Properties>

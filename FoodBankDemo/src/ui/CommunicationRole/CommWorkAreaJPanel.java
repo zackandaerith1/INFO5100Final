@@ -6,14 +6,10 @@
 package ui.CommunicationRole;
 
 import Business.Enterprise.Enterprise;
-import Business.Enterprise.FundingEnterprise;
 import Business.Organization.Foodbank.CommunicationOrganization;
-import Business.Organization.Funding.AccountOrganization;
-import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.FoodbankToFundingWorkRequest;
 import Business.WorkQueue.ShelterToFoodbankWorkRequest;
-import java.awt.CardLayout;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -29,14 +25,13 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
     private CommunicationOrganization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
+
     /**
      * Creates new form CommWorkAreaJPanel
      */
-
-
     public CommWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, CommunicationOrganization organization, Enterprise enterprise) {
         initComponents();
-        
+
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
@@ -72,7 +67,12 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         txtamount = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         AssigntoDistributionJButton = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
+        setBackground(new java.awt.Color(233, 230, 225));
+
+        JTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        JTable.setForeground(new java.awt.Color(43, 71, 92));
         JTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -101,6 +101,9 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(JTable);
 
+        processshelterrequestJButton.setBackground(new java.awt.Color(94, 138, 117));
+        processshelterrequestJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        processshelterrequestJButton.setForeground(new java.awt.Color(43, 71, 92));
         processshelterrequestJButton.setText("Process");
         processshelterrequestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +111,9 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        refreshTestJButton.setBackground(new java.awt.Color(94, 138, 117));
+        refreshTestJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        refreshTestJButton.setForeground(new java.awt.Color(43, 71, 92));
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,13 +121,21 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(43, 71, 92));
         enterpriseLabel.setText("EnterPrise :");
 
+        valueLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        valueLabel.setForeground(new java.awt.Color(43, 71, 92));
         valueLabel.setText("<value>");
 
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(43, 71, 92));
         jLabel2.setText("Amount: ");
 
+        btnsubmitfundingrequest.setBackground(new java.awt.Color(94, 138, 117));
+        btnsubmitfundingrequest.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnsubmitfundingrequest.setForeground(new java.awt.Color(43, 71, 92));
         btnsubmitfundingrequest.setText("Submit");
         btnsubmitfundingrequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,6 +143,9 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnupdate.setBackground(new java.awt.Color(94, 138, 117));
+        btnupdate.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnupdate.setForeground(new java.awt.Color(43, 71, 92));
         btnupdate.setText("Update");
         btnupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,6 +153,9 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btndelete.setBackground(new java.awt.Color(94, 138, 117));
+        btndelete.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btndelete.setForeground(new java.awt.Color(43, 71, 92));
         btndelete.setText("Delete");
         btndelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,6 +163,8 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        workRequestJTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        workRequestJTable.setForeground(new java.awt.Color(43, 71, 92));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -171,8 +193,13 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(workRequestJTable);
 
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setText("Funding Request");
 
+        btnRefreshfundingrequest.setBackground(new java.awt.Color(94, 138, 117));
+        btnRefreshfundingrequest.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnRefreshfundingrequest.setForeground(new java.awt.Color(43, 71, 92));
         btnRefreshfundingrequest.setText("Refresh");
         btnRefreshfundingrequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,6 +207,8 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Request Form");
 
         txtamount.addActionListener(new java.awt.event.ActionListener() {
@@ -188,8 +217,13 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(43, 71, 92));
         jLabel4.setText("Shelter Request");
 
+        AssigntoDistributionJButton.setBackground(new java.awt.Color(94, 138, 117));
+        AssigntoDistributionJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        AssigntoDistributionJButton.setForeground(new java.awt.Color(43, 71, 92));
         AssigntoDistributionJButton.setText("Assign to Distribution Center");
         AssigntoDistributionJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,94 +235,103 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(131, 131, 131)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtamount, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(239, 239, 239)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(refreshTestJButton)
-                .addGap(73, 73, 73))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
+                        .addGap(325, 325, 325)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(116, 116, 116))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(btnsubmitfundingrequest)
-                                .addGap(73, 73, 73)
+                                .addGap(87, 87, 87)
                                 .addComponent(btnupdate)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btndelete))))
+                                .addGap(68, 68, 68)
+                                .addComponent(btndelete))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtamount, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addGap(67, 67, 67)
-                        .addComponent(btnRefreshfundingrequest)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(processshelterrequestJButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(AssigntoDistributionJButton))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addGap(118, 118, 118))))
-                .addGap(61, 61, 61))
+                        .addGap(78, 78, 78)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(processshelterrequestJButton)
+                                    .addGap(52, 52, 52)
+                                    .addComponent(AssigntoDistributionJButton))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel3)
+                                            .addGap(64, 64, 64)
+                                            .addComponent(btnRefreshfundingrequest))
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(62, 62, 62)
+                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(212, 212, 212)
+                                            .addComponent(jLabel4)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(refreshTestJButton))))))))
+                .addGap(61, 137, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jScrollPane1, jScrollPane2});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(refreshTestJButton))
-                            .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(refreshTestJButton))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnRefreshfundingrequest)
-                        .addGap(19, 19, 19)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                            .addComponent(btnRefreshfundingrequest))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(processshelterrequestJButton)
                     .addComponent(AssigntoDistributionJButton))
-                .addGap(14, 14, 14)
+                .addGap(84, 84, 84)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addGap(68, 68, 68)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtamount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btndelete)
                     .addComponent(btnupdate)
                     .addComponent(btnsubmitfundingrequest))
                 .addGap(113, 113, 113))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jScrollPane1, jScrollPane2});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void processshelterrequestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processshelterrequestJButtonActionPerformed
@@ -305,8 +348,8 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             request.setRequestDate(new Date());
 
             txtamount.setText("");
-        
-        populatefundingTable();
+
+            populatefundingTable();
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -326,20 +369,18 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
     private void btnsubmitfundingrequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitfundingrequestActionPerformed
         // TODO add your handling code here:
         String amount = txtamount.getText();
-        
+
         FoodbankToFundingWorkRequest request = new FoodbankToFundingWorkRequest();
         request.setAmount(Integer.parseInt(amount));
         request.setSender(userAccount);
         request.setStatus("Sent");
         request.setRequestDate(new Date());
-        
 
         organization.getWorkQueue().getFoodbankToFundingworkrequestlist().add(request);
         userAccount.getWorkQueue().getFoodbankToFundingworkrequestlist().add(request);
- 
-        
+
         txtamount.setText("");
-        
+
         populatefundingTable();
     }//GEN-LAST:event_btnsubmitfundingrequestActionPerformed
 
@@ -353,11 +394,11 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             }
             FoodbankToFundingWorkRequest d = (FoodbankToFundingWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
 
-            d.setAmount(Integer.getInteger(txtamount.getText()));   
+            d.setAmount(Integer.getInteger(txtamount.getText()));
 
             txtamount.setText("");
-        
-        populatefundingTable();
+
+            populatefundingTable();
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -366,13 +407,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnRefreshfundingrequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshfundingrequestActionPerformed
         // TODO add your handling code here:
-        
-        
-        
-        
-        
-        
-        
+
         populatefundingTable();
     }//GEN-LAST:event_btnRefreshfundingrequestActionPerformed
 
@@ -390,11 +425,10 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             }
             FoodbankToFundingWorkRequest d = (FoodbankToFundingWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
 
-        organization.getWorkQueue().getFoodbankToFundingworkrequestlist().remove(d);
-        userAccount.getWorkQueue().getFoodbankToFundingworkrequestlist().remove(d);
-            
-        
-        populatefundingTable();
+            organization.getWorkQueue().getFoodbankToFundingworkrequestlist().remove(d);
+            userAccount.getWorkQueue().getFoodbankToFundingworkrequestlist().remove(d);
+
+            populatefundingTable();
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -404,7 +438,6 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
     private void AssigntoDistributionJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssigntoDistributionJButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AssigntoDistributionJButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AssigntoDistributionJButton;
@@ -420,6 +453,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton processshelterrequestJButton;
     private javax.swing.JButton refreshTestJButton;
     private javax.swing.JTextField txtamount;
@@ -429,14 +463,17 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
 
     private void populateRequestTable() {
         DefaultTableModel model = (DefaultTableModel) JTable.getModel();
-        
+
         model.setRowCount(0);
-        for (Shelt1erToFoodbankWorkRequest request : organization.getWorkQueue().getWorkRequestList()){
+
+        for (ShelterToFoodbankWorkRequest request : organization.getWorkQueue().getWorkRequestList()) {
+
             Object[] row = new Object[4];
             row[0] = request;
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
             row[3] = request.getMessage();
+
             
             model.addRow(row);
         }  
@@ -446,16 +483,16 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
 
     private void populatefundingTable() {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
-        
+
         model.setRowCount(0);
-        for (FoodbankToFundingWorkRequest request : userAccount.getWorkQueue().getFoodbankToFundingworkrequestlist()){
+        for (FoodbankToFundingWorkRequest request : userAccount.getWorkQueue().getFoodbankToFundingworkrequestlist()) {
             Object[] row = new Object[4];
             row[0] = request;
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
             row[3] = request.getMessage();
-            
+
             model.addRow(row);
-        }    
+        }
     }
 }

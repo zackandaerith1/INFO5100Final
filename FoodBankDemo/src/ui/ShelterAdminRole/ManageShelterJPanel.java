@@ -5,8 +5,6 @@
  */
 package ui.ShelterAdminRole;
 
-import ui.ShelterAdminRole.CreateShelterJPanel;
-import Business.EcoSystem;
 import Business.Enterprise.ShelterEnteriprise;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
@@ -81,23 +79,20 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblShelter = new javax.swing.JTable();
         btnModify = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(54, 33, 89));
+        jPanel1.setBackground(new java.awt.Color(233, 230, 225));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Manage Shelter");
-
-        tblShelter.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tblShelter.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        tblShelter.setForeground(new java.awt.Color(43, 71, 92));
         tblShelter.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -130,9 +125,9 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
             tblShelter.getColumnModel().getColumn(0).setMaxWidth(0);
         }
 
-        btnModify.setBackground(new java.awt.Color(122, 72, 221));
-        btnModify.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnModify.setForeground(new java.awt.Color(255, 255, 255));
+        btnModify.setBackground(new java.awt.Color(94, 138, 117));
+        btnModify.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnModify.setForeground(new java.awt.Color(43, 71, 92));
         btnModify.setText("Modify Shelter");
         btnModify.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,9 +135,9 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnCreate.setBackground(new java.awt.Color(122, 72, 221));
-        btnCreate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreate.setBackground(new java.awt.Color(94, 138, 117));
+        btnCreate.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnCreate.setForeground(new java.awt.Color(43, 71, 92));
         btnCreate.setText("Create Shelter");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,9 +145,9 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(122, 72, 221));
-        btnDelete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setBackground(new java.awt.Color(94, 138, 117));
+        btnDelete.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(43, 71, 92));
         btnDelete.setText("Delete Shelter");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,9 +155,9 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(122, 72, 221));
-        btnBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setBackground(new java.awt.Color(94, 138, 117));
+        btnBack.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(43, 71, 92));
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,14 +165,15 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
+        jLabel1.setText("Manage Shelter");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(218, 218, 218)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -192,13 +188,16 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(297, 297, 297)
-                        .addComponent(btnBack)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnBack))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(253, 253, 253)
+                        .addComponent(jLabel1)))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(54, 54, 54)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -209,7 +208,7 @@ public class ManageShelterJPanel extends javax.swing.JPanel {
                     .addComponent(btnDelete))
                 .addGap(18, 18, 18)
                 .addComponent(btnBack)
-                .addContainerGap(401, Short.MAX_VALUE))
+                .addContainerGap(393, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
