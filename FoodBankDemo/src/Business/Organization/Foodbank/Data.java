@@ -21,6 +21,7 @@ public class Data {
     private int numvolunteer;
     private int funding;
     private int numorg;
+    private int numemployee;
 
     public Data(EcoSystem business) {
         
@@ -29,14 +30,10 @@ public class Data {
     public Data(Enterprise enterprise) {
 
         this.funding = 0;
-        
-        
-        this.numaccount = 
-                
-                
-                
-                
-                
+        this.numaccount = enterprise.getnumaccounts();
+        this.numorg = enterprise.getnumOrg();
+        this.numemployee = enterprise.getnumemployees();
+                      
     }
     
 

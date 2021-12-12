@@ -56,4 +56,26 @@ public abstract class Enterprise extends Organization{
         this.enterpriseType=type;
         organizationDirectory=new OrganizationDirectory();
     }
+    public int getnumOrg(){
+        int num = 0;
+        for(Organization i:organizationDirectory.getOrganizationList()){
+            num++;
+        }
+        return num;
+    }
+    public int getnumaccounts(){
+        int num = 0;
+        for(Organization i:organizationDirectory.getOrganizationList()){
+            num = num+i.getnumaccount();
+        }
+        return num;
+        
+    }
+    public int getnumemployees(){
+        int num = 0;
+        for(Organization i: organizationDirectory.getOrganizationList()){
+            num = num + i.getnumemployee();
+        }
+        return num;
+    }
 }
