@@ -56,7 +56,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         JTable = new javax.swing.JTable();
-        requestTestJButton = new javax.swing.JButton();
+        processshelterrequestJButton = new javax.swing.JButton();
         refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
@@ -71,7 +71,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         txtamount = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        AssigntoDistributionJButton = new javax.swing.JButton();
 
         JTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,10 +101,10 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(JTable);
 
-        requestTestJButton.setText("Process");
-        requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
+        processshelterrequestJButton.setText("Process");
+        processshelterrequestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestTestJButtonActionPerformed(evt);
+                processshelterrequestJButtonActionPerformed(evt);
             }
         });
 
@@ -190,7 +190,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel4.setText("Shelter Request");
 
-        jButton1.setText("Assign to Distribution Center");
+        AssigntoDistributionJButton.setText("Assign to Distribution Center");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -234,9 +234,9 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(requestTestJButton)
+                        .addComponent(processshelterrequestJButton)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1))
+                        .addComponent(AssigntoDistributionJButton))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -269,8 +269,8 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(requestTestJButton)
-                    .addComponent(jButton1))
+                    .addComponent(processshelterrequestJButton)
+                    .addComponent(AssigntoDistributionJButton))
                 .addGap(14, 14, 14)
                 .addComponent(jLabel1)
                 .addGap(68, 68, 68)
@@ -286,13 +286,13 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
+    private void processshelterrequestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processshelterrequestJButtonActionPerformed
 
 //        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
 //        userProcessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise));
 //        layout.next(userProcessContainer);
 
-    }//GEN-LAST:event_requestTestJButtonActionPerformed
+    }//GEN-LAST:event_processshelterrequestJButtonActionPerformed
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
 
@@ -380,21 +380,21 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AssigntoDistributionJButton;
     private javax.swing.JTable JTable;
     private javax.swing.JButton btnRefreshfundingrequest;
     private javax.swing.JButton btndelete;
     private javax.swing.JButton btnsubmitfundingrequest;
     private javax.swing.JButton btnupdate;
     private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton processshelterrequestJButton;
     private javax.swing.JButton refreshTestJButton;
-    private javax.swing.JButton requestTestJButton;
     private javax.swing.JTextField txtamount;
     private javax.swing.JLabel valueLabel;
     private javax.swing.JTable workRequestJTable;

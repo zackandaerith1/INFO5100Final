@@ -22,7 +22,7 @@ public class AnalyRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new AnalyWorkAreaJPanel(userProcessContainer, account, (AnalysisOrganization)organization, enterprise);
+        return new AnalyWorkAreaJPanel(userProcessContainer, account, (AnalysisOrganization)organization, enterprise, business);
     }
     
     

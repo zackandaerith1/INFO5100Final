@@ -28,4 +28,23 @@ public class WorkQueue {
         return Fundingworkrequestlist;
     }
     
+    public int numfbwq(){
+        int num = 0;
+        for (FoodbankToFundingWorkRequest i: Fundingworkrequestlist){
+            num++;
+        }
+        return num;
+    }
+    
+    public int numwq(){
+        int n = 0;
+        for(WorkRequest i:workRequestList){
+            n++;
+        }
+        return n;
+    }
+    
+    public int getTotalwq(){
+        return this.numfbwq()+this.numwq();
+    }
 }

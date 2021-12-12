@@ -7,6 +7,7 @@ package Business.Role.Funding;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.FundingEnterprise;
 import Business.Organization.Funding.AccountOrganization;
 import Business.Organization.Organization;
 import Business.Profile.DonatorDirectory;
@@ -24,7 +25,7 @@ public class AccountRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new AccountWorkAreaJPanel(userProcessContainer, account, (AccountOrganization)organization, enterprise);
+        return new AccountWorkAreaJPanel(userProcessContainer, account, (AccountOrganization)organization, (FundingEnterprise)enterprise);
     }
     
     

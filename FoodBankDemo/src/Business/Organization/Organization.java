@@ -4,10 +4,13 @@
  */
 package Business.Organization;
 
+import Business.Employee.Employee;
 import Business.Employee.EmployeeDirectory;
 import Business.Role.Role;
+import Business.UserAccount.UserAccount;
 import Business.UserAccount.UserAccountDirectory;
 import Business.WorkQueue.WorkQueue;
+import Business.WorkQueue.WorkRequest;
 import java.util.ArrayList;
 
 /**
@@ -88,6 +91,23 @@ public abstract class Organization {
         this.workQueue = workQueue;
     }
 
+    public int getnumaccount(){
+        int num = 0;
+        for(UserAccount u :userAccountDirectory.getUserAccountList()){
+            num++;
+        }
+        
+        return num;
+    }
+    
+    public int getnumemployee(){
+        int num = 0;
+        for (Employee e: employeeDirectory.getEmployeeList()){
+            num++;
+        }
+        return num;
+    }
+    
     @Override
     public String toString() {
         return name;
