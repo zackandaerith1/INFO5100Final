@@ -5,6 +5,11 @@
  */
 package Business;
 
+import Business.Enterprise.Enterprise;
+import Business.Enterprise.FoodBankEnterprise;
+import Business.Enterprise.FundingEnterprise;
+import Business.Enterprise.ShelterEnteriprise;
+import Business.Enterprise.VolunteerEnterprise;
 import Business.Network.Network;
 import Business.Organization.Foodbank.Data;
 import Business.Organization.Organization;
@@ -62,4 +67,46 @@ public class EcoSystem extends Organization{
         }
         return true;
     }
+    public FoodBankEnterprise getfirstFoodBankEnterprise(){
+        for(Enterprise e:this.getNetworkList().get(0).getEnterpriseDirectory().getEnterpriseList()){
+            if(e.getEnterpriseType() == Enterprise.EnterpriseType.FoodBank){
+                return (FoodBankEnterprise) e;
+            }
+        }
+        return null;
+    }
+    
+    public ShelterEnteriprise getfirstShelterEnterprise(){
+        for(Enterprise e:this.getNetworkList().get(0).getEnterpriseDirectory().getEnterpriseList()){
+            if(e.getEnterpriseType() == Enterprise.EnterpriseType.Shelter){
+                return (ShelterEnteriprise) e;
+            }
+        }
+        return null;
+    }
+    
+    public VolunteerEnterprise getfirstVolunteerEnterprise(){
+        for(Enterprise e:this.getNetworkList().get(0).getEnterpriseDirectory().getEnterpriseList()){
+            if(e.getEnterpriseType() == Enterprise.EnterpriseType.Volunteer){
+                return (VolunteerEnterprise) e;
+            }
+        }
+        return null;
+    }
+
+    public FundingEnterprise getfirstFundingEnterprise(){
+        for(Enterprise e:this.getNetworkList().get(0).getEnterpriseDirectory().getEnterpriseList()){
+            if(e.getEnterpriseType() == Enterprise.EnterpriseType.Funding){
+                return (FundingEnterprise) e;  
+            }
+        }
+        return null;
+    }
+
+
+        
+
+
 }
+
+
