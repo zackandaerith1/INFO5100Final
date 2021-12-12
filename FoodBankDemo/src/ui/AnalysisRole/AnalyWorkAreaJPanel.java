@@ -11,23 +11,22 @@ import Business.Organization.Foodbank.AnalysisOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
-import org.jfree.chart.ChartColor;
-
 
 /**
  *
  * @author zhengfang
  */
 public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
+
     private JPanel userProcessContainer;
     private AnalysisOrganization organization;
     private Enterprise enterprise;
     private EcoSystem business;
     private UserAccount userAccount;
+
     /**
      * Creates new form AnalyWorkAreaJPanel
      */
-
     public AnalyWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, AnalysisOrganization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
 
@@ -36,9 +35,8 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.business = business;
         this.userAccount = account;
-        valueLabel.setText(enterprise.getName());        
-        
-        
+        valueLabel.setText(enterprise.getName());
+
     }
 
     /**
@@ -58,11 +56,19 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
         FundingDataJButton = new javax.swing.JButton();
         NetWorkData = new javax.swing.JButton();
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        setBackground(new java.awt.Color(233, 230, 225));
+
+        enterpriseLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(43, 71, 92));
         enterpriseLabel.setText("EnterPrise :");
 
+        valueLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        valueLabel.setForeground(new java.awt.Color(43, 71, 92));
         valueLabel.setText("<value>");
 
+        ShowDataJButton.setBackground(new java.awt.Color(94, 138, 117));
+        ShowDataJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        ShowDataJButton.setForeground(new java.awt.Color(43, 71, 92));
         ShowDataJButton.setText("Shelter Data");
         ShowDataJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,6 +76,9 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        FoobankDataJButton.setBackground(new java.awt.Color(94, 138, 117));
+        FoobankDataJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        FoobankDataJButton.setForeground(new java.awt.Color(43, 71, 92));
         FoobankDataJButton.setText("FoodBank Data");
         FoobankDataJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +86,9 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        VolunteerData.setBackground(new java.awt.Color(94, 138, 117));
+        VolunteerData.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        VolunteerData.setForeground(new java.awt.Color(43, 71, 92));
         VolunteerData.setText("Volunteer Data");
         VolunteerData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +96,9 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        FundingDataJButton.setBackground(new java.awt.Color(94, 138, 117));
+        FundingDataJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        FundingDataJButton.setForeground(new java.awt.Color(43, 71, 92));
         FundingDataJButton.setText("Funding Data");
         FundingDataJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +106,9 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        NetWorkData.setBackground(new java.awt.Color(94, 138, 117));
+        NetWorkData.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        NetWorkData.setForeground(new java.awt.Color(43, 71, 92));
         NetWorkData.setText("Network Data");
         NetWorkData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +132,7 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(VolunteerData)
                             .addComponent(FoobankDataJButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 370, Short.MAX_VALUE)
+                        .addGap(332, 332, 332)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ShowDataJButton)
                             .addComponent(FundingDataJButton))
@@ -141,7 +159,7 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VolunteerData)
                     .addComponent(FundingDataJButton))
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addContainerGap(341, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -151,12 +169,12 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add(dataanalysis);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-        
+
     }//GEN-LAST:event_FoobankDataJButtonActionPerformed
 
     private void ShowDataJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowDataJButtonActionPerformed
         // TODO add your handling code here:
-        ShelterAnalysisJPanel dataanalysis = new ShelterAnalysisJPanel(userProcessContainer, userAccount ,business);
+        ShelterAnalysisJPanel dataanalysis = new ShelterAnalysisJPanel(userProcessContainer, userAccount, business);
         userProcessContainer.add(dataanalysis);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -164,7 +182,7 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
 
     private void VolunteerDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolunteerDataActionPerformed
         // TODO add your handling code here:
-        VolunteerAnalysisJPanel dataanalysis = new VolunteerAnalysisJPanel(userProcessContainer, userAccount,business);
+        VolunteerAnalysisJPanel dataanalysis = new VolunteerAnalysisJPanel(userProcessContainer, userAccount, business);
         userProcessContainer.add(dataanalysis);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -172,7 +190,7 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
 
     private void FundingDataJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FundingDataJButtonActionPerformed
         // TODO add your handling code here:
-        FundingAnalysisJPanel dataanalysis = new FundingAnalysisJPanel(userProcessContainer, userAccount,business);
+        FundingAnalysisJPanel dataanalysis = new FundingAnalysisJPanel(userProcessContainer, userAccount, business);
         userProcessContainer.add(dataanalysis);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -183,9 +201,8 @@ public class AnalyWorkAreaJPanel extends javax.swing.JPanel {
         NetworkAnalysisJPanel dataanalysis = new NetworkAnalysisJPanel(userProcessContainer, userAccount, business);
         userProcessContainer.add(dataanalysis);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);        
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_NetWorkDataActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton FoobankDataJButton;

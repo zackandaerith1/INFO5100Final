@@ -15,14 +15,12 @@ import javax.swing.JPanel;
  */
 public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 
-    
     private JPanel userProcessContainer;
     private FoodbankToFundingWorkRequest request;
+
     /**
      * Creates new form ProcessWorkRequestJPanel
      */
-
-
     ProcessWorkRequestJPanel(JPanel userProcessContainer, FoodbankToFundingWorkRequest request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -46,10 +44,19 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(233, 230, 225));
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Result :");
 
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(43, 71, 92));
         jLabel2.setText("Amount: ");
 
+        jButton1.setBackground(new java.awt.Color(94, 138, 117));
+        jButton1.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(43, 71, 92));
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +64,9 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(94, 138, 117));
+        jButton2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(43, 71, 92));
         jButton2.setText("Submit Result");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +74,9 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel3.setBackground(new java.awt.Color(43, 71, 92));
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setText("Funding Process");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -83,21 +96,24 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
                             .addComponent(txtResult)
                             .addComponent(txtamount, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 245, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(182, 182, 182)
                         .addComponent(jButton2)
-                        .addGap(145, 145, 145))))
+                        .addContainerGap(165, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(242, 242, 242)
+                .addGap(221, 221, 221)
                 .addComponent(jLabel3)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(53, 53, 53)
                 .addComponent(jLabel3)
-                .addGap(62, 62, 62)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -109,7 +125,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(456, Short.MAX_VALUE))
+                .addContainerGap(444, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -129,10 +145,8 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         request.setAmount(Integer.getInteger(txtamount.getText()));
         request.setMessage(txtResult.getText());
         request.setStatus("Completed");
-        
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
 
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
