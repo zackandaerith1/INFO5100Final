@@ -1,30 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package ui.VolunteerRole;
-
-import Business.Enterprise.Enterprise;
-import Business.Organization.Volunteer.VolunteerOrganization;
-import Business.UserAccount.UserAccount;
-import javax.swing.JPanel;
+package ui.VolunteerAdminWorkArea;
 
 /**
  *
- * @author zhengfang
+ * @author jaydenwjc
  */
-public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
+public class VolunteerAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form VolunteerWorkAreaJPanel
+     * Creates new form VolunteerAdminWorkAreaJPanel
      */
-    public VolunteerWorkAreaJPanel() {
+    public VolunteerAdminWorkAreaJPanel() {
         initComponents();
-    }
-
-    public VolunteerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, VolunteerOrganization volunteerOrganization, Enterprise enterprise) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -43,7 +33,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Volunteer Work Area");
+        jLabel1.setText("Volunteer Admin Work Area");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
