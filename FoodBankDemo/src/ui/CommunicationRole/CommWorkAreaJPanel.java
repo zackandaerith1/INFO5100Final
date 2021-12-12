@@ -431,15 +431,15 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) JTable.getModel();
         
         model.setRowCount(0);
-        for (ShelterToFoodbankWorkRequest request : organization.getWorkQueue().getWorkRequestList()){
-            Object[] row = new Object[4];
-            row[0] = request;
-            row[1] = request.getReceiver();
-            row[2] = request.getStatus();
-            row[3] = request.getMessage();
-            
-            model.addRow(row);
-        }  
+//        for (Shelt1erToFoodbankWorkRequest request : organization.getWorkQueue().getWorkRequestList()){
+//            Object[] row = new Object[4];
+//            row[0] = request;
+//            row[1] = request.getReceiver();
+//            row[2] = request.getStatus();
+//            row[3] = request.getMessage();
+//            
+//            model.addRow(row);
+//        }  
         
 
     }

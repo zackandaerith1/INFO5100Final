@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Order;
+package Business.WorkQueue;
 
 import Business.Coordinator.Coordinator;
 import Business.Menu.Menu;

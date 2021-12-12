@@ -7,8 +7,8 @@ package ui.ShelterArrangerRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.ShelterEnteriprise;
-import Business.Order.Order;
-import Business.Order.OrderDirectory;
+import Business.WorkQueue.Order;
+import Business.WorkQueue.OrderDirectory;
 import Business.Profile.ProfileDirectory;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
