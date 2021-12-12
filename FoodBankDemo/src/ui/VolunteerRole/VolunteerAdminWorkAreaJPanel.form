@@ -24,8 +24,8 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
-                      <Component id="enterpriseLabel" min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="enterpriseLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="valueLabel" min="-2" pref="160" max="-2" attributes="0"/>
                   </Group>
@@ -34,7 +34,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="manageApplicationBtn" min="-2" pref="230" max="-2" attributes="0"/>
                           <Component id="managePersonBtn" min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="manageResourceBtn" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                          <Component id="manageAssignemntBtn" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -42,7 +42,7 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="146" max="32767" attributes="0"/>
+              <EmptySpace pref="53" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -61,7 +61,7 @@
               <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
               <Component id="managePersonBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="manageResourceBtn" min="-2" max="-2" attributes="0"/>
+              <Component id="manageAssignemntBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -76,7 +76,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Shelter Arranger Work Area"/>
+        <Property name="text" type="java.lang.String" value="Volunteer Arrangerment Work Area"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="managePersonBtn">
@@ -90,7 +90,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Manage Person"/>
+        <Property name="text" type="java.lang.String" value="Manage Volunteer"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="managePersonBtnActionPerformed"/>
@@ -121,7 +121,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Shelter :"/>
+        <Property name="text" type="java.lang.String" value="Volunteer Center :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="valueLabel">
@@ -134,7 +134,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="manageResourceBtn">
+    <Component class="javax.swing.JButton" name="manageAssignemntBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="dd" green="48" red="7a" type="rgb"/>
@@ -145,10 +145,10 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Manage Resource"/>
+        <Property name="text" type="java.lang.String" value="Manage Assignment"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageResourceBtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageAssignemntBtnActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

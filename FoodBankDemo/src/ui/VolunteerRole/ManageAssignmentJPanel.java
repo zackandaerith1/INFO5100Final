@@ -12,8 +12,6 @@ import Business.Enterprise.VolunteerEnterprise;
 import Business.Organization.Shelter.ArrangementOrganization;
 import Business.Profile.Profile;
 import Business.Profile.ProfileDirectory;
-import Business.Profile.Volunteer;
-import Business.Profile.VolunteerDirectory;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
@@ -49,20 +47,23 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author yibin
  */
-public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
+public class ManageAssignmentJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private UserAccount account;
 //    private EcoSystem ecosystem;
     private VolunteerEnterprise enterprise;
-    private VolunteerDirectory profileDirectory;
+    private ShelterDirectory shelterDirectory;
+    private ProfileDirectory profileDirectory;
+    private Shelter shelter;
 
-    public ManageVolunteerProfileJPanel(JPanel userProcessContainer, UserAccount account,  VolunteerEnterprise enterprise) {
+    public ManageAssignmentJPanel(JPanel userProcessContainer, UserAccount account,  VolunteerEnterprise enterprise, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.enterprise = enterprise;
-        this.profileDirectory = enterprise.getVolunteerdirectory();
+        this.shelterDirectory = business;
+        this.profileDirectory = enterprise.getProfileDirectory();
 
         populateTable();
     }
@@ -70,7 +71,8 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
     public void populateTable() {
         DefaultTableModel dtm = (DefaultTableModel) tblProfile.getModel();
         dtm.setRowCount(0);
-        for (Volunteer profile : profileDirectory.getVolunteerDirectory()) { 
+        for (Profile profile : profileDirectory.getProfileDirectory()) {
+            if (profile.getShelterName().equals(account.getEmployee().getName())) {
                 Object[] row = new Object[11];
                 row[0] = profile;
                 row[1] = profile.getId();
@@ -84,7 +86,7 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
                 row[9] = profile.getEmail();
                 row[10] = profile.getComment();
                 dtm.addRow(row);
-            
+            }
         }
     }
 
@@ -178,7 +180,7 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Register Volunteer");
+        jLabel1.setText("Register Person");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -529,7 +531,7 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
         int randNumber = random.nextInt(200000 - 100000 + 1) + 100000;
         String id = String.valueOf(randNumber);
 
-        profileDirectory.newItem(id, firstname, lastname, gender, age, phone, birth, address, email, comment, imagePath);
+        profileDirectory.newItem(id, firstname, lastname, gender, age, phone, birth, address, email, comment, imagePath, shelter);
 
         populateTable();
 
@@ -559,7 +561,7 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
             return;
         }
 
-        Volunteer profile = (Volunteer) tblProfile.getValueAt(selectedRow, 0);
+        Profile profile = (Profile) tblProfile.getValueAt(selectedRow, 0);
         profileDirectory.removeProfile(profile);
         populateTable();
     }//GEN-LAST:event_deleteActionPerformed
@@ -571,13 +573,14 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-            Volunteer profile = (Volunteer) tblProfile.getValueAt(selectedRow, 0);
-            ModifyVolunteerProfileJPanel modifyProfile = new ModifyVolunteerProfileJPanel(userProcessContainer, account, enterprise, profileDirectory, profile);
+            Profile profile = (Profile) tblProfile.getValueAt(selectedRow, 0);
+            ModifyProfileJPanel modifyProfile = new ModifyProfileJPanel(userProcessContainer, account, enterprise,
+                    shelterDirectory, profileDirectory, profile);
             userProcessContainer.add("ModifyProfileJPanel", modifyProfile);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
-        } catch (Exception ex) {
-            Logger.getLogger(ManageVolunteerProfileJPanel.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
+            Logger.getLogger(ManageAssignmentJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_viewBtnActionPerformed
 
@@ -629,7 +632,7 @@ public class ManageVolunteerProfileJPanel extends javax.swing.JPanel {
                     // save image to PNG file
                     ImageIO.write(image, "PNG", new File(firstname + " " + lastname + ".png"));
                 } catch (IOException ex) {
-                    Logger.getLogger(ManageVolunteerProfileJPanel.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ManageAssignmentJPanel.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 //load image from folder
                 JFileChooser chooser = new JFileChooser("C:\\Users\\yibin\\Documents\\GitHub\\INFO5100Final\\EcoSystemDemo");

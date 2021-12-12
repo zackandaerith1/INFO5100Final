@@ -7,12 +7,13 @@ package Business.Role.Volunteer;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.VolunteerEnterprise;
 import Business.Organization.Organization;
 import Business.Organization.Volunteer.VolunteerOrganization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import ui.VolunteerRole.VolunteerWorkAreaJPanel;
+import ui.VolunteerRole.VolunteerAdminWorkAreaJPanel;
 
 /**
  *
@@ -22,7 +23,7 @@ public class VolunteerRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new VolunteerWorkAreaJPanel(userProcessContainer, account, (VolunteerOrganization)organization, enterprise);
+        return new VolunteerAdminWorkAreaJPanel(userProcessContainer, account, (VolunteerOrganization)organization, (VolunteerEnterprise) enterprise, business);
     }
     
     

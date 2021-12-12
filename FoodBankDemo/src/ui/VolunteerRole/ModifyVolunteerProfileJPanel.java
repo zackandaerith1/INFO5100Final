@@ -7,8 +7,11 @@ package ui.VolunteerRole;
 
 import ui.ShelterArrangerRole.*;
 import Business.Enterprise.ShelterEnteriprise;
+import Business.Enterprise.VolunteerEnterprise;
 import Business.Profile.Profile;
 import Business.Profile.ProfileDirectory;
+import Business.Profile.Volunteer;
+import Business.Profile.VolunteerDirectory;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
@@ -46,19 +49,18 @@ public class ModifyVolunteerProfileJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private UserAccount account;
 //    private EcoSystem ecosystem;
-    private ShelterEnteriprise enterprise;
+    private VolunteerEnterprise enterprise;
     private ShelterDirectory shelterDirectory;
-    private ProfileDirectory profileDirectory;
+    private VolunteerDirectory profileDirectory;
     private Shelter shelter;
-    private Profile profile;
+    private Volunteer profile;
 
-    public ModifyVolunteerProfileJPanel(JPanel userProcessContainer, UserAccount account, ShelterEnteriprise enterprise, ShelterDirectory shelterDirectory, ProfileDirectory profiledirectory, Profile profile) throws ParseException {
+    public ModifyVolunteerProfileJPanel(JPanel userProcessContainer, UserAccount account, VolunteerEnterprise enterprise, VolunteerDirectory profiledirectory, Volunteer profile) throws ParseException {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.enterprise = enterprise;
-        this.shelterDirectory = enterprise.getShelterDirectory();
-        this.profileDirectory = enterprise.getProfileDirectory();
+        this.profileDirectory = enterprise.getVolunteerdirectory();
         this.profile = profile;
         txtID.setText(profile.getId());
         txtFirstName.setText(profile.getFirstname());

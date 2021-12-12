@@ -5,7 +5,7 @@ import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.ShelterEnteriprise;
 import Business.Menu.MenuDirectory;
-import Business.Order.OrderDirectory;
+import Business.WorkQueue.OrderDirectory;
 import Business.Organization.Shelter.ArrangementOrganization;
 import Business.Organization.Shelter.RegistrationOrganization;
 import Business.Profile.ProfileDirectory;

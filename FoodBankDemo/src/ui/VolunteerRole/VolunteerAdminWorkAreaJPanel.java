@@ -1,18 +1,9 @@
 package ui.VolunteerRole;
 
-import ui.ShelterArrangerRole.*;
-import Business.Coordinator.CoordinatorDirectory;
-import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
-import Business.Enterprise.ShelterEnteriprise;
 import Business.Enterprise.VolunteerEnterprise;
-import Business.Menu.MenuDirectory;
-import Business.Order.OrderDirectory;
-import Business.Organization.Shelter.ArrangementOrganization;
-import Business.Organization.Shelter.RegistrationOrganization;
 import Business.Organization.Volunteer.VolunteerOrganization;
-import Business.Profile.ProfileDirectory;
-import Business.Shelter.ShelterDirectory;
+import Business.Profile.VolunteerDirectory;
 import Business.UserAccount.UserAccount;
 import ui.ShelterArrangerRole.ManageApplicationJPanel;
 import ui.ShelterArrangerRole.ManageProfileJPanel;
@@ -25,34 +16,25 @@ import javax.swing.JPanel;
  *
  * @author yibin
  */
-public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
+public class VolunteerAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private UserAccount account;
-//    private EcoSystem ecosystem;
+    private EcoSystem ecosystem;
     private VolunteerEnterprise enterprise;
-    private CoordinatorDirectory customerDirectory;
-    private ShelterDirectory shelterDirectory;
-    private DeliveryManDirectory deliveryManDirectory;
-    private ProfileDirectory profileDirectory;
-    private OrderDirectory orderDirectory;
-    private MenuDirectory menuDirectory;
+    private VolunteerDirectory profileDirectory;
+
 
     /**
      * Creates new form AdminWorkAreaJPanel
      */
-    public VolunteerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, VolunteerOrganization organization, VolunteerEnterprise enterprise, EcoSystem business) {
+    public VolunteerAdminWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, VolunteerOrganization organization, VolunteerEnterprise enterprise, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
-//        this.ecosystem = business;
+        this.ecosystem = business;
         this.enterprise = enterprise;
-        this.customerDirectory = enterprise.getCoordinatorDirectory();
-        this.shelterDirectory = enterprise.getShelterDirectory();
-        this.deliveryManDirectory = enterprise.getDeliveryManDirectory();
-        this.profileDirectory = enterprise.getProfileDirectory();
-        this.orderDirectory = enterprise.getOrderDirectory();
-        this.menuDirectory = enterprise.getMenuDirectory();
+        this.profileDirectory = enterprise.getVolunteerdirectory();
         valueLabel.setText(account.getUsername());
 
     }
@@ -77,18 +59,18 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         manageApplicationBtn = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
-        manageResourceBtn = new javax.swing.JButton();
+        manageAssignemntBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(54, 33, 89));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Shelter Arranger Work Area");
+        jLabel1.setText("Volunteer Arrangerment Work Area");
 
         managePersonBtn.setBackground(new java.awt.Color(122, 72, 221));
         managePersonBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         managePersonBtn.setForeground(new java.awt.Color(255, 255, 255));
-        managePersonBtn.setText("Manage Person");
+        managePersonBtn.setText("Manage Volunteer");
         managePersonBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 managePersonBtnActionPerformed(evt);
@@ -107,18 +89,18 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
-        enterpriseLabel.setText("Shelter :");
+        enterpriseLabel.setText("Volunteer Center :");
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         valueLabel.setForeground(new java.awt.Color(255, 255, 255));
 
-        manageResourceBtn.setBackground(new java.awt.Color(122, 72, 221));
-        manageResourceBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        manageResourceBtn.setForeground(new java.awt.Color(255, 255, 255));
-        manageResourceBtn.setText("Manage Resource");
-        manageResourceBtn.addActionListener(new java.awt.event.ActionListener() {
+        manageAssignemntBtn.setBackground(new java.awt.Color(122, 72, 221));
+        manageAssignemntBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        manageAssignemntBtn.setForeground(new java.awt.Color(255, 255, 255));
+        manageAssignemntBtn.setText("Manage Assignment");
+        manageAssignemntBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageResourceBtnActionPerformed(evt);
+                manageAssignemntBtnActionPerformed(evt);
             }
         });
 
@@ -129,8 +111,8 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(enterpriseLabel)
                         .addGap(18, 18, 18)
                         .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -138,11 +120,11 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(manageApplicationBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(managePersonBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(manageResourceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(manageAssignemntBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addComponent(jLabel1)))
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,14 +140,14 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(25, 25, 25)
                 .addComponent(managePersonBtn)
                 .addGap(18, 18, 18)
-                .addComponent(manageResourceBtn)
+                .addComponent(manageAssignemntBtn)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void managePersonBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managePersonBtnActionPerformed
 
-        ManageProfileJPanel manageprofile = new ManageProfileJPanel(userProcessContainer, account, enterprise);
+        ManageVolunteerProfileJPanel manageprofile = new ManageVolunteerProfileJPanel(userProcessContainer, account, enterprise);
         userProcessContainer.add(manageprofile);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -173,25 +155,25 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void manageApplicationBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageApplicationBtnActionPerformed
 
-        ManageApplicationJPanel manageorder = new ManageApplicationJPanel(userProcessContainer, account, enterprise);
+        ManageAssignmentJPanel manageorder = new ManageAssignmentJPanel(userProcessContainer, account, enterprise,ecosystem);
         userProcessContainer.add(manageorder);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_manageApplicationBtnActionPerformed
 
-    private void manageResourceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageResourceBtnActionPerformed
-        ManageResourceJPanel manageresource = new ManageResourceJPanel(userProcessContainer, account, enterprise);
-        userProcessContainer.add(manageresource);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_manageResourceBtnActionPerformed
+    private void manageAssignemntBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageAssignemntBtnActionPerformed
+//        ManageResourceJPanel manageresource = new ManageResourceJPanel(userProcessContainer, account, enterprise);
+//        userProcessContainer.add(manageresource);
+//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+//        layout.next(userProcessContainer);
+    }//GEN-LAST:event_manageAssignemntBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton manageApplicationBtn;
+    private javax.swing.JButton manageAssignemntBtn;
     private javax.swing.JButton managePersonBtn;
-    private javax.swing.JButton manageResourceBtn;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 
