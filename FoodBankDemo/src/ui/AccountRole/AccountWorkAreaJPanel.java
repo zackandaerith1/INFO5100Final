@@ -6,6 +6,7 @@
 package ui.AccountRole;
 
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.FundingEnterprise;
 import Business.Organization.Funding.AccountOrganization;
 import Business.Profile.Donator;
 import Business.Profile.DonatorDirectory;
@@ -34,12 +35,12 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private AccountOrganization organization;
-    private Enterprise enterprise;
+    private FundingEnterprise enterprise;
     private UserAccount userAccount;
     /**
      * Creates new form AccountWorkAreaJPanel
      */
-    public AccountWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, AccountOrganization organization, Enterprise enterprise) {
+    public AccountWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, AccountOrganization organization, FundingEnterprise enterprise) {
 
         initComponents();
         

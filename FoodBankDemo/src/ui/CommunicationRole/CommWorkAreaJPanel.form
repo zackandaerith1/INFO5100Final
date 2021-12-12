@@ -62,9 +62,9 @@
               <EmptySpace pref="177" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="requestTestJButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="processshelterrequestJButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="AssigntoDistributionJButton" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane1" alignment="1" min="-2" pref="346" max="-2" attributes="0"/>
@@ -111,8 +111,8 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="requestTestJButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="processshelterrequestJButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="AssigntoDistributionJButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -157,12 +157,12 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="requestTestJButton">
+    <Component class="javax.swing.JButton" name="processshelterrequestJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Process"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="requestTestJButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="processshelterrequestJButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="refreshTestJButton">
@@ -291,7 +291,7 @@
         <Property name="text" type="java.lang.String" value="Shelter Request"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="AssigntoDistributionJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Assign to Distribution Center"/>
       </Properties>
