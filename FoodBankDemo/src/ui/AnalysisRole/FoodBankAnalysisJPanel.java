@@ -18,13 +18,13 @@ public class FoodBankAnalysisJPanel extends javax.swing.JPanel {
     /**
      * Creates new form FoodBankAnalysisJPanel
      */
-    public FoodBankAnalysisJPanel() {
+    public FoodBankAnalysisJPanel(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, EcoSystem business) {
         initComponents();
+        
+        
     }
 
-    FoodBankAnalysisJPanel(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,11 +39,11 @@ public class FoodBankAnalysisJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 840, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 706, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

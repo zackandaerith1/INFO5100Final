@@ -191,6 +191,11 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         jLabel4.setText("Shelter Request");
 
         AssigntoDistributionJButton.setText("Assign to Distribution Center");
+        AssigntoDistributionJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AssigntoDistributionJButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -287,7 +292,25 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void processshelterrequestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processshelterrequestJButtonActionPerformed
+        try {
+            int selectedRow = JTable.getSelectedRow();
+            if (selectedRow < 0) {
+                JOptionPane.showMessageDialog(null, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            ShelterToFoodbankWorkRequest request = (ShelterToFoodbankWorkRequest) JTable.getValueAt(selectedRow, 0);
 
+            request.setSender(userAccount);
+            request.setStatus("Processing");
+            request.setRequestDate(new Date());
+
+            txtamount.setText("");
+        
+        populatefundingTable();
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
 //        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
 //        userProcessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise));
 //        layout.next(userProcessContainer);
@@ -377,6 +400,10 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btndeleteActionPerformed
+
+    private void AssigntoDistributionJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssigntoDistributionJButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AssigntoDistributionJButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

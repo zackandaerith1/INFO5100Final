@@ -8,6 +8,11 @@ package Business.WorkQueue;
  *
  * @author zhengfang
  */
-public class ShelterToVolunteerWorkRequest {
+public class ShelterToVolunteerWorkRequest extends WorkRequest{
+
+    @Override
+    public String toString() {
+        return "ShelterToVolunteerWorkRequest{" + '}';
+    }
     
 }

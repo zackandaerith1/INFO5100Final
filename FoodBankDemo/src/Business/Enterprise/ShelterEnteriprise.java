@@ -12,6 +12,7 @@ import Business.Menu.MenuDirectory;
 import Business.Order.OrderDirectory;
 import Business.Profile.ProfileDirectory;
 import Business.Role.Role;
+import Business.Role.Shelter.ShelterAdminRole;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
@@ -126,6 +127,8 @@ public class ShelterEnteriprise extends Enterprise {
 
     @Override
     public ArrayList<Role> getSupportedRole() {
-        return null;
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new ShelterAdminRole());
+        return roles;
     }
 }

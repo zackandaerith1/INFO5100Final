@@ -15,10 +15,7 @@ import java.util.ArrayList;
  * @author zhengfang
  */
 public class AnalysisOrganization extends Organization{
-
-    public AnalysisOrganization() {
-        super(Organization.Type.AnalyDepart.getValue());
-    }
+    
     
 
     @Override

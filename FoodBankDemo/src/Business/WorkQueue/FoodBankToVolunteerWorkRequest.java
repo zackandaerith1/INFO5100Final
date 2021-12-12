@@ -8,6 +8,6 @@ package Business.WorkQueue;
  *
  * @author zhengfang
  */
-public class FoodBankToVolunteerWorkRequest {
+public class FoodBankToVolunteerWorkRequest extends WorkRequest{
     
 }

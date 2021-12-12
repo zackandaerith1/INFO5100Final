@@ -6,6 +6,7 @@
 package Business;
 
 import Business.Network.Network;
+import Business.Organization.Foodbank.Data;
 import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
@@ -19,6 +20,7 @@ public class EcoSystem extends Organization{
     
     private static EcoSystem business;
     private ArrayList<Network> networkList;
+    private Data data;
     public static EcoSystem getInstance(){
         if(business==null){
             business=new EcoSystem();
@@ -40,6 +42,7 @@ public class EcoSystem extends Organization{
     private EcoSystem(){
         super(null);
         networkList=new ArrayList<Network>();
+        this.data = new Data(this);
     }
 
     public ArrayList<Network> getNetworkList() {

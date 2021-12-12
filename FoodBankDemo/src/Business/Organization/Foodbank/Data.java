@@ -24,7 +24,13 @@ public class Data {
     private int numemployee;
 
     public Data(EcoSystem business) {
-        
+
+        for(Enterprise i: business.getNetworkList().get(0).getEnterpriseDirectory().getEnterpriseList()){
+            this.numaccount = +i.getnumaccounts();
+            this.numemployee = +i.getnumemployees();
+            this.numorg = +i.getnumOrg();
+        }
+
     }
 
     public Data(Enterprise enterprise) {
@@ -35,6 +41,8 @@ public class Data {
         this.numemployee = enterprise.getnumemployees();
                       
     }
+    
+
     
 
     public EcoSystem getBusiness() {
