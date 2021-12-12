@@ -40,7 +40,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EcoSystem business;
     private UserAccount account;
-    private RegistrationOrganization organization;
+    private ArrangementOrganization organization;
     private ShelterEnteriprise enterprise;
     private CoordinatorDirectory coordinatorDirectory;
     private ShelterDirectory shelterDirectory;
@@ -52,7 +52,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
 
     ArrayList<Item> itemList = new ActivatableArrayList<>();
 
-    public CoordinatorAreaJPanel(JPanel userProcessContainer, UserAccount account, RegistrationOrganization organization, ShelterEnteriprise enterprise, EcoSystem business) {
+    public CoordinatorAreaJPanel(JPanel userProcessContainer, UserAccount account, ArrangementOrganization organization, ShelterEnteriprise enterprise, EcoSystem business) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;
@@ -578,7 +578,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
 
     private void orderHistoryJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderHistoryJButtonActionPerformed
 
-        CoordinatorApplicationListJPanel ccjp = new CoordinatorApplicationListJPanel(userProcessContainer, account, organization,
+        CoordinatorApplicationListJPanel ccjp = new CoordinatorApplicationListJPanel(userProcessContainer, account,
                 enterprise,business);
 
         JFrame window = new JFrame("CoordinatorApplicationDetailFrame");

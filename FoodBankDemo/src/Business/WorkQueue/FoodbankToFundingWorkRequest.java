@@ -9,7 +9,7 @@ package Business.WorkQueue;
  *
  * @author zhengfang
  */
-public class FundingrequestWorkRequest extends WorkRequest{
+public class FoodbankToFundingWorkRequest extends WorkRequest{
     private int amount;
 
     public int getAmount() {
@@ -18,6 +18,11 @@ public class FundingrequestWorkRequest extends WorkRequest{
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(amount);
     }
     
     

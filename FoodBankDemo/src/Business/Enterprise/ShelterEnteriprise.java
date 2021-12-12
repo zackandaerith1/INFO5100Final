@@ -30,7 +30,7 @@ public class ShelterEnteriprise extends Enterprise {
     private MenuDirectory menuDirectory;
     private UserAccount userAccount;
 
-    public ShelterEnteriprise(String name, Enterprise.Type type) {
+    public ShelterEnteriprise(String name, Enterprise.EnterpriseType type) {
         super(name, EnterpriseType.Shelter);
     
         this.shelterDirectory= new ShelterDirectory();

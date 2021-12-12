@@ -5,6 +5,7 @@
  */
 package Business.Enterprise;
 
+import Business.Organization.OrganizationDirectory;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -14,10 +15,11 @@ import java.util.ArrayList;
  */
 public class FoodBankEnterprise extends Enterprise{
 
-    public FoodBankEnterprise(String name){
-        super(name,EnterpriseType.FoodBank);
+    public FoodBankEnterprise(String name, EnterpriseType type) {
+        super(name, type);
     }
-    
+
+
     
 
     @Override

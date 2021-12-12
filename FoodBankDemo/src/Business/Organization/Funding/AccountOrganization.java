@@ -6,6 +6,7 @@
 package Business.Organization.Funding;
 
 import Business.Organization.Organization;
+import Business.Profile.DonatorDirectory;
 import Business.Role.Funding.AccountRole;
 import Business.Role.Role;
 import java.util.ArrayList;
@@ -16,10 +17,32 @@ import java.util.ArrayList;
  */
 public class AccountOrganization extends Organization{
     private int funding;
+        
+    private DonatorDirectory Dlist;
+
     
     public AccountOrganization() {
         super(Organization.Type.Account.getValue());
+        this.Dlist = new DonatorDirectory();
+        this.funding = Dlist.Totalamount();
     }
+
+    public int getFunding() {
+        return funding;
+    }
+
+    public void setFunding(int funding) {
+        this.funding = funding;
+    }
+
+    public DonatorDirectory getDlist() {
+        return Dlist;
+    }
+
+    public void setDlist(DonatorDirectory Dlist) {
+        this.Dlist = Dlist;
+    }
+    
 
     @Override
     public ArrayList<Role> getSupportedRole() {
