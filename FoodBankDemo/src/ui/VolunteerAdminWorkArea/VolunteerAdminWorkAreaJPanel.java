@@ -4,6 +4,11 @@
  */
 package ui.VolunteerAdminWorkArea;
 
+import Business.Enterprise.Enterprise;
+import Business.Organization.Volunteer.VolunteerOrganization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author jaydenwjc
@@ -15,6 +20,10 @@ public class VolunteerAdminWorkAreaJPanel extends javax.swing.JPanel {
      */
     public VolunteerAdminWorkAreaJPanel() {
         initComponents();
+    }
+
+    public VolunteerAdminWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, VolunteerOrganization volunteerOrganization, Enterprise enterprise) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
