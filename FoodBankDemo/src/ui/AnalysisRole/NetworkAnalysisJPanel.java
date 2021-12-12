@@ -17,13 +17,11 @@ public class NetworkAnalysisJPanel extends javax.swing.JPanel {
     /**
      * Creates new form NetworkAnalysisJPanel
      */
-    public NetworkAnalysisJPanel() {
+    public NetworkAnalysisJPanel(JPanel userProcessContainer, UserAccount userAccount, EcoSystem business) {
         initComponents();
     }
 
-    NetworkAnalysisJPanel(JPanel userProcessContainer, UserAccount userAccount, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -9,6 +9,11 @@ package Business.WorkQueue;
  * @author zhengfang
  */
 public class ShelterToFoodbankWorkRequest extends WorkRequest{
+
+    @Override
+    public String toString() {
+        return "ShelterToFoodbankWorkRequest{" + '}';
+    }
     
     
 }

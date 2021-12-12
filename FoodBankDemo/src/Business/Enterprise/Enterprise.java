@@ -5,6 +5,7 @@
  */
 package Business.Enterprise;
 
+import Business.Organization.Foodbank.Data;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 
@@ -16,6 +17,7 @@ public abstract class Enterprise extends Organization{
     
     private EnterpriseType enterpriseType;
     private OrganizationDirectory organizationDirectory;
+    private Data data;
 
     public OrganizationDirectory getOrganizationDirectory() {
         return organizationDirectory;
@@ -55,6 +57,7 @@ public abstract class Enterprise extends Organization{
         super(name);
         this.enterpriseType=type;
         organizationDirectory=new OrganizationDirectory();
+        this.data = new Data(this);
     }
     public int getnumOrg(){
         int num = 0;

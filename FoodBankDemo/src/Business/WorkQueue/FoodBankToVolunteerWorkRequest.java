@@ -8,6 +8,12 @@ package Business.WorkQueue;
  *
  * @author zhengfang
  */
-public class FoodBankToVolunteerWorkRequest {
+public class FoodBankToVolunteerWorkRequest extends WorkRequest{
+
+    @Override
+    public String toString() {
+        return "FoodBankToVolunteerWorkRequest{" + '}';
+    }
+    
     
 }

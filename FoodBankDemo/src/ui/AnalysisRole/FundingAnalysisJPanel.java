@@ -17,13 +17,11 @@ public class FundingAnalysisJPanel extends javax.swing.JPanel {
     /**
      * Creates new form FundingAnalysisJPanel
      */
-    public FundingAnalysisJPanel() {
+    public FundingAnalysisJPanel(JPanel userProcessContainer, UserAccount userAccount, EcoSystem business) {
         initComponents();
     }
 
-    FundingAnalysisJPanel(JPanel userProcessContainer, UserAccount userAccount, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
