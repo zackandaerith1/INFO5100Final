@@ -19,40 +19,42 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
     private OrganizationDirectory directory;
     private JPanel userProcessContainer;
-    
+
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageOrganizationJPanel(JPanel userProcessContainer,OrganizationDirectory directory) {
+    public ManageOrganizationJPanel(JPanel userProcessContainer, OrganizationDirectory directory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.directory = directory;
-        
+
         populateTable();
         populateCombo();
     }
-    
-    private void populateCombo(){
+
+    private void populateCombo() {
         organizationJComboBox.removeAllItems();
-        for (Type type : Organization.Type.values()){
-            if (!type.getValue().equals(Type.Admin.getValue()))
+        for (Type type : Organization.Type.values()) {
+            if (!type.getValue().equals(Type.Admin.getValue())) {
                 organizationJComboBox.addItem(type);
+            }
         }
     }
 
-    private void populateTable(){
+    private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
-        
+
         model.setRowCount(0);
-        
-        for (Organization organization : directory.getOrganizationList()){
+
+        for (Organization organization : directory.getOrganizationList()) {
             Object[] row = new Object[2];
             row[0] = organization.getOrganizationID();
             row[1] = organization.getName();
-            
+
             model.addRow(row);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -69,6 +71,10 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(233, 230, 225));
+
+        organizationJTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        organizationJTable.setForeground(new java.awt.Color(43, 71, 92));
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -101,6 +107,9 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             organizationJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
+        addJButton.setBackground(new java.awt.Color(94, 138, 117));
+        addJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        addJButton.setForeground(new java.awt.Color(43, 71, 92));
         addJButton.setText("Add Organization");
         addJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,10 +117,19 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             }
         });
 
+        organizationJComboBox.setBackground(new java.awt.Color(94, 138, 117));
+        organizationJComboBox.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        organizationJComboBox.setForeground(new java.awt.Color(43, 71, 92));
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel1.setBackground(new java.awt.Color(94, 138, 117));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Organization Type ");
 
+        backJButton.setBackground(new java.awt.Color(94, 138, 117));
+        backJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        backJButton.setForeground(new java.awt.Color(43, 71, 92));
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,26 +144,26 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(111, 111, 111)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(184, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(208, 208, 208)
                 .addComponent(jLabel1)
                 .addGap(32, 32, 32)
                 .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(334, 334, 334))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addComponent(backJButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(306, 306, 306)
                 .addComponent(addJButton)
-                .addGap(175, 175, 175))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
