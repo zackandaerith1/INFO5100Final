@@ -13,12 +13,19 @@ import java.util.ArrayList;
 public class WorkQueue {
     
     private ArrayList<WorkRequest> workRequestList;
+    private ArrayList<FundingrequestWorkRequest> Fundingworkrequestlist;
 
     public WorkQueue() {
         workRequestList = new ArrayList();
+        Fundingworkrequestlist = new ArrayList<>();
     }
 
     public ArrayList<WorkRequest> getWorkRequestList() {
         return workRequestList;
     }
+
+    public ArrayList<FundingrequestWorkRequest> getFundingworkrequestlist() {
+        return Fundingworkrequestlist;
+    }
+    
 }

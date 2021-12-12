@@ -45,7 +45,7 @@ public class CoordinatorApplicationListJPanel extends javax.swing.JPanel {
 
     ArrayList<Item> arrayListItems = new ActivatableArrayList<>();
 
-    public CoordinatorApplicationListJPanel(JPanel userProcessContainer, UserAccount account, RegistrationOrganization organization, ShelterEnteriprise enterprise, EcoSystem business) {
+    public CoordinatorApplicationListJPanel(JPanel userProcessContainer, UserAccount account, ShelterEnteriprise enterprise, EcoSystem business) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;

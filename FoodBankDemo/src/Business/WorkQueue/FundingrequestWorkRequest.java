@@ -19,6 +19,11 @@ public class FundingrequestWorkRequest extends WorkRequest{
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(amount);
+    }
     
     
     

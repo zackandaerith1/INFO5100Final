@@ -10,6 +10,8 @@ import Business.Organization.Funding.AccountOrganization;
 import Business.Profile.Donator;
 import Business.Profile.DonatorDirectory;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.FundingrequestWorkRequest;
+import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -63,7 +65,7 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
         ApproverequestJButton = new javax.swing.JButton();
-        refreshTestJButton = new javax.swing.JButton();
+        refreshDonatorJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         btndenyrequest = new javax.swing.JButton();
@@ -82,6 +84,7 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
         txtamount = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         valueLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -91,7 +94,7 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Message", "Receiver", "Status", "Result"
+                "Amount", "Sender", "Status", "Result"
             }
         ) {
             Class[] types = new Class [] {
@@ -111,17 +114,17 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        ApproverequestJButton.setText("Approved request");
+        ApproverequestJButton.setText("Accept request");
         ApproverequestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ApproverequestJButtonActionPerformed(evt);
             }
         });
 
-        refreshTestJButton.setText("Refresh");
-        refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
+        refreshDonatorJButton.setText("Refresh");
+        refreshDonatorJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshTestJButtonActionPerformed(evt);
+                refreshDonatorJButtonActionPerformed(evt);
             }
         });
 
@@ -130,7 +133,12 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
 
         valueLabel.setText("<value>");
 
-        btndenyrequest.setText("Deny Request");
+        btndenyrequest.setText("Process Request");
+        btndenyrequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndenyrequestActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -183,6 +191,8 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
 
         valueLabel1.setText("<value>");
 
+        jLabel5.setText("Total $:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -195,13 +205,16 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
                         .addGap(34, 34, 34)
                         .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(156, 156, 156)
-                        .addComponent(refreshTestJButton))
+                        .addComponent(refreshDonatorJButton))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(valueLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(valueLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel1)
@@ -223,16 +236,19 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
                                 .addGap(52, 52, 52)
                                 .addComponent(btnDeleteDonator)))
                         .addGap(18, 18, 18)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(ApproverequestJButton)
+                                .addGap(62, 62, 62)
+                                .addComponent(btndenyrequest))
+                            .addComponent(refreshTestJButton1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(70, 70, 70))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(ApproverequestJButton)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btndenyrequest)))
-                    .addComponent(refreshTestJButton1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(70, 70, 70))
+                        .addGap(82, 82, 82))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,7 +262,7 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(refreshTestJButton)
+                            .addComponent(refreshDonatorJButton)
                             .addComponent(refreshTestJButton1))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -273,7 +289,9 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(txtamount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(valueLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(valueLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnaddDonator)
@@ -284,22 +302,43 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ApproverequestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApproverequestJButtonActionPerformed
-
+        int selectedRow = workRequestJTable.getSelectedRow();
+        
+        if (selectedRow < 0) return;
+        
+        FundingrequestWorkRequest request = (FundingrequestWorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        request.setReceiver(userAccount);
+        request.setStatus("Pending");
+        populateRequestTable();
 //        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
 //        userProcessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise));
 //        layout.next(userProcessContainer);
 
     }//GEN-LAST:event_ApproverequestJButtonActionPerformed
 
-    private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
+    private void refreshDonatorJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshDonatorJButtonActionPerformed
+        populateDonatorTable();
 
-        populateRequestTable();
-    }//GEN-LAST:event_refreshTestJButtonActionPerformed
+    }//GEN-LAST:event_refreshDonatorJButtonActionPerformed
 
     private void refreshTestJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButton1ActionPerformed
         // TODO add your handling code here:
-        populateDonatorTable();
-        valueLabel1.setText(String.valueOf(organization.getDlist().Totalamount()));
+
+       populateRequestTable();
+        
+        int total=0;
+
+        for (Donator order : organization.getDlist().getDonatorlist()) {
+
+                total = + order.getAmount();
+        }
+        for(FundingrequestWorkRequest request : organization.getWorkQueue().getFundingworkrequestlist()){
+            if (request.getStatus().equals("Completed")){
+                total = -request.getAmount();
+            }
+        } 
+        
+        valueLabel1.setText(String.valueOf(total));
         
     }//GEN-LAST:event_refreshTestJButton1ActionPerformed
 
@@ -378,6 +417,27 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnDeleteDonatorActionPerformed
 
+    private void btndenyrequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndenyrequestActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = workRequestJTable.getSelectedRow();
+        
+        if (selectedRow < 0){
+            return;
+        }
+        FundingrequestWorkRequest request = (FundingrequestWorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        
+        request.setStatus("Processing");
+        
+        ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, request);
+        userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+        
+        
+        
+        
+    }//GEN-LAST:event_btndenyrequestActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ApproverequestJButton;
@@ -390,10 +450,11 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton refreshTestJButton;
+    private javax.swing.JButton refreshDonatorJButton;
     private javax.swing.JButton refreshTestJButton1;
     private javax.swing.JTextField txtamount;
     private javax.swing.JTextField txtfname;
@@ -404,8 +465,20 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 
-    private void populateRequestTable() {
+    public void populateRequestTable() {
+        DefaultTableModel model = (DefaultTableModel)workRequestJTable.getModel();
         
+        model.setRowCount(0);
+        
+        for(FundingrequestWorkRequest request : organization.getWorkQueue().getFundingworkrequestlist()){
+            Object[] row = new Object[4];
+            row[0] = request;
+            row[1] = request.getSender().getEmployee().getName();
+            row[2] = request.getStatus();
+            row[3] = request.getMessage();
+            
+            model.addRow(row);
+        }    
     }
 
     private void populateDonatorTable() {
