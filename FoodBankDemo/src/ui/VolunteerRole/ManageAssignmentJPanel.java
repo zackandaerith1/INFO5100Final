@@ -62,8 +62,8 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.account = account;
         this.enterprise = enterprise;
-        this.shelterDirectory = business;
-        this.profileDirectory = enterprise.getProfileDirectory();
+        this.shelterDirectory = business.getfirstShelterEnterprise().getShelterDirectory();
+        this.profileDirectory = business.getfirstShelterEnterprise().getProfileDirectory();
 
         populateTable();
     }
@@ -574,12 +574,12 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
                 return;
             }
             Profile profile = (Profile) tblProfile.getValueAt(selectedRow, 0);
-            ModifyProfileJPanel modifyProfile = new ModifyProfileJPanel(userProcessContainer, account, enterprise,
-                    shelterDirectory, profileDirectory, profile);
-            userProcessContainer.add("ModifyProfileJPanel", modifyProfile);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
-        } catch (ParseException ex) {
+//            ModifyProfileJPanel modifyProfile = new ModifyProfileJPanel(userProcessContainer, account, enterprise,
+//                    shelterDirectory, profileDirectory, profile);
+//            userProcessContainer.add("ModifyProfileJPanel", modifyProfile);
+//            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+//            layout.next(userProcessContainer);
+        } catch (Exception ex) {
             Logger.getLogger(ManageAssignmentJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_viewBtnActionPerformed

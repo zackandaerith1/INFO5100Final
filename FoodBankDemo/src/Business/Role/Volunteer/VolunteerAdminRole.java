@@ -19,7 +19,7 @@ import ui.VolunteerRole.VolunteerAdminWorkAreaJPanel;
  *
  * @author zhengfang
  */
-public class VolunteerRole extends Role{
+public class VolunteerAdminRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {

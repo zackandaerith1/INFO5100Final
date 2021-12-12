@@ -25,7 +25,8 @@ public abstract class Role {
         DistriRole("Distributor"),
         AnalyRole("Analysitor"),
         AccountRole("Accountor"),
-        VoluntRole("Volunteer");
+        VoluntAdminRole("Volunteer Admin"),
+        Volunteer("Volunteer");
         
         private String value;
         private RoleType(String value){
