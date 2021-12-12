@@ -8,12 +8,12 @@ package ui.VolunteerAdminWorkArea;
  *
  * @author jaydenwjc
  */
-public class AddVolunteerJPanel extends javax.swing.JPanel {
+public class UpdateVolunteerJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form AddVolunteerJPanel
+     * Creates new form UpdateVolunteerJPanel
      */
-    public AddVolunteerJPanel() {
+    public UpdateVolunteerJPanel() {
         initComponents();
     }
 
@@ -26,7 +26,6 @@ public class AddVolunteerJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jCheckBox1 = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -41,11 +40,9 @@ public class AddVolunteerJPanel extends javax.swing.JPanel {
         btnSave = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
 
-        jCheckBox1.setText("jCheckBox1");
-
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Add Volunteer");
+        jLabel2.setText("Update Volunteer");
 
         jLabel1.setText("ID:");
 
@@ -176,7 +173,6 @@ public class AddVolunteerJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSave;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

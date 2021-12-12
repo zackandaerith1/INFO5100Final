@@ -8,12 +8,12 @@ package ui.VolunteerAdminWorkArea;
  *
  * @author jaydenwjc
  */
-public class ManageVolunteerJPanel extends javax.swing.JPanel {
+public class AssignWorkJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManageVolunteerJPanel
+     * Creates new form AssignWorkJPanel
      */
-    public ManageVolunteerJPanel() {
+    public AssignWorkJPanel() {
         initComponents();
     }
 
@@ -27,22 +27,15 @@ public class ManageVolunteerJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        btnAddVolunteer = new javax.swing.JButton();
-        btnUpdateVolunteer = new javax.swing.JButton();
-        btnDeleteVolunteer = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblVolunteer = new javax.swing.JTable();
-        btnBack = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Manage Volunteer");
-
-        btnAddVolunteer.setText("Add Volunteer");
-
-        btnUpdateVolunteer.setText("Update Volunteer");
-
-        btnDeleteVolunteer.setText("Delete Volunteer");
+        jLabel2.setText("Assign Work to Volunteer");
 
         tblVolunteer.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tblVolunteer.setModel(new javax.swing.table.DefaultTableModel(
@@ -72,7 +65,12 @@ public class ManageVolunteerJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblVolunteer);
 
-        btnBack.setText("Back...");
+        jLabel1.setText("Choose Volunteer:");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel3.setText("Work List:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -80,22 +78,22 @@ public class ManageVolunteerJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 100, Short.MAX_VALUE)
-                        .addComponent(btnAddVolunteer)
+                        .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnUpdateVolunteer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnDeleteVolunteer)
-                        .addGap(100, 100, 100))))
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(1, 1, 1)
+                    .addComponent(jScrollPane1)
+                    .addGap(1, 1, 1)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,24 +101,25 @@ public class ManageVolunteerJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddVolunteer)
-                    .addComponent(btnUpdateVolunteer)
-                    .addComponent(btnDeleteVolunteer))
-                .addGap(18, 18, 18)
-                .addComponent(btnBack)
-                .addGap(38, 38, 38))
+                    .addComponent(jLabel1)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(146, 146, 146)
+                .addComponent(jLabel3)
+                .addContainerGap(204, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(87, 87, 87)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(247, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddVolunteer;
-    private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnDeleteVolunteer;
-    private javax.swing.JButton btnUpdateVolunteer;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblVolunteer;
     // End of variables declaration//GEN-END:variables

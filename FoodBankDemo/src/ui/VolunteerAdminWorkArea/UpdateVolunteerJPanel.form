@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
-  <NonVisualComponents>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jCheckBox1"/>
-      </Properties>
-    </Component>
-  </NonVisualComponents>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -23,7 +16,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -32,19 +25,19 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtID" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="txtName" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="txtAddress" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="txtEmail" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="txtNumber" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="txtID" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="txtName" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="txtAddress" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="txtEmail" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="txtNumber" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                           <Component id="btnSave" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnBack" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -101,7 +94,7 @@
           <Font name="Helvetica Neue" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Add Volunteer"/>
+        <Property name="text" type="java.lang.String" value="Update Volunteer"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
