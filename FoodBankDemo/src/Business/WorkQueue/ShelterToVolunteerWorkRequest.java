@@ -8,11 +8,21 @@ package Business.WorkQueue;
  *
  * @author zhengfang
  */
-public class ShelterToVolunteerWorkRequest extends WorkRequest{
+public class ShelterToVolunteerWorkRequest extends WorkRequest {
+
+    private int headcount;
+
+    public int getHeadcount() {
+        return headcount;
+    }
+
+    public void setHeadcount(int headcount) {
+        this.headcount = headcount;
+    }
 
     @Override
     public String toString() {
-        return "ShelterToVolunteerWorkRequest{" + '}';
+        return String.valueOf(headcount);
     }
-    
+
 }
