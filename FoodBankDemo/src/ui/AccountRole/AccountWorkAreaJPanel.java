@@ -332,7 +332,7 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
 
                 total = + order.getAmount();
         }
-        for(FoodbankToFundingWorkRequest request : organization.getWorkQueue().getFundingworkrequestlist()){
+        for(FoodbankToFundingWorkRequest request : organization.getWorkQueue().getFoodbankToFundingworkrequestlist()){
             if (request.getStatus().equals("Completed")){
                 total = -request.getAmount();
             }
@@ -470,7 +470,7 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         
-        for(FoodbankToFundingWorkRequest request : organization.getWorkQueue().getFundingworkrequestlist()){
+        for(FoodbankToFundingWorkRequest request : organization.getWorkQueue().getFoodbankToFundingworkrequestlist()){
             Object[] row = new Object[4];
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();
