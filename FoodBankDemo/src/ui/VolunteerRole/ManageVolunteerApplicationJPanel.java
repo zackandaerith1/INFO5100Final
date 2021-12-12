@@ -228,7 +228,7 @@ public class ManageVolunteerApplicationJPanel extends javax.swing.JPanel {
 
         jLabel13.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(43, 71, 92));
-        jLabel13.setText("Modify Application");
+        jLabel13.setText("Manage Application");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

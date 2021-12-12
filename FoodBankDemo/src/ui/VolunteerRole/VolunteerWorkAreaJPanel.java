@@ -71,7 +71,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(43, 71, 92));
-        jLabel1.setText("Shelter Arranger Work Area");
+        jLabel1.setText("Volunteer Work Area");
 
         managePersonBtn.setBackground(new java.awt.Color(94, 138, 117));
         managePersonBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
@@ -130,7 +130,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addComponent(jLabel1)))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
