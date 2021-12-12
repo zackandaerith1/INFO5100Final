@@ -187,7 +187,7 @@ public class CreateCoordinatorJPanel extends javax.swing.JPanel {
                             .addComponent(homeaddressTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emailaddressTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
+                        .addGap(153, 153, 153)
                         .addComponent(jLabel1)))
                 .addContainerGap(296, Short.MAX_VALUE))
         );

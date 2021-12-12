@@ -5,7 +5,6 @@
  */
 package ui.ShelterArrangerRole;
 
-import Business.EcoSystem;
 import Business.Enterprise.ShelterEnteriprise;
 import Business.Order.Order;
 import Business.Order.OrderDirectory;
@@ -139,14 +138,14 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
         tblOrder = new javax.swing.JTable();
         btnCompleted = new javax.swing.JButton();
         btnProcess = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         btnRejct = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtComment = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(54, 33, 89));
+        setBackground(new java.awt.Color(233, 230, 225));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -178,9 +177,9 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblOrder);
 
-        btnCompleted.setBackground(new java.awt.Color(122, 72, 221));
-        btnCompleted.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCompleted.setForeground(new java.awt.Color(255, 255, 255));
+        btnCompleted.setBackground(new java.awt.Color(43, 71, 92));
+        btnCompleted.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnCompleted.setForeground(new java.awt.Color(94, 138, 117));
         btnCompleted.setText("Approved");
         btnCompleted.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,9 +187,9 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnProcess.setBackground(new java.awt.Color(122, 72, 221));
-        btnProcess.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnProcess.setForeground(new java.awt.Color(255, 255, 255));
+        btnProcess.setBackground(new java.awt.Color(43, 71, 92));
+        btnProcess.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnProcess.setForeground(new java.awt.Color(94, 138, 117));
         btnProcess.setText("Process");
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,13 +197,9 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Manage Application");
-
-        btnBack.setBackground(new java.awt.Color(122, 72, 221));
-        btnBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setBackground(new java.awt.Color(43, 71, 92));
+        btnBack.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(94, 138, 117));
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,9 +207,9 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnRejct.setBackground(new java.awt.Color(122, 72, 221));
-        btnRejct.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnRejct.setForeground(new java.awt.Color(255, 255, 255));
+        btnRejct.setBackground(new java.awt.Color(43, 71, 92));
+        btnRejct.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnRejct.setForeground(new java.awt.Color(94, 138, 117));
         btnRejct.setText("Reject");
         btnRejct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,13 +217,18 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(43, 71, 92));
         jLabel2.setText("Comment:");
 
         txtComment.setColumns(20);
         txtComment.setRows(5);
         jScrollPane3.setViewportView(txtComment);
+
+        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
+        jLabel1.setText("Manage Applications");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -250,20 +250,20 @@ public class ManageApplicationJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(477, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(472, 472, 472)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addContainerGap(551, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(jScrollPane1)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(543, 543, 543)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(54, 54, 54)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
