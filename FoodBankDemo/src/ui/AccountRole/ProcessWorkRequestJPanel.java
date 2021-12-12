@@ -130,6 +130,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         request.setMessage(txtResult.getText());
         request.setStatus("Completed");
         
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
