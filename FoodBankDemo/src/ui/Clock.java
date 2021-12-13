@@ -23,6 +23,9 @@ public class Clock {
     private int   currentSecond;
     private Calendar calendar;
 
+    public Clock() {
+    }
+
 //    public static void main( String [] args ) {
 //        JFrame frame = new JFrame();
 //        Clock clock = new Clock();
