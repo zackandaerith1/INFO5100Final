@@ -5,44 +5,6 @@
  */
 package ui.VolunteerRole;
 
-import ui.ShelterArrangerRole.*;
-import Business.EcoSystem;
-import Business.Enterprise.ShelterEnteriprise;
-import Business.Enterprise.VolunteerEnterprise;
-import Business.Organization.Shelter.ArrangementOrganization;
-import Business.Profile.Profile;
-import Business.Profile.ProfileDirectory;
-import Business.Shelter.Shelter;
-import Business.Shelter.ShelterDirectory;
-import Business.UserAccount.UserAccount;
-import com.github.sarxos.webcam.Webcam;
-import com.github.sarxos.webcam.WebcamPanel;
-import ui.ShelterArrangerRole.ModifyProfileJPanel;
-import com.toedter.calendar.JDateChooser;
-import java.awt.CardLayout;
-import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author yibin
@@ -57,7 +19,7 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
     private ProfileDirectory profileDirectory;
     private Shelter shelter;
 
-    public ManageAssignmentJPanel(JPanel userProcessContainer, UserAccount account,  VolunteerEnterprise enterprise, EcoSystem business) {
+    public ManageAssignmentJPanel(JPanel userProcessContainer, UserAccount account, VolunteerEnterprise enterprise, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
@@ -132,9 +94,8 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
         radioFemale = new javax.swing.JRadioButton();
         radioOther = new javax.swing.JRadioButton();
         btnUpload = new javax.swing.JButton();
-        jDateChooser = new com.toedter.calendar.JDateChooser();
 
-        setBackground(new java.awt.Color(54, 33, 89));
+        setBackground(new java.awt.Color(233, 230, 225));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -178,12 +139,13 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
             tblProfile.getColumnModel().getColumn(0).setMaxWidth(0);
         }
 
+        jLabel1.setBackground(new java.awt.Color(43, 71, 92));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Assignment");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setText("First Name:");
 
         txtFirstName.addActionListener(new java.awt.event.ActionListener() {
@@ -192,9 +154,9 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnAdd.setBackground(new java.awt.Color(122, 72, 221));
+        btnAdd.setBackground(new java.awt.Color(94, 138, 117));
         btnAdd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdd.setForeground(new java.awt.Color(43, 71, 92));
         btnAdd.setText("Add Record");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,9 +164,9 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(122, 72, 221));
+        btnBack.setBackground(new java.awt.Color(94, 138, 117));
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setForeground(new java.awt.Color(43, 71, 92));
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,9 +174,9 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
             }
         });
 
-        Assign.setBackground(new java.awt.Color(122, 72, 221));
+        Assign.setBackground(new java.awt.Color(94, 138, 117));
         Assign.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Assign.setForeground(new java.awt.Color(255, 255, 255));
+        Assign.setForeground(new java.awt.Color(43, 71, 92));
         Assign.setText("Assign");
         Assign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,9 +184,9 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
             }
         });
 
-        viewBtn.setBackground(new java.awt.Color(122, 72, 221));
+        viewBtn.setBackground(new java.awt.Color(94, 138, 117));
         viewBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        viewBtn.setForeground(new java.awt.Color(255, 255, 255));
+        viewBtn.setForeground(new java.awt.Color(43, 71, 92));
         viewBtn.setText("View/Update");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,8 +194,8 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(43, 71, 92));
         jLabel5.setText("Last Name:");
 
         txtLastName.addActionListener(new java.awt.event.ActionListener() {
@@ -242,8 +204,8 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(43, 71, 92));
         jLabel6.setText("Phone Number:");
 
         txtPhone.addActionListener(new java.awt.event.ActionListener() {
@@ -252,16 +214,16 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(43, 71, 92));
         jLabel7.setText("Birth Day:");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(43, 71, 92));
         jLabel8.setText("Gender:");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(43, 71, 92));
         jLabel9.setText("Home Address:");
 
         txtAddress.addActionListener(new java.awt.event.ActionListener() {
@@ -270,8 +232,8 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(43, 71, 92));
         jLabel10.setText("Email Address:");
 
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -280,8 +242,8 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(43, 71, 92));
         jLabel11.setText("Comment:");
 
         txtComment.setColumns(20);
@@ -290,17 +252,18 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        jLabel2.setBackground(new java.awt.Color(43, 71, 92));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(43, 71, 92));
         jLabel2.setText("Volunteer List");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(43, 71, 92));
         jLabel12.setText("Upload Picture:");
 
-        btnChoose.setBackground(new java.awt.Color(122, 72, 221));
-        btnChoose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnChoose.setForeground(new java.awt.Color(255, 255, 255));
+        btnChoose.setBackground(new java.awt.Color(94, 138, 117));
+        btnChoose.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnChoose.setForeground(new java.awt.Color(43, 71, 92));
         btnChoose.setText("Take Picture");
         btnChoose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -314,21 +277,27 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
         txtFilePath.setForeground(new java.awt.Color(54, 33, 89));
         txtFilePath.setToolTipText("");
 
+        radioMale.setBackground(new java.awt.Color(94, 138, 117));
         buttonGroup1.add(radioMale);
-        radioMale.setForeground(new java.awt.Color(255, 255, 255));
+        radioMale.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        radioMale.setForeground(new java.awt.Color(43, 71, 92));
         radioMale.setText("Male");
 
+        radioFemale.setBackground(new java.awt.Color(94, 138, 117));
         buttonGroup1.add(radioFemale);
-        radioFemale.setForeground(new java.awt.Color(255, 255, 255));
+        radioFemale.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        radioFemale.setForeground(new java.awt.Color(43, 71, 92));
         radioFemale.setText("Female");
 
+        radioOther.setBackground(new java.awt.Color(94, 138, 117));
         buttonGroup1.add(radioOther);
-        radioOther.setForeground(new java.awt.Color(255, 255, 255));
+        radioOther.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        radioOther.setForeground(new java.awt.Color(43, 71, 92));
         radioOther.setText("Other");
 
-        btnUpload.setBackground(new java.awt.Color(122, 72, 221));
-        btnUpload.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnUpload.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpload.setBackground(new java.awt.Color(94, 138, 117));
+        btnUpload.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnUpload.setForeground(new java.awt.Color(43, 71, 92));
         btnUpload.setText("Upload Picture");
         btnUpload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -387,10 +356,7 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -413,7 +379,7 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
                                 .addComponent(viewBtn)
                                 .addGap(93, 93, 93)
                                 .addComponent(Assign, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 187, Short.MAX_VALUE)))
+                        .addGap(0, 151, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -453,9 +419,7 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
                                 .addGap(66, 66, 66)
                                 .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel7)
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
@@ -667,7 +631,6 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnChoose;
     private javax.swing.JButton btnUpload;
     private javax.swing.ButtonGroup buttonGroup1;
-    private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
