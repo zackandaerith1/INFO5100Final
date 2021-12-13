@@ -107,7 +107,7 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
         txtFirstName = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
-        delete = new javax.swing.JButton();
+        Assign = new javax.swing.JButton();
         viewBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txtLastName = new javax.swing.JTextField();
@@ -180,7 +180,7 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Register Person");
+        jLabel1.setText("Assignment");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -212,20 +212,20 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
             }
         });
 
-        delete.setBackground(new java.awt.Color(122, 72, 221));
-        delete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        delete.setForeground(new java.awt.Color(255, 255, 255));
-        delete.setText("Delete Record");
-        delete.addActionListener(new java.awt.event.ActionListener() {
+        Assign.setBackground(new java.awt.Color(122, 72, 221));
+        Assign.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Assign.setForeground(new java.awt.Color(255, 255, 255));
+        Assign.setText("Assign");
+        Assign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteActionPerformed(evt);
+                AssignActionPerformed(evt);
             }
         });
 
         viewBtn.setBackground(new java.awt.Color(122, 72, 221));
         viewBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         viewBtn.setForeground(new java.awt.Color(255, 255, 255));
-        viewBtn.setText("View/Update Record");
+        viewBtn.setText("View/Update");
         viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewBtnActionPerformed(evt);
@@ -369,7 +369,7 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(btnBack)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(56, 56, 56)
+                                .addGap(80, 80, 80)
                                 .addComponent(jLabel1))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel12)
@@ -412,8 +412,8 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
                                 .addGap(171, 171, 171)
                                 .addComponent(viewBtn)
                                 .addGap(93, 93, 93)
-                                .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 134, Short.MAX_VALUE)))
+                                .addComponent(Assign, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 187, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -430,7 +430,7 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(55, 55, 55)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(delete)
+                            .addComponent(Assign)
                             .addComponent(viewBtn)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
@@ -554,7 +554,7 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+    private void AssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssignActionPerformed
         int selectedRow = tblProfile.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -564,7 +564,7 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
         Profile profile = (Profile) tblProfile.getValueAt(selectedRow, 0);
         profileDirectory.removeProfile(profile);
         populateTable();
-    }//GEN-LAST:event_deleteActionPerformed
+    }//GEN-LAST:event_AssignActionPerformed
 
     private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
         try {
@@ -661,12 +661,12 @@ public class ManageAssignmentJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnUploadActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Assign;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnChoose;
     private javax.swing.JButton btnUpload;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton delete;
     private com.toedter.calendar.JDateChooser jDateChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

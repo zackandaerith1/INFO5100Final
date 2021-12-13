@@ -14,6 +14,8 @@ public class WorkQueue {
     
     private ArrayList<WorkRequest> workRequestList;
     private ArrayList<FoodbankToFundingWorkRequest> Fundingworkrequestlist;
+    private ArrayList<ShelterToFoodbankWorkRequest> sheltertofoodbanklist;
+    private ArrayList<ShelterToVolunteerWorkRequest> sheltertovolunteerlist;
 
     public WorkQueue() {
         workRequestList = new ArrayList();
@@ -27,6 +29,16 @@ public class WorkQueue {
     public ArrayList<FoodbankToFundingWorkRequest> getFoodbankToFundingworkrequestlist() {
         return Fundingworkrequestlist;
     }
+
+    public ArrayList<ShelterToFoodbankWorkRequest> getSheltertofoodbanklist() {
+        return sheltertofoodbanklist;
+    }
+
+    public ArrayList<ShelterToVolunteerWorkRequest> getSheltertovolunteerlist() {
+        return sheltertovolunteerlist;
+    }
+    
+    
     
     public int numfbwq(){
         int num = 0;
@@ -39,6 +51,20 @@ public class WorkQueue {
     public int numwq(){
         int n = 0;
         for(WorkRequest i:workRequestList){
+            n++;
+        }
+        return n;
+    }
+    public int numstfwq(){
+        int n = 0;
+        for(ShelterToFoodbankWorkRequest i:sheltertofoodbanklist){
+            n++;
+        }
+        return n;
+    }
+    public int numstvwq(){
+        int n =0;
+        for(ShelterToVolunteerWorkRequest i:sheltertovolunteerlist){
             n++;
         }
         return n;

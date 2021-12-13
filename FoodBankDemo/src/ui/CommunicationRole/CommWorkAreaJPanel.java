@@ -50,7 +50,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        JTable = new javax.swing.JTable();
+        ShelterRequestJTable = new javax.swing.JTable();
         processshelterrequestJButton = new javax.swing.JButton();
         refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
@@ -69,26 +69,28 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         AssigntoDistributionJButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
+
         setBackground(new java.awt.Color(233, 230, 225));
 
         JTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         JTable.setForeground(new java.awt.Color(43, 71, 92));
         JTable.setModel(new javax.swing.table.DefaultTableModel(
+
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Message", "Receiver", "Status", "Result"
+                "", "Name", "Quantity", "Unit", "Sender", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, true, true, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -99,7 +101,12 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(JTable);
+        jScrollPane1.setViewportView(ShelterRequestJTable);
+        if (ShelterRequestJTable.getColumnModel().getColumnCount() > 0) {
+            ShelterRequestJTable.getColumnModel().getColumn(0).setMinWidth(0);
+            ShelterRequestJTable.getColumnModel().getColumn(0).setPreferredWidth(0);
+            ShelterRequestJTable.getColumnModel().getColumn(0).setMaxWidth(0);
+        }
 
         processshelterrequestJButton.setBackground(new java.awt.Color(94, 138, 117));
         processshelterrequestJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
@@ -300,6 +307,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+
                             .addComponent(jLabel4)
                             .addComponent(refreshTestJButton))
                         .addGap(18, 18, 18)
@@ -336,12 +344,12 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
 
     private void processshelterrequestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processshelterrequestJButtonActionPerformed
         try {
-            int selectedRow = JTable.getSelectedRow();
+            int selectedRow = ShelterRequestJTable.getSelectedRow();
             if (selectedRow < 0) {
                 JOptionPane.showMessageDialog(null, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-            ShelterToFoodbankWorkRequest request = (ShelterToFoodbankWorkRequest) JTable.getValueAt(selectedRow, 0);
+            ShelterToFoodbankWorkRequest request = (ShelterToFoodbankWorkRequest) ShelterRequestJTable.getValueAt(selectedRow, 0);
 
             request.setSender(userAccount);
             request.setStatus("Processing");
@@ -355,7 +363,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
         }
 //        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-//        userProcessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise));
+//        usShelterRequestJTableessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise));
 //        layout.next(userProcessContainer);
 
     }//GEN-LAST:event_processshelterrequestJButtonActionPerformed
@@ -437,11 +445,15 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
 
     private void AssigntoDistributionJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssigntoDistributionJButtonActionPerformed
         // TODO add your handling code here:
+        
+        
+        
+        populateRequestTable();
     }//GEN-LAST:event_AssigntoDistributionJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AssigntoDistributionJButton;
-    private javax.swing.JTable JTable;
+    private javax.swing.JTable ShelterRequestJTable;
     private javax.swing.JButton btnRefreshfundingrequest;
     private javax.swing.JButton btndelete;
     private javax.swing.JButton btnsubmitfundingrequest;
@@ -462,17 +474,17 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void populateRequestTable() {
-        DefaultTableModel model = (DefaultTableModel) JTable.getModel();
-
+        DefaultTableModel model = (DefaultTableModel) ShelterRequestJTable.getModel();
+        
         model.setRowCount(0);
-
-        for (ShelterToFoodbankWorkRequest request : organization.getWorkQueue().getWorkRequestList()) {
-
-            Object[] row = new Object[4];
+        for (ShelterToFoodbankWorkRequest request :organization.getWorkQueue().getSheltertofoodbanklist()){
+            Object[] row = new Object[6];
             row[0] = request;
-            row[1] = request.getReceiver();
-            row[2] = request.getStatus();
-            row[3] = request.getMessage();
+            row[1] = request.getItemName();
+            row[2] = request.getQty();
+            row[3] = request.getUnit();
+            row[4] = request.getSender();
+            row[5] =request.getStatus();
 
             
             model.addRow(row);

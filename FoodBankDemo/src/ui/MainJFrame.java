@@ -39,6 +39,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
         Image logoimage = ii.getImage().getScaledInstance(1000, 600, Image.SCALE_SMOOTH);
         logo.setIcon(new ImageIcon(logoimage));
+        Clock clock = new Clock();
+//        jLabel2 == clock.time;
+//        clock.start();
+
     }
 
     /**
@@ -59,6 +63,7 @@ public class MainJFrame extends javax.swing.JFrame {
         loginJLabel = new javax.swing.JLabel();
         logoutJButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         container = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
@@ -96,6 +101,8 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setText("Password");
 
+        jLabel2.setText("jLabel2");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -110,8 +117,7 @@ public class MainJFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
-                                .addComponent(jLabel1)
-                                .addGap(37, 37, 37))
+                                .addComponent(jLabel1))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
                                 .addComponent(jLabel3))
@@ -122,8 +128,11 @@ public class MainJFrame extends javax.swing.JFrame {
                                 .addGap(29, 29, 29)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(logoutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, Short.MAX_VALUE)
-                                    .addComponent(loginJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(152, Short.MAX_VALUE))
+                                    .addComponent(loginJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(208, 208, 208)
+                        .addComponent(jLabel2)))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {loginJButton, logoutJButton});
@@ -145,7 +154,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(logoutJButton)
                 .addGap(26, 26, 26)
                 .addComponent(loginJLabel)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(66, 66, 66))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -279,6 +290,7 @@ public class MainJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel container;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

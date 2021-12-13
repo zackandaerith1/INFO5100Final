@@ -9,6 +9,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Foodbank.DistributionOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.ShelterToFoodbankWorkRequest;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -58,20 +59,20 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Message", "Receiver", "Status", "Result"
+                "", "Receiver", "Status", "Result", "Message"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -83,6 +84,11 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(workRequestJTable);
+        if (workRequestJTable.getColumnModel().getColumnCount() > 0) {
+            workRequestJTable.getColumnModel().getColumn(0).setMinWidth(0);
+            workRequestJTable.getColumnModel().getColumn(0).setPreferredWidth(0);
+            workRequestJTable.getColumnModel().getColumn(0).setMaxWidth(0);
+        }
 
         requestTestJButton.setBackground(new java.awt.Color(94, 138, 117));
         requestTestJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
@@ -98,6 +104,11 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
         viewdetailJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         viewdetailJButton.setForeground(new java.awt.Color(43, 71, 92));
         viewdetailJButton.setText("View");
+        viewdetailJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewdetailJButtonActionPerformed(evt);
+            }
+        });
 
         refreshTestJButton.setBackground(new java.awt.Color(94, 138, 117));
         refreshTestJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
@@ -168,8 +179,8 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
 //impletement method
 
             ShelterToFoodbankWorkRequest d = (ShelterToFoodbankWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
-
-//            organization.getDlist().getDonatorlist().remove(d);
+        
+            d.setStatus("Completed");
             populateRequestTable();
 
         } catch (Exception ex) {
@@ -186,6 +197,33 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
         populateRequestTable();
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
 
+    private void viewdetailJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewdetailJButtonActionPerformed
+        // TODO add your handling code here:
+        try {
+            int selectedRow = workRequestJTable.getSelectedRow();
+            if (selectedRow < 0) {
+                JOptionPane.showMessageDialog(null, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+//impletement method
+        
+            ShelterToFoodbankWorkRequest d = (ShelterToFoodbankWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
+                
+        
+        ShelterOrderWorkAreaJPanel Shelterorder = new ShelterOrderWorkAreaJPanel(userProcessContainer,d);
+        userProcessContainer.add(Shelterorder);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);             
+            
+
+        
+        populateRequestTable();
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_viewdetailJButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JScrollPane jScrollPane1;
@@ -201,9 +239,7 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-
-        for (ShelterToFoodbankWorkRequest request : organization.getWorkQueue().getWorkRequestList()) {
-
+        for (ShelterToFoodbankWorkRequest request : organization.getWorkQueue().getSheltertofoodbanklist()){
             Object[] row = new Object[4];
             row[0] = request;
             row[1] = request.getReceiver();
