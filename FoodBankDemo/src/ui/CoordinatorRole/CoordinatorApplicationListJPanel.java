@@ -12,7 +12,6 @@ import Business.Menu.Item;
 import Business.Menu.MenuDirectory;
 import Business.WorkQueue.Order;
 import Business.WorkQueue.OrderDirectory;
-import Business.Organization.Shelter.RegistrationOrganization;
 import Business.Profile.ProfileDirectory;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
