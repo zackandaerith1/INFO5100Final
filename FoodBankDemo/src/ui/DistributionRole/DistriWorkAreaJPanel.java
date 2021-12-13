@@ -8,28 +8,29 @@ package ui.DistributionRole;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Foodbank.DistributionOrganization;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.ShelterToFoodbankWorkRequest;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import Business.WorkQueue.ShelterToFoodbankWorkRequest;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author zhengfang
  */
 public class DistriWorkAreaJPanel extends javax.swing.JPanel {
+
     private JPanel userProcessContainer;
     private DistributionOrganization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
+
     /**
      * Creates new form DistriWorkAreaJPanel
      */
-
     public DistriWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, DistributionOrganization organization, Enterprise enterprise) {
         initComponents();
-        
+
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
@@ -53,6 +54,8 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
         refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(233, 230, 225));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -87,6 +90,9 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
             workRequestJTable.getColumnModel().getColumn(0).setMaxWidth(0);
         }
 
+        requestTestJButton.setBackground(new java.awt.Color(94, 138, 117));
+        requestTestJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        requestTestJButton.setForeground(new java.awt.Color(43, 71, 92));
         requestTestJButton.setText("Process the request");
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,6 +100,9 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        viewdetailJButton.setBackground(new java.awt.Color(94, 138, 117));
+        viewdetailJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        viewdetailJButton.setForeground(new java.awt.Color(43, 71, 92));
         viewdetailJButton.setText("View");
         viewdetailJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +110,9 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        refreshTestJButton.setBackground(new java.awt.Color(94, 138, 117));
+        refreshTestJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        refreshTestJButton.setForeground(new java.awt.Color(43, 71, 92));
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,9 +120,12 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(43, 71, 92));
         enterpriseLabel.setText("EnterPrise :");
 
+        valueLabel.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        valueLabel.setForeground(new java.awt.Color(43, 71, 92));
         valueLabel.setText("<value>");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -162,16 +177,11 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
                 return;
             }
 //impletement method
-        
-            ShelterToFoodbankWorkRequest d = (ShelterToFoodbankWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
-            
-            d.setStatus("Completed");
-//            organization.getDlist().getDonatorlist().remove(d);       
-           
-            
 
+            ShelterToFoodbankWorkRequest d = (ShelterToFoodbankWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
         
-        populateRequestTable();
+            d.setStatus("Completed");
+            populateRequestTable();
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -214,7 +224,6 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_viewdetailJButtonActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JScrollPane jScrollPane1;
@@ -227,16 +236,20 @@ public class DistriWorkAreaJPanel extends javax.swing.JPanel {
 
     private void populateRequestTable() {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
-        
+
         model.setRowCount(0);
+
         for (ShelterToFoodbankWorkRequest request : organization.getWorkQueue().getSheltertofoodbanklist()){
             Object[] row = new Object[4];
             row[0] = request;
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
             row[3] = request.getMessage();
-            
+
+
             model.addRow(row);
-        }   
+        }
+
+
     }
 }

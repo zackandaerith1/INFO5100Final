@@ -5,18 +5,12 @@
  */
 package ui.ShelterArrangerRole;
 
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
 import Business.Enterprise.ShelterEnteriprise;
 import Business.Menu.Menu;
 import Business.Menu.MenuDirectory;
-import Business.Organization.Organization;
-import Business.Organization.Shelter.ArrangementOrganization;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
-import ui.ShelterArrangerRole.ModifyResourceJPanel;
-
 import java.awt.CardLayout;
 import java.util.Random;
 import javax.swing.JOptionPane;
@@ -88,9 +82,10 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(54, 33, 89));
+        setBackground(new java.awt.Color(233, 230, 225));
 
-        tblResource.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        tblResource.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        tblResource.setForeground(new java.awt.Color(43, 71, 92));
         tblResource.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -128,16 +123,16 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
             tblResource.getColumnModel().getColumn(0).setMaxWidth(0);
         }
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(43, 71, 92));
         jLabel1.setText("Manage Resource");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setText("Item Name:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(43, 71, 92));
         jLabel4.setText("Quantity:");
 
         txtItemName.addActionListener(new java.awt.event.ActionListener() {
@@ -152,9 +147,9 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnAdd.setBackground(new java.awt.Color(122, 72, 221));
-        btnAdd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdd.setBackground(new java.awt.Color(94, 138, 117));
+        btnAdd.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(43, 71, 92));
         btnAdd.setText("Add Item");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,9 +157,9 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(122, 72, 221));
-        btnBack.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setBackground(new java.awt.Color(94, 138, 117));
+        btnBack.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(43, 71, 92));
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,9 +167,9 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
             }
         });
 
-        delete.setBackground(new java.awt.Color(122, 72, 221));
-        delete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        delete.setForeground(new java.awt.Color(255, 255, 255));
+        delete.setBackground(new java.awt.Color(94, 138, 117));
+        delete.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        delete.setForeground(new java.awt.Color(43, 71, 92));
         delete.setText("Delete Item");
         delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,8 +177,8 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(43, 71, 92));
         jLabel5.setText("Unit:");
 
         txtUnit.addActionListener(new java.awt.event.ActionListener() {
@@ -192,9 +187,9 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnView.setBackground(new java.awt.Color(122, 72, 221));
-        btnView.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnView.setForeground(new java.awt.Color(255, 255, 255));
+        btnView.setBackground(new java.awt.Color(94, 138, 117));
+        btnView.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        btnView.setForeground(new java.awt.Color(43, 71, 92));
         btnView.setText("View/Modify Item");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,8 +199,8 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(43, 71, 92));
         jLabel6.setText("Resource List");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -252,7 +247,7 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(229, 229, 229)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,7 +284,7 @@ public class ManageResourceJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(136, 136, 136)
                         .addComponent(btnBack)))
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator1))
