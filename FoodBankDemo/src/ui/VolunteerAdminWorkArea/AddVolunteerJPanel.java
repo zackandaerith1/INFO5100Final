@@ -1,14 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package ui.VolunteerAdminWorkArea;
+
+import Business.Enterprise.VolunteerEnterprise;
+import Business.Role.Volunteer.VolunteerDirectory;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author jaydenwjc
  */
 public class AddVolunteerJPanel extends javax.swing.JPanel {
+
+    private VolunteerEnterprise enterprise;
+    private VolunteerDirectory volunteerDirectory;
 
     /**
      * Creates new form AddVolunteerJPanel
@@ -88,6 +91,11 @@ public class AddVolunteerJPanel extends javax.swing.JPanel {
         });
 
         btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         btnBack.setText("Back...");
 
@@ -172,6 +180,31 @@ public class AddVolunteerJPanel extends javax.swing.JPanel {
     private void txtNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumberActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        // TODO add your handling code here:
+        if (txtID.getText().isEmpty() || txtName.getText().isEmpty()
+                || txtEmail.getText().isEmpty() || txtAddress.getText().isEmpty()
+                || txtNumber.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Fields cannot be empty", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if (!txtName.getText().matches("^([A-Z])([a-z])+$")) {
+            JOptionPane.showMessageDialog(null, "Name format incorrect!(Start with Uppercase + lowercase)", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if (!txtNumber.getText().matches("^[0-9]{10}$")) {
+            JOptionPane.showMessageDialog(null, "Phone Number must be 10 digits", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if (!txtEmail.getText().matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$")) {
+            JOptionPane.showMessageDialog(null, "Email Address format incorrect!(aaa@aaa)", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

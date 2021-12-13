@@ -6,6 +6,7 @@
 package Business.Enterprise;
 
 import Business.Role.Role;
+import Business.Role.Volunteer.VolunteerDirectory;
 import java.util.ArrayList;
 
 /**
@@ -14,19 +15,17 @@ import java.util.ArrayList;
  */
 public class VolunteerEnterprise extends Enterprise {
 
+    private VolunteerDirectory volunteerDirectory;
+
     public VolunteerEnterprise(String name) {
         super(name, EnterpriseType.Volunteer);
     }
-    
-    
-    
 
     @Override
     public ArrayList<Role> getSupportedRole() {
-        
+
         return null;
-        
+
     }
-    
-    
+
 }
