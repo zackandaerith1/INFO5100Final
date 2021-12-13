@@ -11,6 +11,8 @@ import Business.Organization.Funding.AccountOrganization;
 import Business.Organization.Organization.Type;
 import Business.Organization.Shelter.ArrangementOrganization;
 import Business.Organization.Shelter.RegistrationOrganization;
+import Business.Organization.Shelter.ShelterAdminOrganization;
+import Business.Organization.Volunteer.VolunteerOrganization;
 import java.util.ArrayList;
 
 /**
@@ -49,6 +51,12 @@ public class OrganizationDirectory {
             organizationList.add(organization);
         }else if (type.getValue().equals(Type.RegisDepart.getValue())){
             organization = new RegistrationOrganization();
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Type.ShelterAdmin.getValue())){
+            organization = new ShelterAdminOrganization();
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Type.VolunteerDepart.getValue())){
+            organization = new VolunteerOrganization();
             organizationList.add(organization);
         }
         return organization;

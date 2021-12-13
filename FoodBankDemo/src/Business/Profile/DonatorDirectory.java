@@ -35,7 +35,7 @@ public class DonatorDirectory {
     public int Totalamount(){
         int total =0;
         for (Donator d: donatorlist){
-            total = +d.getAmount();
+            total +=d.getAmount();
         }
         return total;
     }

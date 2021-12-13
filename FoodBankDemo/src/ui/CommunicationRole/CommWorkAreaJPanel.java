@@ -13,6 +13,7 @@ import Business.WorkQueue.ShelterToFoodbankWorkRequest;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -69,28 +70,26 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         AssigntoDistributionJButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
-
         setBackground(new java.awt.Color(233, 230, 225));
 
-        JTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        JTable.setForeground(new java.awt.Color(43, 71, 92));
-        JTable.setModel(new javax.swing.table.DefaultTableModel(
-
+        ShelterRequestJTable.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        ShelterRequestJTable.setForeground(new java.awt.Color(43, 71, 92));
+        ShelterRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "", "Name", "Quantity", "Unit", "Sender", "Status"
+                "Message", "Receiver", "Status", "Result"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -102,11 +101,6 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(ShelterRequestJTable);
-        if (ShelterRequestJTable.getColumnModel().getColumnCount() > 0) {
-            ShelterRequestJTable.getColumnModel().getColumn(0).setMinWidth(0);
-            ShelterRequestJTable.getColumnModel().getColumn(0).setPreferredWidth(0);
-            ShelterRequestJTable.getColumnModel().getColumn(0).setMaxWidth(0);
-        }
 
         processshelterrequestJButton.setBackground(new java.awt.Color(94, 138, 117));
         processshelterrequestJButton.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
@@ -174,20 +168,20 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
         workRequestJTable.setForeground(new java.awt.Color(43, 71, 92));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Amount", "Receiver", "Status", "Result"
+                "", "Amount", "Receiver", "Status", "Result"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                true, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -199,6 +193,11 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane2.setViewportView(workRequestJTable);
+        if (workRequestJTable.getColumnModel().getColumnCount() > 0) {
+            workRequestJTable.getColumnModel().getColumn(0).setMinWidth(0);
+            workRequestJTable.getColumnModel().getColumn(0).setPreferredWidth(0);
+            workRequestJTable.getColumnModel().getColumn(0).setMaxWidth(0);
+        }
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(43, 71, 92));
@@ -307,22 +306,22 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-
                             .addComponent(jLabel4)
                             .addComponent(refreshTestJButton))
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(processshelterrequestJButton)
+                            .addComponent(AssigntoDistributionJButton))
+                        .addGap(84, 84, 84))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(btnRefreshfundingrequest))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(processshelterrequestJButton)
-                    .addComponent(AssigntoDistributionJButton))
-                .addGap(84, 84, 84)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                        .addGap(119, 119, 119)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
@@ -402,7 +401,7 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
             }
             FoodbankToFundingWorkRequest d = (FoodbankToFundingWorkRequest) workRequestJTable.getValueAt(selectedRow, 0);
 
-            d.setAmount(Integer.getInteger(txtamount.getText()));
+            d.setAmount(Integer.parseInt(txtamount.getText()));
 
             txtamount.setText("");
 
@@ -498,11 +497,12 @@ public class CommWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (FoodbankToFundingWorkRequest request : userAccount.getWorkQueue().getFoodbankToFundingworkrequestlist()) {
-            Object[] row = new Object[4];
+            Object[] row = new Object[5];
             row[0] = request;
-            row[1] = request.getReceiver();
-            row[2] = request.getStatus();
-            row[3] = request.getMessage();
+            row[1] = request.getAmount();
+            row[2] = "Fudning department";
+            row[3] = request.getStatus();
+            row[4] = request.getMessage();
 
             model.addRow(row);
         }

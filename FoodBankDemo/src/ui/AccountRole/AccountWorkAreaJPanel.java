@@ -390,11 +390,11 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
 
-        int amount = Integer.getInteger(txtamount.getText());
+        int amount = Integer.parseInt(txtamount.getText());
         Donator d = new Donator(amount);
         d.setFname(txtfname.getText());
         d.setLname(txtlname.getText());
-        d.setPhone(Integer.getInteger(txtphone.getText()));
+        d.setPhone(Integer.parseInt(txtphone.getText()));
         d.setDate(new Date());
 
         DonatorDirectory dlist = organization.getDlist();
@@ -420,8 +420,8 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
             d.setFname(txtfname.getName());
             d.setLname(txtlname.getName());
             d.setDate(new Date());
-            d.setAmount(Integer.getInteger(txtamount.getText()));
-            d.setPhone(Integer.getInteger(txtphone.getText()));
+            d.setAmount(Integer.parseInt(txtamount.getText()));
+            d.setPhone(Integer.parseInt(txtphone.getText()));
 
             txtfname.setText("");
             txtlname.setText("");
@@ -561,5 +561,6 @@ public class AccountWorkAreaJPanel extends javax.swing.JPanel {
             dtm.addRow(row);
 
         }
+        valueLabel1.setText(String.valueOf(organization.getDlist().Totalamount()));
     }
 }

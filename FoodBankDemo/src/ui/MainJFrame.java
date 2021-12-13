@@ -12,6 +12,10 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Image;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -32,14 +36,22 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         system = dB4OUtil.retrieveSystem();
         this.setSize(1680, 1050);
-
+        try {
+            URL url = new URL("https://drive.google.com/file/d/1OtVBKi9KhLLYcKtiN8OOXZfWv2aDbKK8/view");
+                    ImageIcon ii = new ImageIcon(url);
+                            Image logoimage = ii.getImage().getScaledInstance(1000, 600, Image.SCALE_SMOOTH);
+        logo.setIcon(new ImageIcon(logoimage));
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(MainJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         String filename = "C:\\Users\\yibin\\Documents\\GitHub\\INFO5100Final\\FoodBankDemo\\huskyfoodbanklogo.png";
 
-        ImageIcon ii = new ImageIcon(filename);
+//        ImageIcon ii = new ImageIcon(url);
 
-        Image logoimage = ii.getImage().getScaledInstance(1000, 600, Image.SCALE_SMOOTH);
-        logo.setIcon(new ImageIcon(logoimage));
-        Clock clock = new Clock();
+//        Image logoimage = ii.getImage().getScaledInstance(1000, 600, Image.SCALE_SMOOTH);
+//        logo.setIcon(new ImageIcon(logoimage));
+//        Clock clock = new Clock();
 //        jLabel2 == clock.time;
 //        clock.start();
 
@@ -101,8 +113,6 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(43, 71, 92));
         jLabel3.setText("Password");
 
-        jLabel2.setText("jLabel2");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -154,7 +164,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(logoutJButton)
                 .addGap(26, 26, 26)
                 .addComponent(loginJLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(66, 66, 66))
         );
