@@ -11,6 +11,7 @@ import Business.DeliveryMan.DeliveryMan;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.ShelterEnteriprise;
+import Business.Organization.Shelter.ShelterAdminOrganization;
 import Business.Shelter.Shelter;
 import Business.Shelter.ShelterDirectory;
 import Business.UserAccount.UserAccount;
@@ -38,7 +39,7 @@ public class ShelterAdminWorkAreaJPanel extends javax.swing.JPanel {
     private DeliveryManDirectory deliveryManDirectory;
     private UserAccountDirectory userAccountDirectory;
 
-    public ShelterAdminWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, ShelterEnteriprise enterprise, EcoSystem business) {
+    public ShelterAdminWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, ShelterAdminOrganization organization, ShelterEnteriprise enterprise, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.business = business;

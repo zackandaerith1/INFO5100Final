@@ -10,6 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Enterprise.ShelterEnteriprise;
 import Business.Organization.Organization;
 import Business.Organization.Shelter.ArrangementOrganization;
+import Business.Organization.Shelter.RegistrationOrganization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -32,7 +33,7 @@ public class CoordinatorRole extends Role {
      */
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-       return new CoordinatorAreaJPanel(userProcessContainer, account, (ArrangementOrganization)organization, (ShelterEnteriprise)enterprise, business);
+       return new CoordinatorAreaJPanel(userProcessContainer, account, (RegistrationOrganization)organization, (ShelterEnteriprise)enterprise, business);
        
     }
 //    @Override

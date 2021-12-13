@@ -42,7 +42,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EcoSystem business;
     private UserAccount account;
-    private ArrangementOrganization organization;
+    private RegistrationOrganization organization;
     private ShelterEnteriprise enterprise;
     private CoordinatorDirectory coordinatorDirectory;
     private ShelterDirectory shelterDirectory;
@@ -54,7 +54,7 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
 
     ArrayList<Item> itemList = new ActivatableArrayList<>();
 
-    public CoordinatorAreaJPanel(JPanel userProcessContainer, UserAccount account, ArrangementOrganization organization, ShelterEnteriprise enterprise, EcoSystem business) {
+    public CoordinatorAreaJPanel(JPanel userProcessContainer, UserAccount account, RegistrationOrganization organization, ShelterEnteriprise enterprise, EcoSystem business) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;
@@ -75,9 +75,6 @@ public class CoordinatorAreaJPanel extends javax.swing.JPanel {
 
     }
 
-    public CoordinatorAreaJPanel(JPanel userProcessContainer, UserAccount account, RegistrationOrganization arrangementOrganization, Enterprise enterprise) {
-
-    }
 
     public void populatePersonTable() {
 
